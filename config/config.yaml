@@ -1,0 +1,27 @@
+# system configuration
+system:
+  env: 'public'  # Change to "develop" to skip authentication for development mode
+  addr: 8888
+  db-type: 'mysql'
+
+# mysql connect configuration
+mysql:
+  path: '127.0.0.1:3306'
+  config: 'charset=utf8&parseTime=True&loc=Local&timeout=1000ms'
+  db-name: 'gin-admin'
+  username: 'root'
+  password: 'Jiang19920802&'
+  max-idle-conns: 1000
+  max-open-conns: 1000
+  log-mode: false
+
+# zap logger configuration
+zap:
+  level: 'info'
+  director: 'log'
+  prefix: 'gin'
+  encode-level: 'LowercaseColorLevelEncoder'
+  format: 'console'
+  showLine: true
+  link-name: 'latest_log'
+

@@ -1,0 +1,2 @@
+2021-10-14 17:15:43	[34minfo[0m	server run success on 	{"address": ":8888"}
+2021-10-14 17:16:10	[31merror[0m	accept tcp [::]:8888: use of closed network connection

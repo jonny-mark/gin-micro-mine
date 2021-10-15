@@ -1,0 +1,143 @@
+#博客地址
+#http://www.cnblogs.com/brady-wang/p/14424195.html
+#证书 https://blog.csdn.net/u012676824/article/details/119979400
+
+#etcdctl --endpoints=https://127.0.0.1:22379 --cacert=/Users/zhangtingting/docker/etcd-cluster/ssl/ca.pem --cert=/Users/zhangtingting/docker/etcd-cluster/ssl/etcd.pem --key=/Users/zhangtingting/docker/etcd-cluster/ssl/etcd-key.pem member list
+#etcdctl --endpoints=http://127.0.0.1:2379 member list
+# 指定compose文件的版本
+version: '2.2'
+
+services:
+  etcd-1:
+    image: quay.io/coreos/etcd:v3.4.13
+    container_name: etcd-1
+    restart: on-failure
+    ports:
+      - 12379:2379
+      - 12380:2380
+    environment:
+      ETCDCTL_API: 3
+    command: etcd
+      -name etcd-1
+      -advertise-client-urls https://172.23.0.11:2379,http://172.23.0.11:2379
+      --data-dir=/var/lib/etcd
+      -listen-client-urls https://172.23.0.11:2379,http://172.23.0.11:2379
+      -listen-peer-urls https://172.23.0.11:2380
+      -initial-cluster-token etcd-cluster
+      -initial-advertise-peer-urls https://172.23.0.11:2380
+      -initial-cluster "etcd-1=https://etcd-1:2380,etcd-2=https://etcd-2:2380,etcd-3=https://etcd-3:2380"
+      --cert-file=/var/lib/ssl/etcd.pem
+      --key-file=/var/lib/ssl/etcd-key.pem
+      -client-cert-auth
+      --trusted-ca-file=/var/lib/ssl/ca.pem
+      --peer-cert-file=/var/lib/ssl/etcd.pem
+      --peer-key-file=/var/lib/ssl/etcd-key.pem
+      -peer-client-cert-auth
+      --peer-trusted-ca-file=/var/lib/ssl/ca.pem
+      -initial-cluster-state new
+    volumes:
+      - /Users/zhangtingting/docker/etcd-cluster/data1:/var/lib/etcd
+      - /Users/zhangtingting/docker/etcd-cluster/ssl:/var/lib/ssl
+     # 将容器加入指定网络
+    stdin_open: true
+    tty: true
+    networks:
+      mynetwork:
+        ipv4_address: 172.23.0.11   #设置ip地址
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+  etcd-2:
+    image: quay.io/coreos/etcd:v3.4.13
+    container_name: etcd-2
+    restart: on-failure
+    ports:
+      - 22379:2379
+      - 22380:2380
+    environment:
+      ETCDCTL_API: 3
+    command: etcd
+      -name etcd-2
+      -advertise-client-urls https://172.23.0.12:2379,http://172.23.0.12:2379
+      --data-dir=/var/lib/etcd
+      -listen-client-urls https://172.23.0.12:2379,http://172.23.0.12:2379
+      -listen-peer-urls https://172.23.0.12:2380
+      -initial-cluster-token etcd-cluster
+      -initial-advertise-peer-urls https://172.23.0.12:2380
+      -initial-cluster "etcd-1=https://etcd-1:2380,etcd-2=https://etcd-2:2380,etcd-3=https://etcd-3:2380"
+      --cert-file=/var/lib/ssl/etcd.pem
+      --key-file=/var/lib/ssl/etcd-key.pem
+      -client-cert-auth
+      --trusted-ca-file=/var/lib/ssl/ca.pem
+      --peer-cert-file=/var/lib/ssl/etcd.pem
+      --peer-key-file=/var/lib/ssl/etcd-key.pem
+      -peer-client-cert-auth
+      --peer-trusted-ca-file=/var/lib/ssl/ca.pem
+      -initial-cluster-state new
+    volumes:
+      - /Users/zhangtingting/docker/etcd-cluster/data2:/var/lib/etcd
+      - /Users/zhangtingting/docker/etcd-cluster/ssl:/var/lib/ssl
+     # 将容器加入指定网络
+    stdin_open: true
+    tty: true
+    networks:
+      mynetwork:
+        ipv4_address: 172.23.0.12   #设置ip地址
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+  etcd-3:
+    image: quay.io/coreos/etcd:v3.4.13
+    container_name: etcd-3
+    restart: on-failure
+    ports:
+      - 32379:2379
+      - 32380:2380
+    environment:
+      ETCDCTL_API: 3
+    command: etcd
+      -name etcd-3
+      -advertise-client-urls https://172.23.0.13:2379,http://172.23.0.13:2379
+      --data-dir=/var/lib/etcd
+      -listen-client-urls https://172.23.0.13:2379,http://172.23.0.13:2379
+      -listen-peer-urls https://172.23.0.13:2380
+      -initial-cluster-token etcd-cluster
+      -initial-advertise-peer-urls https://172.23.0.13:2380
+      -initial-cluster "etcd-1=https://etcd-1:2380,etcd-2=https://etcd-2:2380,etcd-3=https://etcd-3:2380"
+      --cert-file=/var/lib/ssl/etcd.pem
+      --key-file=/var/lib/ssl/etcd-key.pem
+      -client-cert-auth
+      --trusted-ca-file=/var/lib/ssl/ca.pem
+      --peer-cert-file=/var/lib/ssl/etcd.pem
+      --peer-key-file=/var/lib/ssl/etcd-key.pem
+      -peer-client-cert-auth
+      --peer-trusted-ca-file=/var/lib/ssl/ca.pem
+      -initial-cluster-state new
+    volumes:
+      - /Users/zhangtingting/docker/etcd-cluster/data3:/var/lib/etcd
+      - /Users/zhangtingting/docker/etcd-cluster/ssl:/var/lib/ssl
+     # 将容器加入指定网络
+    stdin_open: true
+    tty: true
+    networks:
+      mynetwork:
+        ipv4_address: 172.23.0.13   #设置ip地址
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+#设置网络环境
+networks:
+  #引用外部预先定义好的网段
+  mynetwork:
+    ipam: ## 配置网络
+     config:
+       - subnet: 172.23.0.0/16 ## ip地址网络 这里宿主机一般会是该网段的172.23.0.1,所以不要设置自网段为1
+
+#Name               Command               State                                           Ports
+#----------------------------------------------------------------------------------------------------------------------------------------
+#etcd-1   etcd -name etcd-1 -adverti ...   Up      0.0.0.0:12379->2379/tcp,:::12379->2379/tcp, 0.0.0.0:12380->2380/tcp,:::12380->2380/tcp
+#etcd-2   etcd -name etcd-2 -adverti ...   Up      0.0.0.0:22379->2379/tcp,:::22379->2379/tcp, 0.0.0.0:22380->2380/tcp,:::22380->2380/tcp
+#etcd-3   etcd -name etcd-3 -adverti ...   Up      0.0.0.0:32379->2379/tcp,:::32379->2379/tcp, 0.0.0.0:32380->2380/tcp,:::32380->2380/tcp
