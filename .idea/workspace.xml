@@ -1,7 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47921597-3152-4cdd-9ee3-675888de41e4" name="Default" comment="" />
+    <list default="true" id="47921597-3152-4cdd-9ee3-675888de41e4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/grpc/user/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/grpc/user/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/grpc/user/v1/user.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/database.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/docker-kugo.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/logger.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/redis.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/cache/user_base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/middleware/trace.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/middleware/trace_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/model/init.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/repository/repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/server/grpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/server/http.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/app/app.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/app/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/app/config_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/app/jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/app/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/auth/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/cache/cache.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/cache/key.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/cache/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/config/config_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/config/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/encoding/encoding.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/errcode/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/errcode/code.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/errcode/errcode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/lock/etcd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/lock/lock.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/lock/lock_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/lock/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/lock/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/log/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/log/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/log/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/log/logger_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/log/zap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/middleware/header.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/middleware/logging.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/redis/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/redis/check_repeat.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/redis/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/redis/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/redis/redis_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/registry/etcd/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/registry/etcd/registry.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/registry/etcd/registry_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/registry/etcd/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/registry/etcd/watcher.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/registry/registry.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/storage/orm/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/storage/orm/orm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/system/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/system/system.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/trace/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/trace/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/trace/trace.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/grpc/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/grpc/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/grpc/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/http/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/http/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/http/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/http/server_bak.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/transport/transport.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/ip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/ip_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/pagination.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/slice_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/time.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/url.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/utils_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/utils/valid.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/version/version.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/a_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/constant/configConstant.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/constant/configConstant.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/constant/responseConstant.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/response/response.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/response/responseMsg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.idea/config.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/docker-etcd-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker-etcd-cluster.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/docker-redis-cluster.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker-redis-cluster.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/config/mysql.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/config/redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/config/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/config/system.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/config/zap.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/global.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/latest_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2021-10-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/core/core.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/core/core.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/logger/logger.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/viper/viper.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/router/route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/router_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/router/router_api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/directory.go" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,56 +130,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.go">
+      <file leaf-file-name="registry_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/registry_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="48">
+              <caret line="85" column="31" lean-forward="true" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="42" />
+              <folding>
+                <element signature="e#76#160#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logger.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/logger/logger.go">
+      <file leaf-file-name="service.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/service.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="161">
+              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding>
+                <element signature="e#14#67#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/global/global.go">
+      <file leaf-file-name="registry.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/registry.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="836">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+              <folding>
+                <element signature="n#!!block;n#GetService#0" />
+                <element signature="n#!!block;n#heartBeat#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/global/config/server.go">
+      <file leaf-file-name="docker-etcd-cluster.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/docker-etcd-cluster.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logger.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/go.uber.org/zap/logger.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viper.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/viper/viper.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="41" column="8" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="8" />
+            <state relative-caret-position="2803">
+              <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -76,73 +187,112 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>json</find>
-      <find>json(</find>
-      <find>AbortWithError</find>
-      <find>\*\*</find>
-      <find>**</find>
-      <find>tConfigPath</find>
-      <find>configFile</find>
-      <find>ype Config struct</find>
-      <find>field</find>
-      <find>/usr/local/etc/redis.conf</find>
-      <find>/usr/local/etc/redis/</find>
-      <find>mynetwork</find>
-      <find>172.21.0</find>
-      <find>http</find>
-      <find>http:</find>
-      <find>lib/etcd/ssl</find>
-      <find>etcd-peer</find>
-      <find>Lock</find>
-      <find>er) scan</find>
-      <find>if err != nil</find>
-      <find>package runner</find>
-      <find>package pool</find>
-      <find>mt.Printf(</find>
-      <find>lates</find>
-      <find>Config struc</find>
+      <find>gateway</find>
+      <find>v3</find>
+      <find>AuthorizationError</find>
+      <find>UrlSignError</find>
+      <find>main.go -v</find>
+      <find>config file not found</find>
+      <find>de</find>
+      <find>contex</find>
+      <find>Comparable(</find>
+      <find>Comparable</find>
+      <find>*PB)</find>
+      <find>WithCance</find>
+      <find>WithCancel</find>
+      <find>removeChild</find>
+      <find>cancelCtxKey</find>
+      <find>Deadline() (</find>
+      <find>Deadline()</find>
+      <find>unc With</find>
+      <find>cancel</find>
+      <find>cancel(</find>
+      <find>closedchan</find>
+      <find>select</find>
+      <find>propagateCancel</find>
+      <find>type map s</find>
+      <find>spew</find>
+      <find>go.opentelemetry.io/ote</find>
+      <find>gin</find>
+      <find>serv</find>
+      <find>twirp</find>
+      <find>twirp_out</find>
     </findStrings>
     <replaceStrings>
       <replace>172.22.0</replace>
       <replace>https</replace>
       <replace>lib/ssl</replace>
       <replace>etcd</replace>
+      <replace>= NewError( ,&quot;</replace>
+      <replace>,&quot;</replace>
+      <replace>10.99.8.116</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/pkg/system</dir>
+      <dir>$PROJECT_DIR$/internal</dir>
+    </dirStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go@1.16/1.16.9/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
-    <option name="useGoPathFromSystemEnvironment" value="false" />
+    <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/constant/response.go" />
-        <option value="$PROJECT_DIR$/common/constant/ddd.go" />
-        <option value="$PROJECT_DIR$/common/constant/responseConstant.go" />
-        <option value="$PROJECT_DIR$/common/response/responseMsg.go" />
-        <option value="$PROJECT_DIR$/global/config/mysql.go" />
-        <option value="$PROJECT_DIR$/common/constant/configConstant.go" />
-        <option value="$PROJECT_DIR$/global/viper.go" />
-        <option value="$PROJECT_DIR$/pkg/viper/viper.go" />
-        <option value="$PROJECT_DIR$/global/config/Zap.go" />
-        <option value="$PROJECT_DIR$/utils/directory.go" />
-        <option value="$PROJECT_DIR$/global/config/system.go" />
-        <option value="$PROJECT_DIR$/router/testRouter.go" />
-        <option value="$PROJECT_DIR$/router/route.go" />
-        <option value="$PROJECT_DIR$/router/router_api.go" />
-        <option value="$PROJECT_DIR$/api/controller/test.go" />
-        <option value="$PROJECT_DIR$/global/config/zap.go" />
+        <option value="$PROJECT_DIR$/pkg/auth/auth.go" />
+        <option value="$PROJECT_DIR$/pkg/encoding/encoding.go" />
+        <option value="$PROJECT_DIR$/pkg/errcode/code.go" />
+        <option value="$PROJECT_DIR$/pkg/middleware/header.go" />
+        <option value="$PROJECT_DIR$/pkg/middleware/logging.go" />
+        <option value="$PROJECT_DIR$/internal/router/route.go" />
+        <option value="$PROJECT_DIR$/pkg/version/version.go" />
+        <option value="$PROJECT_DIR$/config/app.yaml" />
+        <option value="$PROJECT_DIR$/config/logger.go" />
+        <option value="$PROJECT_DIR$/pkg/log/config.go" />
+        <option value="$PROJECT_DIR$/pkg/app/config.go" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/config/config.yaml" />
-        <option value="$PROJECT_DIR$/pkg/logger/logger.go" />
-        <option value="$PROJECT_DIR$/global/config/server.go" />
-        <option value="$PROJECT_DIR$/global/config/redis.go" />
-        <option value="$PROJECT_DIR$/config/docker-redis-cluster.yaml" />
-        <option value="$PROJECT_DIR$/config/docker-etcd-cluster.yml" />
+        <option value="$PROJECT_DIR$/config/logger.yaml" />
+        <option value="$PROJECT_DIR$/pkg/storage/orm/config.go" />
+        <option value="$PROJECT_DIR$/config/redis.yaml" />
+        <option value="$PROJECT_DIR$/pkg/redis/config.go" />
+        <option value="$PROJECT_DIR$/pkg/app/config_test.go" />
+        <option value="$PROJECT_DIR$/internal/model/init.go" />
+        <option value="$PROJECT_DIR$/config/database.yaml" />
+        <option value="$PROJECT_DIR$/pkg/log/logger.go" />
+        <option value="$PROJECT_DIR$/pkg/redis/redis_test.go" />
+        <option value="$PROJECT_DIR$/pkg/config/config.go" />
+        <option value="$PROJECT_DIR$/pkg/redis/redis.go" />
+        <option value="$PROJECT_DIR$/pkg/cache/cache.go" />
+        <option value="$PROJECT_DIR$/internal/cache/user_cache.go" />
+        <option value="$PROJECT_DIR$/internal/dao/dao.go" />
+        <option value="$PROJECT_DIR$/pkg/cache/redis_cache.go" />
+        <option value="$PROJECT_DIR$/pkg/cache/redis.go" />
+        <option value="$PROJECT_DIR$/scripts/admin.sh" />
+        <option value="$PROJECT_DIR$/api/grpc/user/v1/user.proto" />
+        <option value="$PROJECT_DIR$/go.mod" />
+        <option value="$PROJECT_DIR$/api/grpc/user/v1/user_grpc.pb.go" />
+        <option value="$PROJECT_DIR$/api/grpc/user/README.md" />
+        <option value="$PROJECT_DIR$/api/grpc/user/client.go" />
+        <option value="$PROJECT_DIR$/internal/cache/user_base.go" />
+        <option value="$PROJECT_DIR$/common/constant/configConstant.go" />
+        <option value="$PROJECT_DIR$/pkg/config/config_test.go" />
+        <option value="$PROJECT_DIR$/internal/repository/repository.go" />
+        <option value="$PROJECT_DIR$/internal/service/service.go" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/api/controller/a_test.go" />
-        <option value="$PROJECT_DIR$/common/response/response.go" />
-        <option value="$PROJECT_DIR$/pkg/core/core.go" />
-        <option value="$PROJECT_DIR$/global/global.go" />
+        <option value="$PROJECT_DIR$/pkg/app/app.go" />
+        <option value="$PROJECT_DIR$/pkg/app/options.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/registry.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/etcd/options.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/etcd/watch.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/etcd/registry.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/etcd/watcher.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/etcd/registry_test.go" />
+        <option value="$PROJECT_DIR$/pkg/registry/etcd/service.go" />
+        <option value="$PROJECT_DIR$/config/docker-etcd-cluster.yaml" />
       </list>
     </option>
   </component>
@@ -153,18 +303,22 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/vendor/github.com/go-redis/redis/v8/package.json" />
+    </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="25" />
     <option name="width" value="1440" />
     <option name="height" value="788" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,24 +329,7 @@
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="response" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
@@ -202,18 +339,25 @@
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gin" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
@@ -224,34 +368,30 @@
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="viper" type="462c0819:PsiDirectoryNode" />
+              <item name="registry" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="registry" type="462c0819:PsiDirectoryNode" />
+              <item name="etcd" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
-    <property name="SearchEverywhereHistoryKey" value="runner&#9;FILE&#9;file:///Users/zhangtingting/go/src/etcd源码/tests/functional/runner&#10;syntax/&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/syntax&#10;synt&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/syntax/syntax.go&#10;closu&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/gc/closure.go&#10;sync&#9;FILE&#9;file:///Users/zhangtingting/go/src/etcd源码/client/pkg/fileutil/sync.go" />
+    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file:///Users/zhangtingting/go/src/gin/main.go&#10;sync&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.9/libexec/src/sync&#10;regis&#9;FILE&#9;file:///Users/zhangtingting/go/src/go-eagle/web/user/register.go&#10;github.com/qiniu/&#9;FILE&#9;file:///Users/zhangtingting/go/src/gin-vue-admin/vendor/github.com/qiniu&#10;runner&#9;FILE&#9;file:///Users/zhangtingting/go/src/etcd源码/tests/functional/runner&#10;syntax/&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/syntax&#10;synt&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/syntax/syntax.go&#10;closu&#9;FILE&#9;file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/gc/closure.go" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="true" />
@@ -262,18 +402,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pkg/viper" />
-      <recent name="$PROJECT_DIR$/global" />
+      <recent name="$PROJECT_DIR$/api/grpc/user" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/pkg" />
+      <recent name="$PROJECT_DIR$/internal" />
+      <recent name="$PROJECT_DIR$/pkg/storage/orm" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/global/config" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/api/controller" />
-      <recent name="$PROJECT_DIR$/common/constant" />
+      <recent name="$PROJECT_DIR$/pkg/registry/etcd" />
+      <recent name="$PROJECT_DIR$/pkg/config" />
+      <recent name="$PROJECT_DIR$/api/grpc/user" />
+      <recent name="$PROJECT_DIR$/pkg/redis" />
+      <recent name="$PROJECT_DIR$/pkg/app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -288,68 +432,106 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Test.TestHeartBeat in gin/pkg/registry/etcd">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="gin" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />
-      <package value="gin" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="TestAa in gin/api/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestHeartBeat in gin/pkg/registry/etcd" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="gin" />
-      <working_directory value="$PROJECT_DIR$/api/controller" />
+      <working_directory value="$PROJECT_DIR$/pkg/registry/etcd" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="gin/api/controller" />
+      <package value="gin/pkg/registry/etcd" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestAa$" />
+      <pattern value="^TestHeartBeat$" />
+    </configuration>
+    <configuration name="TestInitTestRedis in gin/pkg/redis" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="gin" />
+      <working_directory value="$PROJECT_DIR$/pkg/redis" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="gin/pkg/redis" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestInitTestRedis$" />
+    </configuration>
+    <configuration name="TestLoad in gin/pkg/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="gin" />
+      <working_directory value="$PROJECT_DIR$/pkg/config" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="gin/pkg/config" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestLoad$" />
+    </configuration>
+    <configuration name="TestRedisSetGet in gin/pkg/redis" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="gin" />
+      <working_directory value="$PROJECT_DIR$/pkg/redis" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="gin/pkg/redis" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRedisSetGet$" />
     </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.TestAa in gin/api/controller" />
+      <item itemvalue="Go Test.TestRedisSetGet in gin/pkg/redis" />
+      <item itemvalue="Go Test.TestInitTestRedis in gin/pkg/redis" />
+      <item itemvalue="Go Test.TestLoad in gin/pkg/config" />
+      <item itemvalue="Go Test.TestHeartBeat in gin/pkg/registry/etcd" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestHeartBeat in gin/pkg/registry/etcd" />
+        <item itemvalue="Go Test.TestLoad in gin/pkg/config" />
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Test.TestAa in gin/api/controller" />
+        <item itemvalue="Go Test.TestRedisSetGet in gin/pkg/redis" />
+        <item itemvalue="Go Test.TestInitTestRedis in gin/pkg/redis" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 14m 46s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLockWithDefaultTimeout_in_gin_pkg_lock - 2021.12.12 at 18h 09m 46s.xml">
+      <configuration name="TestLockWithDefaultTimeout in gin/pkg/lock" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 15m 06s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLockWithTimeout_should_unlock_failed_in_gin_pkg_lock - 2021.12.12 at 18h 09m 46s.xml">
+      <configuration name="TestLockWithTimeout/should_unlock_failed in gin/pkg/lock" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 15m 53s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLoad_in_gin_pkg_app - 2021.12.12 at 20h 39m 51s.xml">
+      <configuration name="TestLoad in gin/pkg/app" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 16m 28s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLoad_in_gin_pkg_app - 2021.12.12 at 20h 40m 02s.xml">
+      <configuration name="TestLoad in gin/pkg/app" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 17m 12s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestRedisSetGet_in_gin_pkg_redis - 2021.12.13 at 22h 09m 20s.xml">
+      <configuration name="TestRedisSetGet in gin/pkg/redis" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 19m 28s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInitTestRedis_in_gin_pkg_redis - 2021.12.13 at 22h 10m 11s.xml">
+      <configuration name="TestInitTestRedis in gin/pkg/redis" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.08.08 at 18h 20m 18s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestRedisSetGet_in_gin_pkg_redis - 2021.12.13 at 22h 10m 29s.xml">
+      <configuration name="TestRedisSetGet in gin/pkg/redis" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.10.12 at 11h 55m 55s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLoad_in_gin_pkg_config - 2022.01.07 at 15h 37m 07s.xml">
+      <configuration name="TestLoad in gin/pkg/config" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.10.12 at 15h 49m 28s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLoad_in_gin_pkg_config - 2022.01.07 at 15h 38m 20s.xml">
+      <configuration name="TestLoad in gin/pkg/config" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAa_in_gin_api_controller - 2021.10.12 at 15h 51m 25s.xml">
-      <configuration name="TestAa in gin/api/controller" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestHeartBeat_in_gin_pkg_registry_etcd - 2022.01.13 at 19h 57m 23s.xml">
+      <configuration name="TestHeartBeat in gin/pkg/registry/etcd" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -362,20 +544,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20677233" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.24592833" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329602" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50124377" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.34950247" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42288557" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4744318" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329602" />
+      <window_info id="Structure" order="1" sideWeight="0.50284094" side_tool="true" weight="0.2679153" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.15198864" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.421875" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -384,6 +565,7 @@
       <window_info anchor="right" id="Word Book" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,214 +576,374 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/pkg/lock/utils.go</url>
+          <line>10</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="30" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/gin-gonic/gin/context.go">
+    <entry file="file://$PROJECT_DIR$/vendor/gorm.io/gorm/gorm.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="956" column="1" lean-forward="true" selection-start-line="956" selection-start-column="1" selection-end-line="956" selection-end-column="1" />
+        <state relative-caret-position="178">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/time/time.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/go.uber.org/zap/zapcore/core.go">
+    <entry file="file://$PROJECT_DIR$/pkg/cache/cache.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="418">
+          <caret line="22" column="50" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/2021-08-08.log" />
-    <entry file="file://$PROJECT_DIR$/vendor/go.uber.org/zap/zapcore/encoder.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="311" column="5" selection-start-line="311" selection-start-column="5" selection-end-line="311" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/go.uber.org/zap/options.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/docker-etcd-cluster.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global/config/mysql.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/docker-redis-cluster.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="156" selection-start-line="149" selection-end-line="156" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/atomic/doc.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/internal/race/race.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/atomic/value.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/rwmutex.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/pool.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/runtime.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/mutex.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/waitgroup_test.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/waitgroup.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/once.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/sync/cond.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/internal/race/norace.go" />
-    <entry file="file:///usr/local/Cellar/go/1.16.4/libexec/src/context/context.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/gc/closure.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/go/token/example_test.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/go/ast/ast.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/go/token/position.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/go/scanner/scanner.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/go/token/token.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/syntax/syntax.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/cmd/compile/internal/syntax/nodes.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/time/format_test.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/time/format.go" />
-    <entry file="file:///usr/local/Cellar/go@1.16/1.16.8/libexec/src/time/tick.go" />
-    <entry file="file://$PROJECT_DIR$/api/controller/a_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global/config/zap.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global/config/redis.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../go-eagle/pkg/utils/utils.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/response/response.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="46" column="37" lean-forward="true" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/router/router_api.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/controller/test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding>
-            <element signature="e#81#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/fvbock/endless/endless.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2693">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/router/route.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/latest_log">
+    <entry file="file://$PROJECT_DIR$/pkg/cache/key.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/core/core.go">
+    <entry file="file://$PROJECT_DIR$/pkg/app/jwt.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="e#75#212#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1078">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/redis/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/redis/check_repeat.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/cache/redis.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/dao/dao.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/server/http.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/transport/grpc/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/server/grpc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/grpc/user/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/grpc/user/v1/user.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/grpc/user/v1/user.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/grpc/user/v1/user.twirp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-777">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/golang.org/x/net/trace/trace.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9252" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/config/init.go" />
+    <entry file="file://$PROJECT_DIR$/pkg/config/config_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/constant/configConstant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/grpc/user/v1/user_grpc.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1166">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/grpc/user/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="308">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/logger/logger.go">
+    <entry file="file://$PROJECT_DIR$/config/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="176">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/model/init.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/orm/orm.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/cache/user_base.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/repository/repository.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#83#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/service/service.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/gin-gonic/gin/gin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="161" column="5" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../go-eagle/pkg/app/app.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="198">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/viper/viper.go">
+    <entry file="file://$PROJECT_DIR$/pkg/app/app.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="41" column="8" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="8" />
+        <state relative-caret-position="594">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/go.uber.org/zap/logger.go">
+    <entry file="file://$PROJECT_DIR$/pkg/app/options.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="-1391">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/global/config/server.go">
+    <entry file="file://$PROJECT_DIR$/vendor/go.etcd.io/etcd/client/v3/lease.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        <state relative-caret-position="218">
+          <caret line="135" column="4" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/global/global.go">
+    <entry file="file://$PROJECT_DIR$/vendor/go.etcd.io/etcd/client/v3/kv.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="218">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/go.etcd.io/etcd/api/v3/etcdserverpb/rpc.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="525" column="7" selection-start-line="525" selection-start-column="4" selection-end-line="525" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/watcher.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="e#76#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/go.etcd.io/etcd/client/v3/watch.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="239" column="15" selection-start-line="239" selection-start-column="5" selection-end-line="239" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/registry/registry.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/options.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#76#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker-kugo.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker-redis-cluster.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2983" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/registry.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#GetService#0" />
+            <element signature="n#!!block;n#heartBeat#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/service.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/registry/etcd/registry_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="85" column="31" lean-forward="true" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="42" />
+          <folding>
+            <element signature="e#76#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker-etcd-cluster.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2803">
+          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
         </state>
       </provider>
     </entry>

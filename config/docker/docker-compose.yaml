@@ -1,0 +1,39 @@
+# yaml 配置
+# 官方文档：https://docs.docker.com/compose/compose-file/
+version: "3.7"
+
+services:
+    #端口	协议	所属模块	     功能
+     #5775	UDP	agent	     通过兼容性Thrift协议，接收Zipkin thrift类型数据
+     #6831	UDP	agent	     通过兼容性Thrift协议，接收Jaeger thrift类型数据
+     #6832	UDP	agent	     通过二进制Thrift协议，接收Jaeger thrift类型数据
+     #5778	HTTP	agent	     配置控制服务接口
+     #16686	HTTP	query	     客户端前端界面展示端口
+     #14268	HTTP	collector    接收客户端Zipkin thrift类型数据
+     #14267	HTTP	collector    接收客户端Jaeger thrift类型数据
+     #9411	HTTP	collector    Zipkin兼容endpoint
+  jaeger:
+    container_name: jaeger_container
+    image: jaegertracing/all-in-one:1.27
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+    ports:
+      - 5775:5775/udp
+      - 6831:6831/udp
+      - 6832:6832/udp
+      - 5778:5778
+      - 16686:16686
+      - 14268:14268
+      - 14250:14250
+      - 9411:9411
+    networks:
+      - eagle
+
+networks:
+  eagle:
+    driver: "bridge"
+
+volumes:
+  mysql_data:
+  redis_data:
+  mongodb_data:

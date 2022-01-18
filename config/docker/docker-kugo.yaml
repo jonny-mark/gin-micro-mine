@@ -1,0 +1,37 @@
+#博客地址
+
+# 指定compose文件的版本
+version: '3.7'
+# 定义所有的service信息,services下面的第一级别的key即是一个service的名称
+services:
+  goku-ce:
+    # 指定 docker 镜像, 可以是远程仓库镜像、本地镜像
+    image: eolinker/goku-api-gateway-ce-console:3.1.4
+    # 指定容器的名称 (等同于 docker run --name 的作用)
+    container_name: goku-ce-console
+    # 定义容器重启策略 no 禁止自动重启容器(默认)|always 无论如何容器都会重启|on-failure 报错时, 容器重新启动
+    restart: on-failure
+    ports:
+      - 7000:7000
+    # 将容器加入指定网络
+    networks:
+      mynetwork:
+        ipv4_address: 172.24.12.2   #设置ip地址
+    stdin_open: true
+    tty: true
+    # 定义容器和宿主机的卷映射关系
+    volumes:
+      - /Users/zhangtingting/docker/goku/work:/app/goku-ce/console/work
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+      - GOKU_ADMIN_PASSWORD=123456
+
+#设置网络环境
+networks:
+  #引用外部预先定义好的网段
+  mynetwork:
+    driver: "bridge"
+    ipam: ## 配置网络
+     config:
+       - subnet: 172.24.12.0/24

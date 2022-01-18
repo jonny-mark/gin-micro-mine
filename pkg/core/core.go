@@ -5,7 +5,7 @@
 package core
 
 import (
-	"gin/router"
+	"gin/internal/router"
 	"github.com/gin-gonic/gin"
 	"time"
 	"github.com/fvbock/endless"

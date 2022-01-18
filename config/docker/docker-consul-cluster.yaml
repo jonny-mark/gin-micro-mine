@@ -1,0 +1,126 @@
+#博客地址
+
+# version 指定compose文件的版本
+#-data-dir data存放的目录，更多信息请参阅consul数据同步机制
+#-config-dir 指定配置文件夹，Consul会加载其中的所有文件
+#-datacenter 指定数据中心名称，默认是dc1
+#-node 节点id，集群中的每个node必须有一个唯一的名称。默认情况下，Consul使用机器的hostname
+#-bind 监听的ip地址。默认绑定0.0.0.0，可以不指定。表示Consul监听的地址,而且它必须能够被集群中的其他节点访问,Consul默认会监听第一个private IP,但最好还是提供一个。生产设备上的服务器通常有好几个网卡，所以指定一个不会出错
+#-server 以server身份启动。默认是client
+#-bootstrap-expect 集群要求的最少server数量，当低于这个数量，集群即失效
+#-ui 可以访问UI界面
+#-client 客户端的ip地址，0.0.0.0是指谁都可以访问（不加这个，下面的ui :8500无法访问）
+
+ #8500 http 端口，用于 http 接口和 web ui
+ #8300 server rpc 端口，同一数据中心 consul server 之间通过该端口通信
+ #8301 serf lan 端口，同一数据中心 consul client 通过该端口通信
+ #8302 serf wan 端口，不同数据中心 consul server 通过该端口通信
+ #8600 dns 端口，用于服务发现
+version: '3.7'
+
+services:
+  consul-1:
+    image: consul:latest
+    container_name: consul-1
+    hostname: consul-1
+    restart: on-failure
+    command: consul agent
+      -data-dir=/var/lib/consul/data
+      -config-dir=/var/lib/consul/config
+      -datacenter=xdp_dc
+      -node=node1
+      -bind=172.25.0.21
+      -server
+      -bootstrap-expect=3
+      -client=0.0.0.0
+      -ui
+    volumes:
+      - /Users/zhangtingting/docker/consul-cluster/data1:/var/lib/consul/data
+      - /Users/zhangtingting/docker/consul-cluster/data1:/var/lib/consul/config
+    # 将容器加入指定网络
+    stdin_open: true
+    tty: true
+    networks:
+      mynetwork:
+        ipv4_address: 172.25.0.21   #设置ip地址
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+  consul-2:
+    image: consul:latest
+    container_name: consul-2
+    hostname: consul-2
+    restart: on-failure
+    command: consul agent
+      -data-dir /var/lib/consul/data
+      -config-dir /var/lib/consul/config
+      -datacenter=xdp_dc
+      -node=node2
+      -server
+      -join=consul-1
+      -retry-join=node1
+      -bind=0.0.0.0
+      -client=0.0.0.0
+      -ui
+    depends_on:
+      - consul-1
+    volumes:
+      - /Users/zhangtingting/docker/consul-cluster/data2:/var/lib/consul/data
+      - /Users/zhangtingting/docker/consul-cluster/data2:/var/lib/consul/config
+    # 将容器加入指定网络
+    stdin_open: true
+    tty: true
+    networks:
+      mynetwork:
+        ipv4_address: 172.25.0.22   #设置ip地址
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+  consul-3:
+    image: consul:latest
+    container_name: consul-3
+    hostname: consul-3
+    restart: on-failure
+    ports:
+      - 8300:8300
+      - 8301:8301
+      - 8301:8301/udp
+      - 8302:8302
+      - 8302:8302/udp
+      - 8400:8400
+      - 8500:8500
+    command: consul agent
+      -data-dir /var/lib/consul/data
+      -config-dir /var/lib/consul/config
+      -datacenter=xdp_dc
+      -node=node3
+      -server
+      -join=consul-1
+      -retry-join=node1
+      -bind=172.25.0.23
+      -client=0.0.0.0
+      -ui
+    depends_on:
+      - consul-1
+    volumes:
+      - /Users/zhangtingting/docker/consul-cluster/data3:/var/lib/consul/data
+      - /Users/zhangtingting/docker/consul-cluster/data3:/var/lib/consul/config
+    # 将容器加入指定网络
+    stdin_open: true
+    tty: true
+    networks:
+      mynetwork:
+        ipv4_address: 172.25.0.23   #设置ip地址
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+#设置网络环境
+networks:
+  #引用外部预先定义好的网段
+  mynetwork:
+    ipam: ## 配置网络
+      config:
+      - subnet: 172.25.0.0/16 ## ip地址网络 这里宿主机一般会是该网段的172.25.0.1,所以不要设置自网段为1
