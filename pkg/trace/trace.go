@@ -5,54 +5,64 @@
 package trace
 
 import (
-	"fmt"
-	"github.com/opentracing/opentracing-go"
-	"github.com/uber/jaeger-client-go"
-	"github.com/uber/jaeger-client-go/config"
-	"github.com/uber/jaeger-client-go/zipkin"
+	tracesdk "go.opentelemetry.io/otel/sdk/trace"
+	appConfig "gin/pkg/config"
+	"log"
+	"go.opentelemetry.io/otel"
+	jaegerExporter "go.opentelemetry.io/otel/exporters/jaeger"
+	"go.opentelemetry.io/otel/sdk/resource"
+	"go.opentelemetry.io/otel/semconv/v1.7.0"
+	jaegerprop "go.opentelemetry.io/contrib/propagators/jaeger"
+	"errors"
+	"strings"
 )
 
-func GetTracer(cfg *Config) opentracing.Tracer {
-	// 判断是否已注册了，单例模式
-	if opentracing.IsGlobalTracerRegistered() {
-		return opentracing.GlobalTracer()
+func Init() {
+	var traceConfig Config
+	if err := appConfig.Load("trace", &traceConfig); err != nil {
+		log.Panicf("trace config load %+v1", err)
 	}
-	c := &config.Configuration{
-		ServiceName: cfg.traceAgent,
-		Sampler: &config.SamplerConfig{
-			SamplingServerURL: cfg.jaeger.samplingServerURL,
-			Type:              "const",
-			Param:             1,
-		},
-		Reporter: &config.ReporterConfig{
-			LogSpans: true,
-			LocalAgentHostPort: cfg.jaeger.localAgentHostPort,
-			CollectorEndpoint:  cfg.jaeger.collectorEndpoint,
-			User:               cfg.jaeger.collectorUser,
-			Password:           cfg.jaeger.collectorPassword,
-		},
-		Headers: &jaeger.HeadersConfig{
-			JaegerDebugHeader:        "x-debug-id",
-			JaegerBaggageHeader:      "x-baggage",
-			TraceContextHeaderName:   "x-trace-id",
-			TraceBaggageHeaderPrefix: "x-ctx",
-		},
-	}
-
-	propagator := zipkin.NewZipkinB3HTTPHeaderPropagator()
-	tracer, _, err := c.NewTracer(
-		config.Logger(jaeger.StdLogger),
-		config.Injector(opentracing.HTTPHeaders, propagator),
-		config.Extractor(opentracing.HTTPHeaders, propagator),
-		config.ZipkinSharedRPCSpan(true),
-		config.MaxTagValueLength(256),
-		config.PoolSpans(true),
-	)
+	_, err := initTracerProvider(traceConfig.ServiceName, traceConfig.CollectorEndpoint)
 	if err != nil {
-		panic(fmt.Sprintf("init trace failed: %v1\n", err))
+		log.Panicf("trace init err %+v1", err)
 	}
-	// 设置到全局里
-	opentracing.SetGlobalTracer(tracer)
+}
 
-	return tracer
+func initTracerProvider(serviceName, endpoint string, options ...Option) (*tracesdk.TracerProvider, error) {
+	var endpointOption jaegerExporter.EndpointOption
+	if serviceName == "" {
+		return nil, errors.New("no service name provided")
+	}
+
+	if strings.HasPrefix(endpoint, "http") {
+		endpointOption = jaegerExporter.WithCollectorEndpoint(jaegerExporter.WithEndpoint(endpoint))
+	} else {
+		endpointOption = jaegerExporter.WithAgentEndpoint(jaegerExporter.WithAgentHost(endpoint))
+	}
+
+	//初始化exporter
+	exporter, err := jaegerExporter.New(endpointOption)
+	if err != nil {
+		return nil, err
+	}
+
+	opts := applyOptions(options...)
+	tp := tracesdk.NewTracerProvider(
+		//设置Sampler
+		tracesdk.WithSampler(tracesdk.TraceIDRatioBased(opts.SamplingRatio)),
+		//允许批量生产
+		tracesdk.WithBatcher(exporter),
+		//记录Resource信息
+		tracesdk.WithResource(resource.NewWithAttributes(
+			semconv.SchemaURL,
+			semconv.ServiceNameKey.String(serviceName),
+		)),
+	)
+
+	//全局注册
+	otel.SetTracerProvider(tp)
+	//设置全局TextMapPropagator
+	otel.SetTextMapPropagator(jaegerprop.Jaeger{})
+
+	return tp, nil
 }

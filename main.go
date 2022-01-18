@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 	"gin/pkg/config"
-	myApp "gin/pkg/app"
+	"gin/pkg/app"
 	"log"
 	logger "gin/pkg/log"
 	"gin/internal/model"
@@ -17,6 +17,10 @@ import (
 	"gin/internal/service"
 	"net/http"
 	"gin/internal/server"
+	"gin/pkg/registry/etcd"
+	"gin/pkg/trace"
+	etcdclient "go.etcd.io/etcd/client/v3"
+	"gin/pkg/utils"
 )
 
 var (
@@ -46,14 +50,24 @@ func main() {
 	app.Conf = &cfg
 
 	//加载资源
+	//初始化日志
 	logger.Init()
+	//初始化数据库
 	model.Init()
+	//初始化redis
 	redis.Init()
+
+	//初始化trace
+	if app.Conf.EnableTrace {
+		trace.Init()
+	}
+
+	//初始化service
 	service.Svc = service.New(repository.New(model.GetDB()))
 
 	gin.SetMode(cfg.Mode)
 
-	// init pprof server
+	//初始化pprof
 	go func() {
 		fmt.Printf("Listening and serving PProf HTTP on %s\n", cfg.PprofPort)
 		if err := http.ListenAndServe(cfg.PprofPort, http.DefaultServeMux); err != nil && err != http.ErrServerClosed {
@@ -61,18 +75,24 @@ func main() {
 		}
 	}()
 
+	client := etcdclient.New(etcdclient.Config{
+		Endpoints: []string{utils.GetLocalIP() + ":2379"},
+	})
+	r := etcd.New(client)
+
 	// start app
-	app := myApp.New(
-		eagle.WithName(cfg.Name),
-		eagle.WithVersion(cfg.Version),
-		eagle.WithLogger(logger.GetLogger()),
-		eagle.WithServer(
+	myApp := app.New(
+		app.WithName(cfg.Name),
+		app.WithVersion(cfg.Version),
+		app.WithLogger(logger.GetLogger()),
+		app.WithServer(
 			// init http server
 			server.NewHTTPServer(&cfg.HTTP),
 		),
+		app.WithRegistry(r),
 	)
 
-	if err := app.Run(); err != nil {
+	if err := myApp.Run(); err != nil {
 		panic(err)
 	}
 }

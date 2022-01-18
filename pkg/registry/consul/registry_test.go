@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/consul/api"
 	"github.com/stretchr/testify/assert"
 
-	"go-eagle/pkg/registry"
+	"gin/pkg/registry"
 )
 
 func tcpServer(t *testing.T, lis net.Listener) {
@@ -26,7 +26,7 @@ func tcpServer(t *testing.T, lis net.Listener) {
 }
 
 func TestRegister(t *testing.T) {
-	addr := fmt.Sprintf("%s:8081", getIntranetIP())
+	addr := fmt.Sprintf("127.0.0.1:8082")
 	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		t.Errorf("listen tcp %s failed!", addr)
@@ -51,7 +51,7 @@ func TestRegister(t *testing.T) {
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
 	defer cancel()
-	err = r.Deregister(ctx, svc)
+	err = r.DeRegister(ctx, svc)
 	assert.Nil(t, err)
 	err = r.Register(ctx, svc)
 	assert.Nil(t, err)
@@ -64,20 +64,4 @@ func TestRegister(t *testing.T) {
 	assert.EqualValues(t, "test2233", services[0].ID)
 	assert.EqualValues(t, "test-provider", services[0].Name)
 	assert.EqualValues(t, version, services[0].Version)
-}
-
-func getIntranetIP() string {
-	addrs, err := net.InterfaceAddrs()
-	if err != nil {
-		return "127.0.0.1"
-	}
-
-	for _, address := range addrs {
-		if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
-			if ipnet.IP.To4() != nil {
-				return ipnet.IP.String()
-			}
-		}
-	}
-	return "127.0.0.1"
 }

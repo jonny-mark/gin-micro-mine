@@ -11,6 +11,8 @@ import (
 	"net"
 	"time"
 	"gin/pkg/log"
+	"net/url"
+	"gin/pkg/utils"
 )
 
 type Server struct {
@@ -21,11 +23,8 @@ type Server struct {
 	readTimeout  time.Duration
 	writeTimeout time.Duration
 	log          log.Logger
+	endpoint      *url.URL
 }
-//
-//type server interface {
-//	ListenAndServe() error
-//}
 
 func NewServer(opts ...ServerOption) *Server {
 	srv := &Server{
@@ -47,11 +46,6 @@ func NewServer(opts ...ServerOption) *Server {
 		Handler:      srv,
 	}
 	return srv
-	//
-	//srv := endless.NewServer(s.Addr, handler)
-	//
-	//s.Server = srv.Server
-	//return s
 }
 
 // ServeHTTP should write reply headers and data to the ResponseWriter and then return.
@@ -77,4 +71,13 @@ func (s *Server) Start(ctx context.Context) error {
 func (s *Server) Stop(ctx context.Context) error {
 	s.log.Info("[HTTP] server is stopping")
 	return s.Shutdown(ctx)
+}
+
+func (s *Server) Endpoint() (*url.URL, error) {
+	addr, err := utils.Extract(s.address, s.lis)
+	if err != nil {
+		return nil, err
+	}
+	s.endpoint = &url.URL{Scheme: "http", Host: addr}
+	return s.endpoint, nil
 }
