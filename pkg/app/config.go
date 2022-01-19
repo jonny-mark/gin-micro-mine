@@ -24,6 +24,7 @@ type Config struct {
 	EnablePprof       bool
 	HTTP              ServerConfig
 	GRPC              ServerConfig
+	Registry          RegistryConfig
 }
 
 type ServerConfig struct {
@@ -31,4 +32,8 @@ type ServerConfig struct {
 	Addr         string
 	ReadTimeout  time.Duration
 	WriteTimeout time.Duration
+}
+
+type RegistryConfig struct {
+	Endpoints string
 }

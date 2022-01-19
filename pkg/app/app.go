@@ -15,6 +15,8 @@ import (
 	"gin/pkg/registry"
 	"gin/pkg/transport"
 	"golang.org/x/sync/errgroup"
+	"os/signal"
+	"errors"
 )
 
 // App global app
@@ -51,12 +53,6 @@ func New(opts ...Option) *App {
 }
 
 func (a *App) Run() error {
-	//获取instance，做服务注册
-	instance, err := a.buildInstance()
-	if err != nil {
-		return err
-	}
-
 	//errgroup 确保所有服务正常启动
 	group, errCtx := errgroup.WithContext(a.ctx)
 
@@ -74,9 +70,52 @@ func (a *App) Run() error {
 			return srv.Start(errCtx)
 		})
 	}
-
 	wg.Wait()
 
+	//服务注册
+	if a.opts.registry != nil {
+		//获取instance
+		instance, err := a.buildInstance()
+		if err != nil {
+			return err
+		}
+		c, cancel := context.WithTimeout(a.opts.ctx, a.opts.registryTimeout)
+		defer cancel()
+		if err = a.opts.registry.Register(c, instance); err != nil {
+			return err
+		}
+		a.mu.Lock()
+		a.instance = instance
+		a.mu.Unlock()
+	}
+
+	//监听signal
+	quit := make(chan os.Signal, 1)
+	signal.Notify(quit, a.opts.sigs...)
+	group.Go(func() error {
+		for {
+			select {
+			//如果其他协程发生错误，结束当前协程
+			case <-errCtx.Done():
+				return errCtx.Err()
+			//中断信息
+			case s := <-quit:
+				a.opts.logger.Infof("receive a quit signal: %s",s.String())
+				err := a.Stop()
+				if err != nil {
+					a.opts.logger.Infof("failed to stop app, err: %s", err.Error())
+					return err
+				}
+			}
+
+
+		}
+	})
+
+	if err := group.Wait(); err != nil && !errors.Is(err, context.Canceled) {
+		return err
+	}
+	return nil
 }
 
 func (a *App) buildInstance() (*registry.ServiceInstance, error) {
@@ -103,4 +142,8 @@ func (a *App) buildInstance() (*registry.ServiceInstance, error) {
 		Metadata:  a.opts.metadata,
 		Endpoints: endpoints,
 	}, nil
+}
+
+func (a *App) Stop() error {
+	return nil
 }

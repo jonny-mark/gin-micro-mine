@@ -20,7 +20,7 @@ import (
 	"gin/pkg/registry/etcd"
 	"gin/pkg/trace"
 	etcdclient "go.etcd.io/etcd/client/v3"
-	"gin/pkg/utils"
+	"strings"
 )
 
 var (
@@ -75,9 +75,12 @@ func main() {
 		}
 	}()
 
-	client := etcdclient.New(etcdclient.Config{
-		Endpoints: []string{utils.GetLocalIP() + ":2379"},
+	client, err := etcdclient.New(etcdclient.Config{
+		Endpoints: strings.Split(app.Conf.Registry.Endpoints, ','),
 	})
+	if err != nil {
+		log.Fatalf("etcdclient new failed, err: %s", err.Error())
+	}
 	r := etcd.New(client)
 
 	// start app
