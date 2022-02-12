@@ -42,7 +42,7 @@ func Init() Logger {
 	var cfg Config
 
 	if err := config.Load("logger", &cfg); err != nil {
-		log.Panicf("load logger conf err: %v1", err)
+		log.Panicf("load logger conf err: %v", err)
 	}
 	logger = newZapLogger(&cfg)
 	return logger

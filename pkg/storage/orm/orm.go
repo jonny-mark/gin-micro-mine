@@ -26,7 +26,7 @@ func NewMysql(c *Config) (db *gorm.DB) {
 
 	sqlDB, err := sql.Open("mysql", dsn)
 	if err != nil {
-		log.Panicf("open mysql failed. database name: %s, err: %+v1", c.Name, err)
+		log.Panicf("open mysql failed. database name: %s, err: %+v", c.Name, err)
 		panic(err)
 	}
 

@@ -34,7 +34,7 @@ func NewRedisCache(client *redis.Client, keyPrefix string, encoding encoding.Enc
 func (c *redisCache) Set(ctx context.Context, key string, val interface{}, expiration time.Duration) error {
 	cacheKey, err := BuildCacheKey(c.KeyPrefix, key)
 	if err != nil {
-		return errors.Wrapf(err, "build cache key err, key is %+v1", key)
+		return errors.Wrapf(err, "build cache key err, key is %+v", key)
 	}
 	if expiration == 0 {
 		expiration = DefaultExpireTime
@@ -49,7 +49,7 @@ func (c *redisCache) Set(ctx context.Context, key string, val interface{}, expir
 func (c *redisCache) Get(ctx context.Context, key string, val interface{}) error {
 	cacheKey, err := BuildCacheKey(c.KeyPrefix, key)
 	if err != nil {
-		return errors.Wrapf(err, "build cache key err, key is %+v1", key)
+		return errors.Wrapf(err, "build cache key err, key is %+v", key)
 	}
 	bytes, err := c.client.Get(ctx, cacheKey).Bytes()
 	if err != nil {

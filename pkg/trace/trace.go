@@ -20,11 +20,11 @@ import (
 func Init() {
 	var traceConfig Config
 	if err := appConfig.Load("trace", &traceConfig); err != nil {
-		log.Panicf("trace config load %+v1", err)
+		log.Panicf("trace config load %+v", err)
 	}
 	_, err := initTracerProvider(traceConfig.ServiceName, traceConfig.CollectorEndpoint)
 	if err != nil {
-		log.Panicf("trace init err %+v1", err)
+		log.Panicf("trace init err %+v", err)
 	}
 }
 

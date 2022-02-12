@@ -95,19 +95,18 @@ func (a *App) Run() error {
 	group.Go(func() error {
 		for {
 			select {
-			//如果其他协程发生错误，结束当前协程
+			//监听errgroup的chan
 			case <-errCtx.Done():
 				return errCtx.Err()
-			//中断信息
+				//监听signal信息
 			case s := <-quit:
-				a.opts.logger.Infof("receive a quit signal: %s",s.String())
-				err := a.Stop()
+				a.opts.logger.Infof("receive a quit signal: %s", s.String())
+				err := a.stop()
 				if err != nil {
 					a.opts.logger.Infof("failed to stop app, err: %s", err.Error())
 					return err
 				}
 			}
-
 
 		}
 	})
@@ -144,6 +143,23 @@ func (a *App) buildInstance() (*registry.ServiceInstance, error) {
 	}, nil
 }
 
-func (a *App) Stop() error {
+//优雅关闭应用
+func (a *App) stop() error {
+	//如果开启注册，需要注销节点
+	a.mu.Lock()
+	instance := a.instance
+	a.mu.Unlock()
+
+	if a.opts.registry != nil && instance != nil {
+		ctx, cancel := context.WithTimeout(a.ctx, a.opts.registryTimeout)
+		defer cancel()
+		if err := a.opts.registry.DeRegister(ctx, instance); err != nil {
+			return err
+		}
+	}
+
+	if a.cancel != nil {
+		a.cancel()
+	}
 	return nil
 }

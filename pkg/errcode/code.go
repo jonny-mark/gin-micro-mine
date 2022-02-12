@@ -7,7 +7,6 @@ package errcode
  **/
 var (
 	Success = NewError(0, "成功")
-
 	ServerError        = NewError(10001, "内部服务器错误")
 	TooManyRequest     = NewError(10002, "请求过多")
 	ParamBindError     = NewError(10003, "参数信息错误")

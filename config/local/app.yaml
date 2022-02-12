@@ -13,11 +13,11 @@ EnableTrace: true
 EnablePprof: true
 
 HTTP:
-  Addr: :8080
+  Addr: :801
   ReadTimeout: 3s
   WriteTimeout: 3s
 GRPC:
-  Addr: :9090
+  Addr: :901
   ReadTimeout: 5s
   WriteTimeout: 5s
 Registry:

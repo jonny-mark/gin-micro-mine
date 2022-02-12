@@ -17,34 +17,36 @@ import (
 	"gin/internal/service"
 	"net/http"
 	"gin/internal/server"
-	"gin/pkg/registry/etcd"
+	//"gin/pkg/registry/etcd"
 	"gin/pkg/trace"
-	etcdclient "go.etcd.io/etcd/client/v3"
-	"strings"
+	//etcdclient "go.etcd.io/etcd/client/v3"
+	//"strings"
+	"github.com/davecgh/go-spew/spew"
 )
 
 var (
-	cfgDir  = pflag.StringP("config dir", "c", "config", "config path.")
+	cfgDir  = pflag.StringP("config dir", "c", "", "config directory.")
 	env     = pflag.StringP("env name", "e", "", "env var name.")
-	version = pflag.BoolP("version", "v1", false, "show version info.")
+	version = pflag.BoolP("version", "v", false, "show version info.")
 )
 
 func main() {
+	// 把用户传递的命令行参数解析为对应变量的值
+	pflag.Parse()
 	if *version {
 		ver := v.Get()
 		marshaled, err := json.MarshalIndent(ver, "", "")
 		if err != nil {
-			fmt.Printf("%v1\n", err)
+			fmt.Printf("%v\n", err)
 			os.Exit(1)
 		}
 		fmt.Println(string(marshaled))
 		return
 	}
-
 	c := config.New(*cfgDir, config.WithEnv(*env))
 	var cfg app.Config
 	if err := c.Load("app", &cfg); err != nil {
-		log.Panicf("app config load fail:%+v1", err)
+		log.Panicf("app config load fail:%+v", err)
 	}
 	//设置全局app.Config
 	app.Conf = &cfg
@@ -75,13 +77,14 @@ func main() {
 		}
 	}()
 
-	client, err := etcdclient.New(etcdclient.Config{
-		Endpoints: strings.Split(app.Conf.Registry.Endpoints, ','),
-	})
-	if err != nil {
-		log.Fatalf("etcdclient new failed, err: %s", err.Error())
-	}
-	r := etcd.New(client)
+	spew.Dump(app.Conf.Registry.Endpoints)
+	//client, err := etcdclient.New(etcdclient.Config{
+	//	Endpoints: strings.Split(app.Conf.Registry.Endpoints, ','),
+	//})
+	//if err != nil {
+	//	log.Fatalf("etcdclient new failed, err: %s", err.Error())
+	//}
+	//r := etcd.New(client)
 
 	// start app
 	myApp := app.New(
@@ -92,7 +95,7 @@ func main() {
 			// init http server
 			server.NewHTTPServer(&cfg.HTTP),
 		),
-		app.WithRegistry(r),
+		//app.WithRegistry(r),
 	)
 
 	if err := myApp.Run(); err != nil {

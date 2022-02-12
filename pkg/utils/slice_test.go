@@ -19,7 +19,7 @@ func TestStringSliceReflectEqual(t *testing.T) {
 	for _, tt := range cases {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := StringSliceReflectEqual(tt.inA, tt.inB); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("DeleteElemOrderFromUint64Slice() = %v1, want %v1", got, tt.want)
+				t.Errorf("DeleteElemOrderFromUint64Slice() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -56,7 +56,7 @@ func TestStringSliceEqual(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := StringSliceEqual(tt.args.a, tt.args.b); got != tt.want {
-				t.Errorf("StringSliceEqual() = %v1, want %v1", got, tt.want)
+				t.Errorf("StringSliceEqual() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -128,7 +128,7 @@ func TestUint64DeleteElemInSlice(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Uint64DeleteElemInSlice(tt.args.i, tt.args.a); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Uint64DeleteElemInSlice() = %v1, want %v1", got, tt.want)
+				t.Errorf("Uint64DeleteElemInSlice() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -160,7 +160,7 @@ func TestUint64DeleteElemInSliceWithOrder(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Uint64DeleteElemInSliceWithOrder(tt.args.i, tt.args.a); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Uint64DeleteElemInSliceWithOrder() = %v1, want %v1", got, tt.want)
+				t.Errorf("Uint64DeleteElemInSliceWithOrder() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -180,7 +180,7 @@ func TestUint64ShuffleSlice(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Uint64ShuffleSlice(tt.args.a); reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Uint64ShuffleSlice() = %v1, want %v1", got, tt.want)
+				t.Errorf("Uint64ShuffleSlice() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -208,7 +208,7 @@ func TestStringSliceContains(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := StringSliceContains(tt.args.ss, tt.args.s); got != tt.want {
-				t.Errorf("StringSliceContains() = %v1, want %v1", got, tt.want)
+				t.Errorf("StringSliceContains() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -240,7 +240,7 @@ func TestIsInSlice(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsInSlice(tt.args.value, tt.args.sli); got != tt.want {
-				t.Errorf("IsInSlice() = %v1, want %v1", got, tt.want)
+				t.Errorf("IsInSlice() = %v, want %v", got, tt.want)
 			}
 		})
 	}

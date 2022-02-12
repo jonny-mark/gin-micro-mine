@@ -6,11 +6,12 @@ package server
 
 import (
 	"gin/pkg/transport/http"
-	"gin/internal/router"
+	"gin/internal/routers"
+	"gin/pkg/app"
 )
 
-func NewHTTPServer(cfg *http.Http) *http.Server {
-	r := router.NewRouter()
+func NewHTTPServer(cfg *app.ServerConfig) *http.Server {
+	r := routers.NewRouter()
 	srv := http.NewServer(
 		http.WithAddress(cfg.Addr),
 		http.WithReadTimeout(cfg.ReadTimeout),

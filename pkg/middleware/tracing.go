@@ -1,63 +1,60 @@
+/**
+ * @author jiangshangfang
+ * @date 2022/1/25 9:01 PM
+ **/
 package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"go.opentelemetry.io/otel/semconv/v1.4.0"
-	"fmt"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/propagation"
 	oteltrace "go.opentelemetry.io/otel/trace"
+	"go.opentelemetry.io/otel"
 	otelcontrib "go.opentelemetry.io/contrib"
+	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	"go.opentelemetry.io/otel/attribute"
+	"fmt"
 )
-type config struct {
-	TracerProvider oteltrace.TracerProvider
-	Propagators    propagation.TextMapPropagator
-}
+
 const (
 	tracerKey  = "otel-tracer"
 	tracerName = "otelgin"
 )
+
+type config struct {
+	TracerProvider oteltrace.TracerProvider
+	Propagators    propagation.TextMapPropagator
+}
+
 type Option func(*config)
 
-func WithPropagators(propagators propagation.TextMapPropagator) Option {
-	return func(cfg *config) {
-		cfg.Propagators = propagators
-	}
-}
-
-func WithTracerProvider(provider oteltrace.TracerProvider) Option {
-	return func(cfg *config) {
-		cfg.TracerProvider = provider
-	}
-}
-
-// gin 集成 trace
-// Tracing returns middleware that will trace incoming requests.
-// The service parameter should describe the name of the (virtual)
-// server handling the request.
 func Tracing(serviceName string, opts ...Option) gin.HandlerFunc {
 	cfg := config{}
+
 	for _, opt := range opts {
 		opt(&cfg)
 	}
+
+	//获取全局Tracer提供者
 	if cfg.TracerProvider == nil {
 		cfg.TracerProvider = otel.GetTracerProvider()
 	}
+
 	tracer := cfg.TracerProvider.Tracer(
 		tracerName,
 		oteltrace.WithInstrumentationVersion(otelcontrib.SemVersion()),
 	)
+	//获取全局Tracer传播者
 	if cfg.Propagators == nil {
 		cfg.Propagators = otel.GetTextMapPropagator()
 	}
+
 	return func(c *gin.Context) {
 		c.Set(tracerKey, tracer)
 		savedCtx := c.Request.Context()
 		defer func() {
 			c.Request = c.Request.WithContext(savedCtx)
 		}()
-		ctx := cfg.Propagators.Extract(savedCtx, propagation.HeaderCarrier(c.Request.Header))
+		ctx := cfg.Propagators.Extract(savedCtx,propagation.HeaderCarrier(c.Request.Header))
 		route := c.FullPath()
 		opts := []oteltrace.SpanStartOption{
 			oteltrace.WithAttributes(semconv.NetAttributesFromHTTPRequest("tcp", c.Request)...),
@@ -72,10 +69,9 @@ func Tracing(serviceName string, opts ...Option) gin.HandlerFunc {
 		ctx, span := tracer.Start(ctx, spanName, opts...)
 		defer span.End()
 
-		// pass the span through the request context
+		//往后传递ctx
 		c.Request = c.Request.WithContext(ctx)
 
-		// serve the request to the next middleware
 		c.Next()
 
 		status := c.Writer.Status()

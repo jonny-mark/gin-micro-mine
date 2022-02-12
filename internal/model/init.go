@@ -17,7 +17,7 @@ var DB *gorm.DB
 func Init() *gorm.DB {
 	var cfg orm.Config
 	if err := config.Load("database", &cfg); err != nil {
-		log.Panicf("database config load %+v1", err)
+		log.Panicf("database config load %+v", err)
 	}
 	DB = orm.NewMysql(&cfg)
 	return DB

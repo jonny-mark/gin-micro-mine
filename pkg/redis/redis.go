@@ -25,7 +25,7 @@ type Redis struct {
 func Init() {
 	var c Config
 	if err := config.Load("redis", &c); err != nil {
-		log.Panicf("redis config load %+v1", err)
+		log.Panicf("redis config load %+v", err)
 	}
 	rdb := redis.NewClient(&redis.Options{
 		Addr:         c.Addr,
@@ -41,7 +41,7 @@ func Init() {
 
 	_, err := rdb.Ping(context.Background()).Result()
 	if err != nil{
-		log.Panicf("redis connect wrong %+v1", err)
+		log.Panicf("redis connect wrong %+v", err)
 	}
 	if c.EnableTrace {
 		rdb.AddHook(redisotel.NewTracingHook())

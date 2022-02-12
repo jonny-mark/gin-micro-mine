@@ -12,9 +12,10 @@ import (
 )
 
 type Response struct {
-	Code int         `json:"code"`
-	Msg  string      `json:"msg"`
-	Data interface{} `json:"data"`
+	Code    int         `json:"code"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data"`
+	Details []string    `json:"details,omitempty"`
 }
 
 // Success return a success response
@@ -24,41 +25,35 @@ func (r *Response) Success(c *gin.Context, data interface{}) {
 	}
 
 	c.JSON(http.StatusOK, Response{
-		Code: errcode.Success.GetCode(),
-		Msg:  errcode.Success.GetMsg(),
-		Data: data,
+		Code:    errcode.Success.GetCode(),
+		Message: errcode.Success.GetMsg(),
+		Data:    data,
 	})
 }
 
 func (r *Response) Error(c *gin.Context, err error) {
 	if err == nil {
 		c.JSON(http.StatusOK, Response{
-			Code: errcode.Success.GetCode(),
-			Msg:  errcode.Success.GetMsg(),
-			Data: gin.H{},
+			Code:    errcode.Success.GetCode(),
+			Message: errcode.Success.GetMsg(),
+			Data:    gin.H{},
 		})
+		return
 	}
 	if v, ok := err.(*errcode.Error); ok {
 		response := Response{
-			Code: v.GetCode(),
-			Msg:  v.GetMsg(),
-			Data: gin.H{},
+			Code:    v.GetCode(),
+			Message: v.GetMsg(),
+			Data:    gin.H{},
+			Details: []string{},
+		}
+		details := v.GetDetails()
+		if len(details) > 0 {
+			response.Details = details
 		}
 		c.JSON(v.StatusCode(), response)
 		return
 	}
-}
-
-// SendResponse 返回json
-func SendResponse(c *gin.Context, err error, data interface{}) {
-	code, message := errcode.DecodeErr(err)
-
-	// always return http.StatusOK
-	c.JSON(http.StatusOK, Response{
-		Code: code,
-		Msg:  message,
-		Data: data,
-	})
 }
 
 // RouteNotFound 未找到相关路由

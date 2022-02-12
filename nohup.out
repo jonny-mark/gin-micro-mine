@@ -1,8 +1,0 @@
-[gin] Listening on port 3000
-[gin] Building...
-[gin] [97;31;1mBuild failed[0m
-# gin
-./main.go:48:2: undefined: service
-./main.go:48:28: undefined: dao
-
-2021/12/26 15:46:26 Got signal:  interrupt

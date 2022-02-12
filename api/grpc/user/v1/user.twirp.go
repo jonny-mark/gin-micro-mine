@@ -303,15 +303,15 @@ func (s *userServiceServer) ServeHTTP(resp http.ResponseWriter, req *http.Reques
 		return
 	}
 
-	// Verify path format: [<prefix>]/<package>.<Service>/<Method>
+	// Verify directory format: [<prefix>]/<package>.<Service>/<Method>
 	prefix, pkgService, method := parseTwirpPath(req.URL.Path)
 	if pkgService != "user.v1.UserService" {
-		msg := fmt.Sprintf("no handler for path %q", req.URL.Path)
+		msg := fmt.Sprintf("no handler for directory %q", req.URL.Path)
 		s.writeError(ctx, resp, badRouteError(msg, req.Method, req.URL.Path))
 		return
 	}
 	if prefix != s.pathPrefix {
-		msg := fmt.Sprintf("invalid path prefix %q, expected %q, on path %q", prefix, s.pathPrefix, req.URL.Path)
+		msg := fmt.Sprintf("invalid directory prefix %q, expected %q, on directory %q", prefix, s.pathPrefix, req.URL.Path)
 		s.writeError(ctx, resp, badRouteError(msg, req.Method, req.URL.Path))
 		return
 	}
@@ -321,7 +321,7 @@ func (s *userServiceServer) ServeHTTP(resp http.ResponseWriter, req *http.Reques
 		s.serveLoginByPhone(ctx, resp, req)
 		return
 	default:
-		msg := fmt.Sprintf("no handler for path %q", req.URL.Path)
+		msg := fmt.Sprintf("no handler for directory %q", req.URL.Path)
 		s.writeError(ctx, resp, badRouteError(msg, req.Method, req.URL.Path))
 		return
 	}
@@ -515,7 +515,7 @@ func (s *userServiceServer) ProtocGenTwirpVersion() string {
 	return "v8.1.1"
 }
 
-// PathPrefix returns the base service path, in the form: "/<prefix>/<package>.<Service>/"
+// PathPrefix returns the base service directory, in the form: "/<prefix>/<package>.<Service>/"
 // that is everything in a Twirp route except for the <Method>. This can be used for routing,
 // for example to identify the requests that are targeted to this service in a mux.
 func (s *userServiceServer) PathPrefix() string {
@@ -559,9 +559,9 @@ type TwirpServer interface {
 	// twirp used to generate this file.
 	ProtocGenTwirpVersion() string
 
-	// PathPrefix returns the HTTP URL path prefix for all methods handled by this
+	// PathPrefix returns the HTTP URL directory prefix for all methods handled by this
 	// service. This can be used with an HTTP mux to route Twirp requests.
-	// The path prefix is in the form: "/<prefix>/<package>.<Service>/"
+	// The directory prefix is in the form: "/<prefix>/<package>.<Service>/"
 	// that is, everything in a Twirp route except for the <Method> at the end.
 	PathPrefix() string
 }
@@ -618,7 +618,7 @@ func writeError(ctx context.Context, resp http.ResponseWriter, err error, hooks 
 		//
 		// Calling the Error hook would confuse users: it would mean the Error
 		// hook got called twice for one request, which is likely to lead to
-		// duplicated log messages and metrics, no matter how well we document
+		// duplicated log messages and metric, no matter how well we document
 		// the behavior.
 		//
 		// Silently ignoring the error is our least-bad option. It's highly
@@ -643,7 +643,7 @@ func sanitizeBaseURL(baseURL string) string {
 	return u.String()
 }
 
-// baseServicePath composes the path prefix for the service (without <Method>).
+// baseServicePath composes the directory prefix for the service (without <Method>).
 // e.g.: baseServicePath("/twirp", "my.pkg", "MyService")
 //       returns => "/twirp/my.pkg.MyService/"
 // e.g.: baseServicePath("", "", "MyService")
@@ -656,7 +656,7 @@ func baseServicePath(prefix, pkg, service string) string {
 	return path.Join("/", prefix, fullServiceName) + "/"
 }
 
-// parseTwirpPath extracts path components form a valid Twirp route.
+// parseTwirpPath extracts directory components form a valid Twirp route.
 // Expected format: "[<prefix>]/<package>.<Service>/<Method>"
 // e.g.: prefix, pkgService, method := parseTwirpPath("/twirp/pkg.Svc/MakeHat")
 func parseTwirpPath(path string) (string, string, string) {

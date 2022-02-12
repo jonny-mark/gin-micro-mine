@@ -5,7 +5,7 @@
 package core
 
 import (
-	"gin/internal/router"
+	"gin/internal/routers"
 	"github.com/gin-gonic/gin"
 	"time"
 	"github.com/fvbock/endless"
@@ -19,7 +19,7 @@ type server interface {
 
 func Run()  {
 	addr := fmt.Sprintf(":%d",global.Config.System.Addr)
-	server := initServer(addr,router.Router())
+	server := initServer(addr, routers.Router())
 	global.Log.Info("server run success on ", zap.String("address", addr))
 	global.Log.Error(server.ListenAndServe().Error())
 }
