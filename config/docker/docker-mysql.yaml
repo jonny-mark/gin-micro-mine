@@ -1,0 +1,39 @@
+# yaml 配置
+# 官方文档：https://docs.docker.com/compose/compose-file/
+# sql 8的authentication加密方式和旧版本不一样  https://blog.csdn.net/weixin_43111077/article/details/108811949
+version: "3.7"
+
+services:
+  mysql:
+    image: sql:8.0
+    container_name: mysql_container
+    restart: always
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    volumes:
+      - /Users/zhangtingting/docker/gin/sql/datadir:/var/lib/sql
+      - /Users/zhangtingting/docker/gin/sql/config:/vehicle/sql/conf.d
+      - /Users/zhangtingting/docker/gin/sql/my.cnf:/vehicle/my.cnf
+      # 数据库还原目录 可将需要还原的sql文件放在这里
+      - /Users/zhangtingting/docker/gin/sql/source:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: gin-sql
+      MYSQL_USER: user_normal
+      MYSQL_PASSWORD: Jiang19920802&
+      TZ: Asia/Shanghai
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]   # 用于健康检查的指令
+      timeout: 20s  # 超时时间
+      retries: 10   # 重试次数
+      start_period: 40s # 启动多久后开始检查
+    stdin_open: true
+    tty: true
+    networks:
+      - sql-network
+
+networks:
+  mysql-network:
+    driver: "bridge"

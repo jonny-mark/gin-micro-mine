@@ -5,12 +5,12 @@
 package etcd
 
 import (
+	"context"
+	"fmt"
 	"gin/pkg/registry"
 	"go.etcd.io/etcd/client/v3"
-	"context"
-	"time"
-	"fmt"
 	"math/rand"
+	"time"
 )
 
 var (

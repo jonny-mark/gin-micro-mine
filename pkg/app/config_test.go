@@ -5,13 +5,13 @@
 package app
 
 import (
-	"testing"
-	"path/filepath"
 	"github.com/davecgh/go-spew/spew"
+	"path/filepath"
+	"testing"
 )
 
 func TestLoad(t *testing.T) {
-	c := filepath.Join("sss/bbb","dev")
+	c := filepath.Join("sss/bbb", "dev")
 	println(c)
 	spew.Dump(c)
 }

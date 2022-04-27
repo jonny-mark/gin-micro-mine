@@ -5,24 +5,21 @@
 package routers
 
 import (
-	"github.com/gin-gonic/gin"
+	"gin/internal/middleware"
 	"gin/internal/web"
-	"github.com/gin-contrib/static"
+	"github.com/gin-gonic/gin"
+	"gin/internal/web/device"
 )
 
 func LoadWebRouter(g *gin.Engine) *gin.Engine {
 	router := g
-	//// 404
-	//router.NoRoute(func(c *gin.Context) {
-	//	web.Error404(c)
-	//})
-	//router.NoMethod(func(c *gin.Context) {
-	//	web.Error404(c)
-	//})
+	router.Use(middleware.Translations())
 
 	// 静态资源，主要是图片
-	router.Use(static.Serve("/static", static.LocalFile("./static", false)))
+	//router.Use(static.Serve("/static", static.LocalFile("./static", false)))
 
-	router.GET("/",web.Index)
+	router.GET("/", web.Index)
+
+	router.POST("/device-check/create", device.Create)
 	return router
 }

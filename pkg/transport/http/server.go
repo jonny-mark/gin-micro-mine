@@ -5,25 +5,25 @@
 package http
 
 import (
-	"net/http"
 	"context"
 	"errors"
-	"net"
-	"time"
 	"gin/pkg/log"
-	"net/url"
 	"gin/pkg/utils"
+	"net"
+	"net/http"
+	"net/url"
+	"time"
 )
 
 type Server struct {
 	http.Server
-	lis  net.Listener
+	lis          net.Listener
 	network      string
 	address      string
 	readTimeout  time.Duration
 	writeTimeout time.Duration
 	log          log.Logger
-	endpoint      *url.URL
+	endpoint     *url.URL
 }
 
 func NewServer(opts ...ServerOption) *Server {

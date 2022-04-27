@@ -1,0 +1,34 @@
+# yaml 配置
+version: "3.7"
+
+services:
+  app:
+    image: jonnymark/jonny-gin:v1.3
+    container_name: app_container
+    restart: on-failure
+    ports:
+      - 801:801
+    environment:
+      APP_ENV: docker
+      HOSTNAME: app-host
+    extra_hosts:
+      app-host: 172.20.0.1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:801/health"]   # 用于健康检查的指令
+      interval: 1m30s   # 间隔时间
+      timeout: 10s  # 超时时间
+      retries: 3    # 重试次数
+      start_period: 40s # 启动多久后开始检查
+    stdin_open: true
+    tty: true
+    networks:
+      - gin
+
+networks:
+  gin:
+    driver: "bridge"
+    ipam: ## 配置网络
+      config:
+      - subnet: 172.20.0.0/16 ## ip地址网络 这里宿主机一般会是该网段的172.25.0.1,所以不要设置自网段为1
+
+

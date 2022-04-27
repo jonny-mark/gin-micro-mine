@@ -5,12 +5,12 @@
 package log
 
 import (
+	"gin/pkg/utils"
+	"github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"io"
 	"time"
-	"github.com/lestrrat-go/file-rotatelogs"
-	"gin/pkg/utils"
 )
 
 const (
@@ -78,7 +78,7 @@ func newZapLogger(cfg *Config) Logger {
 	return &zapLogger{zap.New(combinedCore, options...).Sugar()}
 }
 
-func getEncoderConfig(cfg *Config) (zapcore.EncoderConfig) {
+func getEncoderConfig(cfg *Config) zapcore.EncoderConfig {
 	var encoderCfg zapcore.EncoderConfig
 
 	if cfg.Development {
@@ -92,7 +92,7 @@ func getEncoderConfig(cfg *Config) (zapcore.EncoderConfig) {
 	return encoderCfg
 }
 
-func getEncoder(cfg *Config, encoderCfg zapcore.EncoderConfig) (zapcore.Encoder) {
+func getEncoder(cfg *Config, encoderCfg zapcore.EncoderConfig) zapcore.Encoder {
 	var encoder zapcore.Encoder
 	if cfg.Format == WriterJson {
 		encoder = zapcore.NewJSONEncoder(encoderCfg)
@@ -142,7 +142,7 @@ func getLogWriterWithTime(cfg *Config, filename string) io.Writer {
 	var MaxAge time.Duration
 	rotationPolicy := cfg.LogRollingPolicy
 	if cfg.MaxAge > 0 {
-		MaxAge = cfg.MaxAge * 24 * time.Hour
+		MaxAge = time.Duration(cfg.MaxAge) * 24 * time.Hour
 	} else {
 		MaxAge = 7 * 24 * time.Hour
 	}
@@ -170,11 +170,6 @@ func getLogWriterWithTime(cfg *Config, filename string) io.Writer {
 	return hook
 }
 
-// Debug logger
-func (l *zapLogger) Debug(args ...interface{}) {
-	l.sugarLogger.Debug(args...)
-}
-
 // Info logger
 func (l *zapLogger) Info(args ...interface{}) {
 	l.sugarLogger.Info(args...)
@@ -198,11 +193,6 @@ func (l *zapLogger) Panic(args ...interface{}) {
 // Fatal logger
 func (l *zapLogger) Fatal(args ...interface{}) {
 	l.sugarLogger.Fatal(args...)
-}
-
-// Debugf logger
-func (l *zapLogger) Debugf(format string, args ...interface{}) {
-	l.sugarLogger.Debugf(format, args...)
 }
 
 // Infof logger

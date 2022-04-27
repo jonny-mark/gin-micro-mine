@@ -5,15 +5,15 @@
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
-	"gin/pkg/log"
-	"time"
-	"github.com/willf/pad"
 	"bytes"
-	"gin/pkg/app"
 	"encoding/json"
+	"gin/pkg/app"
 	"gin/pkg/errcode"
+	"gin/pkg/log"
+	"github.com/gin-gonic/gin"
+	"github.com/willf/pad"
 	"regexp"
+	"time"
 )
 
 type bodyLogWriter struct {
@@ -34,7 +34,7 @@ func Logging() gin.HandlerFunc {
 		path := c.Request.URL.Path
 		//登陆不记录
 		reg := regexp.MustCompile("(/login)")
-		if !reg.MatchString(path) {
+		if reg.MatchString(path) {
 			return
 		}
 
@@ -56,7 +56,7 @@ func Logging() gin.HandlerFunc {
 		var message string
 		var response app.Response
 		if err := json.Unmarshal(blw.body.Bytes(), &response); err != nil {
-			log.Errorf("response body can not unmarshal to model.Response struct, body: `%s`, err: %+v",
+			log.Errorf("response body can not unmarshal to config.Response struct, body: `%s`, err: %v",
 				blw.body.Bytes(), err)
 			code = errcode.ServerError.Code
 			message = err.Error()

@@ -1,9 +1,9 @@
 package config
 
 import (
+	"github.com/davecgh/go-spew/spew"
 	"testing"
 	"time"
-	"github.com/davecgh/go-spew/spew"
 )
 
 func TestLoad(t *testing.T) {

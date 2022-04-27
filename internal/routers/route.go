@@ -5,12 +5,15 @@
 package routers
 
 import (
-	"github.com/gin-gonic/gin"
-	"gin/common"
-	mw "gin/internal/middleware"
-	"gin/pkg/middleware"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"gin/pkg/app"
+	"gin/pkg/middleware"
+	"github.com/gin-contrib/pprof"
+	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"time"
+	"github.com/gin-contrib/timeout"
 )
 
 func NewRouter() *gin.Engine {
@@ -23,17 +26,33 @@ func NewRouter() *gin.Engine {
 	g.Use(middleware.Logging())
 	g.Use(middleware.RequestId())
 	g.Use(middleware.Tracing(app.Conf.Name))
-	g.Use(mw.Translations())
+	g.Use(middleware.Metrics(app.Conf.Name))
+	// https://github.com/vearne/gin-timeout
+	g.Use(timeout.New(
+		timeout.WithTimeout(time.Duration(app.Conf.CtxDefaultTimeout) * time.Second),
+	))
 
 	// 加载web路由
 	LoadWebRouter(g)
 	// 404 Handler.
-	g.NoRoute(common.RouteNotFound)
-	g.NoMethod(common.RouteNotFound)
+	g.NoRoute(app.RouteNotFound)
+	g.NoMethod(app.RouteNotFound)
+
+	// swagger api docs
+	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+	// pprof router 性能分析路由
+	// 默认关闭，开发环境下可以打开
+	// 访问方式: HOST/debug/pprof
+	// 查看分析图 go tool pprof -png profile文件  (-png 图片 -text 文档
+	// 查看trace go tool trace trace文件
+	// see: https://github.com/gin-contrib/pprof
+	if app.Conf.EnablePprof {
+		pprof.Register(g)
+	}
 
 	// HealthCheck 健康检查路由
-	g.GET("/health", common.HealthCheck)
-	// 通过 grafana 可视化查看 prometheus 的监控数据，使用插件6671查看
+	g.GET("/health", app.HealthCheck) // 通过 grafana 可视化查看 prometheus 的监控数据，使用插件6671查看
 	g.GET("/metrics", gin.WrapH(promhttp.Handler()))
 
 	return g

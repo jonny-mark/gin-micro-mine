@@ -7,9 +7,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	pb "gin/api/grpc/user/v1"
+	"log"
 
+	"flag"
 	"google.golang.org/grpc"
 	"time"
 )
@@ -21,9 +22,49 @@ func main() {
 		_ = conn.Close()
 	}()
 
-	client := pb.NewUserServiceClient(conn)
+	client := pb.NewGreeterClient(conn)
 
-	userReq := &pb.PhoneLoginRequest{
+	flag.Parse()
+	//拦截器设置
+	scsource := `{
+		"methodConfig": [{
+		  "name": [{"service": "echo.echo","method":"Echo"}],
+		  "retryPolicy": {
+			  "MaxAttempts": 4,
+			  "InitialBackoff": ".01s",
+			  "MaxBackoff": ".1s",
+			  "BackoffMultiplier": 1.0,
+			  "RetryableStatusCodes": [ "UNAVAILABLE" ]
+		  }
+		}]}`
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	client.SayHello(ctx)
+	conn, err := grpc.Dial(*addr, grpc.WithInsecure(), grpc.WithBlock(), grpc.WithDefaultServiceConfig(scsource))
+
+	if err != nil {
+		fmt.Printf("grpc dial err: %v", err)
+		panic("grpc dial err")
+	}
+	defer func() {
+		_ = conn.Close()
+	}()
+
+	cli := pb.NewGreeterClient(conn)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+
+	req := &pb.HelloRequest{
+		Name: *name,
+	}
+	reply, err := cli.SayHello(ctx, req)
+	if err != nil {
+		log.Fatalf("could not greet: %v", err)
+	}
+	fmt.Printf("Greeting : %s", reply.GetMessage())
+
+	userReq := &pb.HelloRequest{
 		Phone:      13126963723,
 		VerifyCode: 123456,
 	}

@@ -6,8 +6,8 @@ package cache
 
 import (
 	"context"
-	"time"
 	"errors"
+	"time"
 )
 
 var (
@@ -19,7 +19,7 @@ var (
 
 	//展位标识
 	NotFoundPlaceholder = "*"
-	ErrPlaceholder = errors.New("cache: placeholder")
+	ErrPlaceholder      = errors.New("cache: placeholder")
 )
 
 //定义cache驱动接口
@@ -29,8 +29,8 @@ type Cache interface {
 	Del(ctx context.Context, keys ...string) error
 }
 
-func Set(ctx context.Context, key string, val interface{}, expiration time.Duration) error{
-	return DefaultClient.Set(ctx,key,val,expiration)
+func Set(ctx context.Context, key string, val interface{}, expiration time.Duration) error {
+	return DefaultClient.Set(ctx, key, val, expiration)
 }
 
 func Get(ctx context.Context, key string, val interface{}) error {

@@ -5,15 +5,23 @@
 package orm
 
 import (
-	"log"
 	"gorm.io/gorm"
-	"gorm.io/driver/mysql"
 	"gorm.io/gorm/logger"
-	opentelemetry "github.com/1024casts/gorm-opentelemetry"
-	"database/sql"
-	"fmt"
+	"log"
 	"os"
+	"time"
+	"fmt"
+	"database/sql"
+	"gorm.io/driver/mysql"
+	opentelemetry "github.com/1024casts/gorm-opentelemetry"
 )
+
+var DB *gorm.DB
+
+// GetDB 返回默认的数据库
+func GetDB() *gorm.DB {
+	return DB
+}
 
 func NewMysql(c *Config) (db *gorm.DB) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=%t&loc=%s",
@@ -29,7 +37,6 @@ func NewMysql(c *Config) (db *gorm.DB) {
 		log.Panicf("open mysql failed. database name: %s, err: %+v", c.Name, err)
 		panic(err)
 	}
-
 	// 用于设置最大打开的连接数，默认值为0表示不限制.设置最大的连接数，可以避免并发太高导致连接mysql出现too many connections的错误。
 	sqlDB.SetMaxOpenConns(c.MaxOpenConn)
 	// 用于设置闲置的连接数.设置闲置的连接数则当开启的一个连接使用完成后可以放在池里等候下一次使用。
@@ -42,7 +49,7 @@ func NewMysql(c *Config) (db *gorm.DB) {
 		panic(err)
 	}
 
-	// Initialize otel plugin with options
+	//Initialize otel plugin with options
 	plugin := opentelemetry.NewPlugin(
 		// include any options here
 	)
@@ -53,6 +60,7 @@ func NewMysql(c *Config) (db *gorm.DB) {
 		log.Panicf("using gorm opentelemetry, err: %+v1", err)
 		panic(err)
 	}
+
 	return db
 }
 
@@ -71,7 +79,7 @@ func gormConfig(c *Config) *gorm.Config {
 			log.New(os.Stdout, "\r\n", log.LstdFlags),
 			logger.Config{
 				//设定慢查询时间阈值
-				SlowThreshold: c.SlowThreshold, // nolint: golint
+				SlowThreshold: time.Duration(c.SlowThreshold), // nolint: golint
 				Colorful:      true,
 				//设置日志级别，只有指定级别以上会输出慢查询日志
 				LogLevel: logger.Warn,

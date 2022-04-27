@@ -1,0 +1,25 @@
+version: '2'
+services:
+    rabbitmq:
+       hostname: rabbitmq
+       container_name: myRabbitmq
+       environment:
+         RABBITMQ_DEFAULT_VHOST: "root"
+         RABBITMQ_DEFAULT_USER: "root"
+         RABBITMQ_DEFAULT_PASS: "12345678"
+       image: "rabbitmq:3.7.16-management"
+       restart: on-failure
+       volumes:
+         - "/Users/zhangtingting/docker/rabbitMq/data:/var/lib/rabbitmq"
+         - "/Users/zhangtingting/docker/rabbitMq/log:/var/log/rabbitmq/log"
+       ports:
+         - "15672:15672"
+         - "4369:4369"
+         - "5672:5672"
+         - "25672:25672"
+       networks:
+         - rabbitMqNetwork
+
+networks:
+  rabbitMqNetwork:
+    driver: "bridge"

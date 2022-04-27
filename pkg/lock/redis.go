@@ -5,10 +5,10 @@
 package lock
 
 import (
-	"github.com/go-redis/redis/v8"
-	"gin/pkg/log"
-	"fmt"
 	"context"
+	"fmt"
+	"gin/pkg/log"
+	"github.com/go-redis/redis/v8"
 	"time"
 )
 

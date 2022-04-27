@@ -5,9 +5,9 @@
 package utils
 
 import (
-	"testing"
 	"fmt"
 	"reflect"
+	"testing"
 )
 
 func TestCompare(t *testing.T) {
@@ -24,6 +24,7 @@ var (
 	slice1 = []string{"foo", "bar", "h", "e", "l", "l", "o"}
 	slice2 = []string{"foo", "bar", "h", "e", "l", "l", "oooo"}
 )
+
 //1961168	       597.1 ns/op
 func BenchmarkStrings(b *testing.B) {
 	for i := 0; i < b.N; i++ {

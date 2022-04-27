@@ -4,7 +4,9 @@
  **/
 package http
 
-import "time"
+import (
+	"time"
+)
 
 // ServerOption is HTTP server option
 type ServerOption func(*Server)

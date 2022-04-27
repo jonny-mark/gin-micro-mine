@@ -2,15 +2,17 @@
 #环境搭建文档： https://cloud.tencent.com/developer/article/1160850
 
 
-#端口	协议	所属模块	     功能
-     #5775	UDP	agent	     通过兼容性Thrift协议，接收Zipkin thrift类型数据
-     #6831	UDP	agent	     通过兼容性Thrift协议，接收Jaeger thrift类型数据
-     #6832	UDP	agent	     通过二进制Thrift协议，接收Jaeger thrift类型数据
-     #5778	HTTP	agent	     配置控制服务接口
-     #16686	HTTP	query	     客户端前端界面展示端口
-     #14268	HTTP	collector    接收客户端Zipkin thrift类型数据
-     #14267	HTTP	collector    接收客户端Jaeger thrift类型数据
-     #9411	HTTP	collector    Zipkin兼容endpoint
+# 端口	协议	  所属模块	     功能
+#5775	UDP	    agent	     通过兼容性Thrift协议，接收Zipkin thrift类型数据
+#6831	UDP	    agent	     通过兼容性Thrift协议，接收Jaeger thrift类型数据
+#6832	UDP	    agent	     通过二进制Thrift协议，接收Jaeger thrift类型数据
+#5778	HTTP	agent	     配置控制服务接口
+#16686	HTTP	query	     客户端前端界面展示端口
+#14250	gRPC	collector    接收客户端Jaeger thrift类型数据,用来发送范围模型.proto格式
+#14268	HTTP	collector    接收客户端Zipkin thrift类型数据
+#14269	HTTP	collector    管理端口，可用于健康检查（API: /）和 指标采集 （/metrics）
+#14267	HTTP	collector    接收客户端Jaeger thrift类型数据
+#9411	HTTP	collector    Zipkin兼容endpoint
 version: "3.7"
 
 services:
@@ -21,7 +23,7 @@ services:
     ports:
       - '3000:3000'
     networks:
-      - gin
+      - jeager
   jaeger:
     container_name: jaeger_container
     image: jaegertracing/all-in-one:latest
@@ -33,12 +35,13 @@ services:
       - 6832:6832/udp
       - 5778:5778
       - 16686:16686
-      - 14268:14268
       - 14250:14250
+      - 14268:14268
+      - 14269:14269
       - 9411:9411
     networks:
-      - gin
+      - jeager
 
 networks:
-  gin:
+  jeager:
     driver: "bridge"

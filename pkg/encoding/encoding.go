@@ -6,8 +6,8 @@ package encoding
 
 import (
 	"encoding"
-	"reflect"
 	"errors"
+	"reflect"
 )
 
 var (

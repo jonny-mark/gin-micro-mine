@@ -1,27 +1,26 @@
 package main
 
 import (
-	"github.com/spf13/pflag"
-	v "gin/pkg/version"
 	"encoding/json"
 	"fmt"
-	"os"
-	"gin/pkg/config"
-	"gin/pkg/app"
-	"log"
-	logger "gin/pkg/log"
-	"gin/internal/model"
-	"gin/pkg/redis"
-	"github.com/gin-gonic/gin"
-	"gin/internal/repository"
-	"gin/internal/service"
-	"net/http"
 	"gin/internal/server"
-	//"gin/pkg/registry/etcd"
+	"gin/pkg/app"
+	"gin/pkg/config"
+	"gin/pkg/load/nacos"
+	logger "gin/pkg/log"
+	"gin/pkg/redis"
+	"gin/pkg/registry/etcd"
+	"gin/pkg/storage/orm"
 	"gin/pkg/trace"
-	//etcdclient "go.etcd.io/etcd/client/v3"
-	//"strings"
+	v "gin/pkg/version"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/gin-gonic/gin"
+	"github.com/spf13/pflag"
+	etcdclient "go.etcd.io/etcd/client/v3"
+	"log"
+	"os"
+	"strings"
+	"net/http"
 )
 
 var (
@@ -43,59 +42,60 @@ func main() {
 		fmt.Println(string(marshaled))
 		return
 	}
-	c := config.New(*cfgDir, config.WithEnv(*env))
-	var cfg app.Config
-	if err := c.Load("app", &cfg); err != nil {
-		log.Panicf("app config load fail:%+v", err)
-	}
-	//设置全局app.Config
-	app.Conf = &cfg
+	spew.Dump(*cfgDir)
+	spew.Dump(*env)
+	// 初始化cfg目录
+	config.New(*cfgDir, config.WithEnv(*env))
 
-	//加载资源
+	/**加载资源start**/
+	//初始化nacos配置
+	nacos.Init()
+	//初始化app
+	app.Init()
 	//初始化日志
 	logger.Init()
 	//初始化数据库
-	model.Init()
+	orm.Init()
 	//初始化redis
 	redis.Init()
-
 	//初始化trace
 	if app.Conf.EnableTrace {
 		trace.Init()
 	}
-
 	//初始化service
-	service.Svc = service.New(repository.New(model.GetDB()))
+	//service.Svc = service.New(repository.New(orm.GetDB()))
+	/**加载资源end**/
 
-	gin.SetMode(cfg.Mode)
+	gin.SetMode(app.Conf.Mode)
 
 	//初始化pprof
 	go func() {
-		fmt.Printf("Listening and serving PProf HTTP on %s\n", cfg.PprofPort)
-		if err := http.ListenAndServe(cfg.PprofPort, http.DefaultServeMux); err != nil && err != http.ErrServerClosed {
+		fmt.Printf("Listening and serving PProf HTTP on %s\n", app.Conf.PprofPort)
+		if err := http.ListenAndServe(app.Conf.PprofPort, http.DefaultServeMux); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("listen ListenAndServe for PProf, err: %s", err.Error())
 		}
 	}()
 
-	spew.Dump(app.Conf.Registry.Endpoints)
-	//client, err := etcdclient.New(etcdclient.Config{
-	//	Endpoints: strings.Split(app.Conf.Registry.Endpoints, ','),
-	//})
-	//if err != nil {
-	//	log.Fatalf("etcdclient new failed, err: %s", err.Error())
-	//}
-	//r := etcd.New(client)
+	client, err := etcdclient.New(etcdclient.Config{
+		Endpoints: strings.Split(app.Conf.Registry.Endpoints, ","),
+	})
+	if err != nil {
+		log.Fatalf("etcdclient new failed, err: %s", err.Error())
+	}
+	r := etcd.New(client)
 
 	// start app
 	myApp := app.New(
-		app.WithName(cfg.Name),
-		app.WithVersion(cfg.Version),
+		app.WithName(app.Conf.Name),
+		app.WithVersion(app.Conf.Version),
 		app.WithLogger(logger.GetLogger()),
 		app.WithServer(
 			// init http server
-			server.NewHTTPServer(&cfg.HTTP),
+			server.NewHTTPServer(&app.Conf.HTTP),
+			//// init grpc server
+			//server.NewGRPCServer(&cfg.GRPC),
 		),
-		//app.WithRegistry(r),
+		app.WithRegistry(r),
 	)
 
 	if err := myApp.Run(); err != nil {

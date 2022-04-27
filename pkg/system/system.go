@@ -5,15 +5,15 @@
 package system
 
 import (
+	"context"
+	"errors"
 	"gin/pkg/config"
 	"gin/pkg/log"
-	"os"
-	"context"
-	"syscall"
 	"gin/pkg/transport"
 	"golang.org/x/sync/errgroup"
+	"os"
 	"os/signal"
-	"errors"
+	"syscall"
 )
 
 type System struct {

@@ -6,17 +6,17 @@ package app
 
 import (
 	"context"
-	"gin/pkg/log"
-	"os"
-	"syscall"
-	"time"
-	"github.com/google/uuid"
-	"sync"
+	"errors"
+	logger "gin/pkg/log"
 	"gin/pkg/registry"
 	"gin/pkg/transport"
+	"github.com/google/uuid"
 	"golang.org/x/sync/errgroup"
+	"os"
 	"os/signal"
-	"errors"
+	"sync"
+	"syscall"
+	"time"
 )
 
 // App global app
@@ -32,7 +32,7 @@ type App struct {
 func New(opts ...Option) *App {
 	o := options{
 		ctx:    context.Background(),
-		logger: log.GetLogger(),
+		logger: logger.GetLogger(),
 		// don not catch SIGKILL signal, need to waiting for kill self by other.
 		sigs:            []os.Signal{syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGINT},
 		registryTimeout: 10 * time.Second,
@@ -98,7 +98,7 @@ func (a *App) Run() error {
 			//监听errgroup的chan
 			case <-errCtx.Done():
 				return errCtx.Err()
-				//监听signal信息
+			//监听signal信息
 			case s := <-quit:
 				a.opts.logger.Infof("receive a quit signal: %s", s.String())
 				err := a.stop()
@@ -107,7 +107,6 @@ func (a *App) Run() error {
 					return err
 				}
 			}
-
 		}
 	})
 

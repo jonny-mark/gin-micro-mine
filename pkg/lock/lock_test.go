@@ -5,12 +5,12 @@
 package lock
 
 import (
-	"testing"
-	"gin/pkg/redis"
 	"context"
-	"time"
-	"github.com/stretchr/testify/assert"
+	"gin/pkg/redis"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/stretchr/testify/assert"
+	"testing"
+	"time"
 )
 
 func TestLockWithDefaultTimeout(t *testing.T) {
@@ -61,7 +61,7 @@ func TestLockWithTimeout(t *testing.T) {
 		assert.Nil(t, err)
 		assert.True(t, ok)
 
-		time.Sleep(3*time.Second)
+		time.Sleep(3 * time.Second)
 
 		ok, err = lock2.UnLock(ctx)
 		t.Logf("Unlock is %t", ok)

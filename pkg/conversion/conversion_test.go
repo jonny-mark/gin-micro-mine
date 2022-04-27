@@ -5,9 +5,9 @@
 package conversion
 
 import (
-	"testing"
-	"net/http"
 	"github.com/davecgh/go-spew/spew"
+	"net/http"
+	"testing"
 )
 
 func TestStructToMap(t *testing.T) {

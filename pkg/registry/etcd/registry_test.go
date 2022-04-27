@@ -5,18 +5,18 @@
 package etcd
 
 import (
-	"testing"
-	"go.etcd.io/etcd/client/v3"
-	"time"
-	"google.golang.org/grpc"
 	"context"
-	"gin/pkg/registry"
 	"fmt"
+	"gin/pkg/registry"
+	"go.etcd.io/etcd/client/v3"
+	"google.golang.org/grpc"
+	"testing"
+	"time"
 )
 
 func TestRegistry(t *testing.T) {
 	client, err := clientv3.New(clientv3.Config{
-		Endpoints:   []string{"127.0.0.1:12379","127.0.0.1:22379","127.0.0.1:32379"},
+		Endpoints:   []string{"127.0.0.1:12379", "127.0.0.1:22379", "127.0.0.1:32379"},
 		DialTimeout: time.Second,
 		//DialOptions: []grpc.DialOption{grpc.WithBlock()},
 	})
@@ -27,8 +27,8 @@ func TestRegistry(t *testing.T) {
 
 	ctx := context.Background()
 	s := &registry.ServiceInstance{
-		ID:   "0",
-		Name: "jonnyClient1",
+		ID:      "0",
+		Name:    "jonnyClient1",
 		Version: "1.1",
 	}
 	r := New(client)
@@ -68,20 +68,18 @@ func TestRegistry(t *testing.T) {
 	}()
 	//time.Sleep(time.Second)
 
-	if err1 := r.DeRegister(ctx, s); err1 != nil {
-		t.Fatal(err1)
-	}
-	time.Sleep(time.Second)
+	//if err1 := r.DeRegister(ctx, s); err1 != nil {
+	//	t.Fatal(err1)
+	//}
 
-	res, err = r.GetService(ctx, s.Name)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if len(res) != 0 {
-		t.Errorf("not expected empty")
-	}
+	//res, err = r.GetService(ctx, s.Name)
+	//if err != nil {
+	//	t.Fatal(err)
+	//}
+	//if len(res) != 0 {
+	//	t.Errorf("not expected empty")
+	//}
 }
-
 
 func TestHeartBeat(t *testing.T) {
 	client, err := clientv3.New(clientv3.Config{

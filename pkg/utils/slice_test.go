@@ -234,7 +234,7 @@ func TestIsInSlice(t *testing.T) {
 		}, false},
 		{"test string in slice", args{
 			value: "golang",
-			sli:   []string{"golang", "mysql", "redis.yaml"},
+			sli:   []string{"golang", "sql", "redis.yaml"},
 		}, true},
 	}
 	for _, tt := range tests {

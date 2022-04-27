@@ -1,0 +1,15 @@
+version: "v1"
+sentinel:
+  app:
+    name: gin-sentinel #项目名称，必须配置
+    type: 0
+  log:
+    dir: "~/logs/csp"
+    pid: false
+    metric:
+      maxFileCount: 14 #监控日志最大文件数目
+      singleFileMaxSize: 100 #监控日志单个文件大小上限，默认为50MB
+      flushIntervalSec: 1
+  stat:
+    system:
+      collectIntervalMs: 1000

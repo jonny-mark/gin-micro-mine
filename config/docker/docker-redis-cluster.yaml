@@ -27,11 +27,11 @@ services:
     # 定义容器和宿主机的卷映射关系
     volumes:
       - /Users/zhangtingting/docker/redis.yaml-cluster/node1/data:/data
-      - /Users/zhangtingting/docker/redis.yaml-cluster/node1:/usr/local/etc/redis.yaml
+      - /Users/zhangtingting/docker/redis.yaml-cluster/node1:/usr/local/vehicle/redis.yaml
       - /Users/zhangtingting/docker/redis.yaml-cluster/node1/data:/usr/local/var/db/redis.yaml
     # 覆盖容器启动后默认执行的命令, 支持 shell 格式和 [] 格式
     command:
-      /usr/local/bin/redis.yaml-server /usr/local/etc/redis.yaml/redis.yaml.conf
+      /usr/local/bin/redis.yaml-server /usr/local/vehicle/redis.yaml/redis.yaml.conf
     environment:
       # 设置时区为上海，否则时间会有问题
       - TZ=Asia/Shanghai
@@ -50,10 +50,10 @@ services:
     tty: true
     volumes:
       - /Users/zhangtingting/docker/redis.yaml-cluster/node2/data:/data
-      - /Users/zhangtingting/docker/redis.yaml-cluster/node2:/usr/local/etc/redis.yaml
+      - /Users/zhangtingting/docker/redis.yaml-cluster/node2:/usr/local/vehicle/redis.yaml
       - /Users/zhangtingting/docker/redis.yaml-cluster/node2/data:/usr/local/var/db/redis.yaml
     command:
-      /usr/local/bin/redis.yaml-server /usr/local/etc/redis.yaml/redis.yaml.conf
+      /usr/local/bin/redis.yaml-server /usr/local/vehicle/redis.yaml/redis.yaml.conf
     environment:
       # 设置时区为上海，否则时间会有问题
       - TZ=Asia/Shanghai
@@ -72,10 +72,10 @@ services:
     tty: true
     volumes:
       - /Users/zhangtingting/docker/redis.yaml-cluster/node3/data:/data
-      - /Users/zhangtingting/docker/redis.yaml-cluster/node3:/usr/local/etc/redis.yaml
+      - /Users/zhangtingting/docker/redis.yaml-cluster/node3:/usr/local/vehicle/redis.yaml
       - /Users/zhangtingting/docker/redis.yaml-cluster/node3/data:/usr/local/var/db/redis.yaml
     command:
-      /usr/local/bin/redis.yaml-server /usr/local/etc/redis.yaml/redis.yaml.conf
+      /usr/local/bin/redis.yaml-server /usr/local/vehicle/redis.yaml/redis.yaml.conf
     environment:
       # 设置时区为上海，否则时间会有问题
       - TZ=Asia/Shanghai
@@ -94,10 +94,10 @@ services:
     tty: true
     volumes:
       - /Users/zhangtingting/docker/redis.yaml-cluster/node4/data:/data
-      - /Users/zhangtingting/docker/redis.yaml-cluster/node4:/usr/local/etc/redis.yaml
+      - /Users/zhangtingting/docker/redis.yaml-cluster/node4:/usr/local/vehicle/redis.yaml
       - /Users/zhangtingting/docker/redis.yaml-cluster/node4/data:/usr/local/var/db/redis.yaml
     command:
-      /usr/local/bin/redis.yaml-server /usr/local/etc/redis.yaml/redis.yaml.conf
+      /usr/local/bin/redis.yaml-server /usr/local/vehicle/redis.yaml/redis.yaml.conf
     environment:
       # 设置时区为上海，否则时间会有问题
       - TZ=Asia/Shanghai
@@ -116,10 +116,10 @@ services:
     tty: true
     volumes:
       - /Users/zhangtingting/docker/redis.yaml-cluster/node5/data:/data
-      - /Users/zhangtingting/docker/redis.yaml-cluster/node5:/usr/local/etc/redis.yaml
+      - /Users/zhangtingting/docker/redis.yaml-cluster/node5:/usr/local/vehicle/redis.yaml
       - /Users/zhangtingting/docker/redis.yaml-cluster/node5/data:/usr/local/var/db/redis.yaml
     command:
-      /usr/local/bin/redis.yaml-server /usr/local/etc/redis.yaml/redis.yaml.conf
+      /usr/local/bin/redis.yaml-server /usr/local/vehicle/redis.yaml/redis.yaml.conf
     environment:
       # 设置时区为上海，否则时间会有问题
       - TZ=Asia/Shanghai
@@ -138,10 +138,10 @@ services:
     tty: true
     volumes:
       - /Users/zhangtingting/docker/redis.yaml-cluster/node6/data:/data
-      - /Users/zhangtingting/docker/redis.yaml-cluster/node6:/usr/local/etc/redis.yaml
+      - /Users/zhangtingting/docker/redis.yaml-cluster/node6:/usr/local/vehicle/redis.yaml
       - /Users/zhangtingting/docker/redis.yaml-cluster/node6/data:/usr/local/var/db/redis.yaml
     command:
-      /usr/local/bin/redis.yaml-server /usr/local/etc/redis.yaml/redis.yaml.conf
+      /usr/local/bin/redis.yaml-server /usr/local/vehicle/redis.yaml/redis.yaml.conf
     environment:
       # 设置时区为上海，否则时间会有问题
       - TZ=Asia/Shanghai

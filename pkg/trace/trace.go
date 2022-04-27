@@ -5,26 +5,40 @@
 package trace
 
 import (
-	tracesdk "go.opentelemetry.io/otel/sdk/trace"
+	"errors"
+	"gin/internal/constant"
 	appConfig "gin/pkg/config"
-	"log"
+	"gin/pkg/load/nacos"
+	jaegerprop "go.opentelemetry.io/contrib/propagators/jaeger"
 	"go.opentelemetry.io/otel"
 	jaegerExporter "go.opentelemetry.io/otel/exporters/jaeger"
 	"go.opentelemetry.io/otel/sdk/resource"
+	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/semconv/v1.7.0"
-	jaegerprop "go.opentelemetry.io/contrib/propagators/jaeger"
-	"errors"
+	"gopkg.in/yaml.v3"
+	"log"
 	"strings"
 )
 
 func Init() {
-	var traceConfig Config
-	if err := appConfig.Load("trace", &traceConfig); err != nil {
-		log.Panicf("trace config load %+v", err)
-	}
-	_, err := initTracerProvider(traceConfig.ServiceName, traceConfig.CollectorEndpoint)
-	if err != nil {
-		log.Panicf("trace init err %+v", err)
+	var cfg Config
+	if nacos.NacosClient.Enable {
+		context, err := nacos.NacosClient.LoadConfiguration(constant.NacosTraceKey)
+		if err != nil {
+			log.Panicf("load trace conf err: %v", err)
+		}
+		if err := yaml.Unmarshal([]byte(context), &cfg); err != nil {
+			log.Panicf("load trace conf unmarshal err: %v", err)
+		}
+		listenConfiguration(constant.NacosTraceKey, &cfg)
+	} else {
+		if err := appConfig.Load(constant.TraceKey, &cfg); err != nil {
+			log.Panicf("trace config load %+v", err)
+		}
+		_, err := initTracerProvider(cfg.ServiceName, cfg.CollectorEndpoint)
+		if err != nil {
+			log.Panicf("trace init err %+v", err)
+		}
 	}
 }
 
@@ -65,4 +79,15 @@ func initTracerProvider(serviceName, endpoint string, options ...Option) (*trace
 	otel.SetTextMapPropagator(jaegerprop.Jaeger{})
 
 	return tp, nil
+}
+
+//监听nacos的变化
+func listenConfiguration(name string, cfg *Config) {
+	ctx, err := nacos.NacosClient.ListenConfiguration(name)
+	if err != nil {
+		log.Panicf("load trace conf err: %v", err)
+	}
+	if err := yaml.Unmarshal([]byte(ctx), cfg); err != nil {
+		log.Panicf("load trace conf unmarshal err: %v", err)
+	}
 }

@@ -1,9 +1,9 @@
 package rabbitmq
 
 import (
+	"github.com/streadway/amqp"
 	"log"
 	"time"
-	"github.com/streadway/amqp"
 )
 
 // Consumer define consumer for rabbitmq

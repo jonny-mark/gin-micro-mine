@@ -5,9 +5,9 @@
 package server
 
 import (
-	"gin/pkg/transport/http"
 	"gin/internal/routers"
 	"gin/pkg/app"
+	"gin/pkg/transport/http"
 )
 
 func NewHTTPServer(cfg *app.ServerConfig) *http.Server {

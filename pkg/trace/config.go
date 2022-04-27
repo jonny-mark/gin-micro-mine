@@ -5,9 +5,9 @@
 package trace
 
 type Config struct {
-	ServiceName        string // The name of this service
-	LocalAgentHostPort string //Set jaeger-agent's host:port that the reporter will used
-	CollectorEndpoint  string //Instructs reporter to send spans to jaeger-collector at this URL
-	CollectorUser      string // CollectorUser for basic http authentication when sending spans to jaeger-collector
-	CollectorPassword  string // CollectorPassword for basic http authentication when sending spans to jaeger-collector
+	ServiceName        string `yaml:"ServiceName"`
+	LocalAgentHostPort string `yaml:"LocalAgentHostPort"`
+	CollectorEndpoint  string `yaml:"CollectorEndpoint"`
+	CollectorUser      string `yaml:"CollectorUser"`
+	CollectorPassword  string `yaml:"CollectorPassword"`
 }

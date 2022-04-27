@@ -1,0 +1,29 @@
+Enable: true  #nacos是否开启
+ClientConfig:
+  Env: dev
+  TimeoutMs : 5000
+  AppName : 'gin'
+  CacheDir: "cache/nacos"
+  NotLoadCacheAtStart: true
+  LogDir: "log"
+  LogLevel: "debug"
+  MaxAge: 3
+  Namespace: f1b76555-6f2d-49c6-8b3c-9875293347cb
+  FileExtension: yaml
+  ExtensionConfigs:
+    - DataId: app
+      Group: issuer
+    - DataId: database
+      Group: issuer
+    - DataId: redis
+      Group: issuer
+    - DataId: logger
+      Group: issuer
+    - DataId: trace
+      Group: issuer
+ServerConfig :
+  ServerScheme: http
+  #ServerAddr: 192.168.124.10
+  ServerAddr: 127.0.0.1
+  ServerContext: "/nacos"
+  ServerPort: 8848

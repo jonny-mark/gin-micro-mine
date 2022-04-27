@@ -6,8 +6,9 @@ package errcode
  * @note 响应体统一业务码
  **/
 var (
-	Success = NewError(0, "成功")
-	ServerError        = NewError(10001, "内部服务器错误")
+	Success            = NewError(0, "成功")
+	ServerError        = NewError(10000, "内部服务器错误")
+	ErrInvalidParam    = NewError(10001, "无效的请求参数")
 	TooManyRequest     = NewError(10002, "请求过多")
 	ParamBindError     = NewError(10003, "参数信息错误")
 	AuthorizationError = NewError(10004, "签名信息错误")

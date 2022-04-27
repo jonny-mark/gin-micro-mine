@@ -16,7 +16,7 @@ func TestPathExists(t *testing.T) {
 }
 
 func TestFileMove(t *testing.T) {
-	a:= string("../../pkg/directory/README.md")
-	b:=string("../../pkg/conversion/ccc.md")
-	println(FileMove(b,a).Error())
+	a := string("../../pkg/directory/README.md")
+	b := string("../../pkg/conversion/ccc.md")
+	println(FileMove(b, a).Error())
 }

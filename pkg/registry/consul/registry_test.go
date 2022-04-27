@@ -33,7 +33,7 @@ func TestRegister(t *testing.T) {
 		t.Fail()
 	}
 	defer lis.Close()
-	go tcpServer(t, lis)
+	//go tcpServer(t, lis)
 	time.Sleep(time.Millisecond * 100)
 	cli, err := api.NewClient(&api.Config{Address: "127.0.0.1:8500"})
 	if err != nil {

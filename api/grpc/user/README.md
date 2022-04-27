@@ -123,21 +123,6 @@ message HelloResponse {
 }
 ```
 
-2、
-```
-# 针对指定服务
-protoc --go_out=. --twirp_out=. echo.proto
-
-# 针对所有服务
-find rpc -name '*.proto' -exec protoc --twirp_out=. --go_out=. {} \;
-```
-
-生成的文件中 *.pb.go 是由 protobuf 消息的定义代码，同时支持 protobuf 和 json。*.twirp.go 则是 rpc 路由相关代码。
-
-## 实现接口
-
-请参考 [server/README.md](https://github.com/go-eagle/eagle/tree/master/internal/server/README.md)
-
 ## 自动注册
 
 eagle 提供的脚手架可以自动生成 proto 模版、server 模版，并注册路由。 运行以下命令：
@@ -145,23 +130,3 @@ eagle 提供的脚手架可以自动生成 proto 模版、server 模版，并注
 ```bash
 go run cmd/eagle/main.go rpc --server=foo --service=echo
 ```
-
-3、
-会自动生成
-
-```bash
-rpc
-└── foo
-    └── v1
-        ├── echo.pb.go
-        ├── echo.proto
-        └── echo.twirp.go
-server
-└── fooserver1
-    └── echo.go
-```
-
-## Reference
-
-- [Proto 代码到底放哪里？](https://eddycjy.com/posts/where-is-proto/)
-- [Go 每日一库之 twirp](https://zhuanlan.zhihu.com/p/147391981)

@@ -7,18 +7,18 @@ package grpc
 import (
 	"context"
 	"google.golang.org/grpc"
-	"net/url"
-	"time"
 	"log"
 	"net"
+	"net/url"
+	"time"
 
-	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
-	grpcRecovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
-	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
-	healthPb "google.golang.org/grpc/health/grpc_health_v1"
-	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/reflection"
 	"gin/pkg/utils"
+	grpcRecovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
+	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
+	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+	"google.golang.org/grpc/health"
+	healthPb "google.golang.org/grpc/health/grpc_health_v1"
+	"google.golang.org/grpc/reflection"
 )
 
 type Server struct {

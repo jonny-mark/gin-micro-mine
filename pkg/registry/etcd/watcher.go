@@ -6,8 +6,8 @@ package etcd
 
 import (
 	"context"
-	"go.etcd.io/etcd/client/v3"
 	"gin/pkg/registry"
+	"go.etcd.io/etcd/client/v3"
 )
 
 type watcher struct {

@@ -5,9 +5,9 @@
 package consul
 
 import (
+	"gin/pkg/registry"
 	"sync"
 	"sync/atomic"
-	"gin/pkg/registry"
 )
 
 type serviceSet struct {

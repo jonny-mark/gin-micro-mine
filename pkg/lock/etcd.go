@@ -6,11 +6,11 @@ package lock
 
 import (
 	"context"
-	"go.etcd.io/etcd/client/v3/concurrency"
-	"time"
+	"fmt"
 	"gin/pkg/log"
 	"go.etcd.io/etcd/client/v3"
-	"fmt"
+	"go.etcd.io/etcd/client/v3/concurrency"
+	"time"
 )
 
 const EtcdLockKey = "gin:etcd:lock:%s"

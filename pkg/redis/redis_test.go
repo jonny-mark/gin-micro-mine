@@ -1,35 +1,26 @@
-package redis
+package redis_test
 
 import (
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
+	redisMine "gin/pkg/redis"
 	"context"
-	"testing"
-	"time"
 )
 
-func TestInitTestRedis(t *testing.T) {
-	InitTestRedis()
+var _ = Describe("Redis", func() {
+	Describe("redis init", func() {
+		BeforeEach(func() {
+			redisMine.InitTestRedis()
+		})
 
-	err := RedisClient.Ping(context.Background()).Err()
-	if err != nil {
-		t.Error("ping redis.yaml server err: ", err)
-		return
-	}
-	t.Log("ping redis.yaml server pass")
-}
+		AfterEach(func() {
+			Expect(redisMine.RedisClient.Close()).NotTo(HaveOccurred())
+		})
 
-func TestRedisSetGet(t *testing.T) {
-	InitTestRedis()
-
-	var setGetKey = "test-set"
-	var setGetValue = "test-content"
-	RedisClient.Set(context.Background(), setGetKey, setGetValue, time.Second*100)
-
-	expectValue := RedisClient.Get(context.Background(), setGetKey).Val()
-	if setGetValue != expectValue {
-		t.Log("original value: ", setGetValue)
-		t.Log("expect value: ", expectValue)
-		return
-	}
-
-	t.Log("redis.yaml set get test pass")
-}
+		It("开始测试", func() {
+			ctx := context.Background()
+			cccVal := redisMine.RedisClient.Get(ctx,"ccc").Val()
+			Expect(cccVal).To(Equal(""))
+		})
+	})
+})

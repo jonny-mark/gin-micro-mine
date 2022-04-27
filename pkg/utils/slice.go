@@ -62,7 +62,7 @@ func Uint64SliceReverse(a []uint64) []uint64 {
 }
 
 // StringSliceContains 字符串切片中是否包含另一个字符串
-// 来自go源码 net/http/server.go
+// 来自go源码 net/http/nacos.go
 func StringSliceContains(ss []string, s string) bool {
 	for _, v := range ss {
 		if v == s {

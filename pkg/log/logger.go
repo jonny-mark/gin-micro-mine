@@ -5,20 +5,20 @@
 package log
 
 import (
-	"gin/pkg/config"
-	"log"
+	"context"
+	"go.opentelemetry.io/otel/trace"
+	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 //全局log
 var logger Logger
+var zl *zap.Logger
 
 // Fields Type to pass when we want to call WithFields for structured logging
 type Fields map[string]interface{}
 
 type Logger interface {
-	Debug(args ...interface{})
-	Debugf(format string, args ...interface{})
-
 	Info(args ...interface{})
 	Infof(format string, args ...interface{})
 
@@ -28,24 +28,7 @@ type Logger interface {
 	Error(args ...interface{})
 	Errorf(format string, args ...interface{})
 
-	Fatal(args ...interface{})
-	Fatalf(format string, args ...interface{})
-
-	Panic(args ...interface{})
-	Panicf(format string, args ...interface{})
-
 	WithFields(keyValues Fields) Logger
-}
-
-//初始化
-func Init() Logger {
-	var cfg Config
-
-	if err := config.Load("logger", &cfg); err != nil {
-		log.Panicf("load logger conf err: %v", err)
-	}
-	logger = newZapLogger(&cfg)
-	return logger
 }
 
 func GetLogger() Logger {
@@ -67,21 +50,6 @@ func Error(args ...interface{}) {
 	logger.Error(args...)
 }
 
-// Fatal log
-func Fatal(args ...interface{}) {
-	logger.Fatal(args...)
-}
-
-// Panic log
-func Panic(args ...interface{}) {
-	logger.Panic(args...)
-}
-
-// Debugf logger
-func Debugf(format string, args ...interface{}) {
-	logger.Debugf(format, args...)
-}
-
 // Infof logger
 func Infof(format string, args ...interface{}) {
 	logger.Infof(format, args...)
@@ -97,16 +65,23 @@ func Errorf(format string, args ...interface{}) {
 	logger.Errorf(format, args...)
 }
 
-// Fatalf logger
-func Fatalf(format string, args ...interface{}) {
-	logger.Fatalf(format, args...)
-}
-
-// Panicf logger
-func Panicf(format string, args ...interface{}) {
-	logger.Panicf(format, args...)
-}
-
 func WithFields(keyValues Fields) Logger {
 	return logger.WithFields(keyValues)
+}
+
+func WithContext(ctx context.Context) Logger {
+	//return zap logger
+
+	if span := trace.SpanFromContext(ctx); span != nil {
+		logger := spanLogger{span: span, logger: zl}
+
+		spanCtx := span.SpanContext()
+		logger.spanFields = []zapcore.Field{
+			zap.String("trace_id", spanCtx.TraceID().String()),
+			zap.String("span_id", spanCtx.SpanID().String()),
+		}
+
+		return logger
+	}
+	return logger
 }

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package test;
+
+option go_package="/;rpc";
+
+//添加的google.api.http注解依赖该文件
+import "google/api/annotations.proto";
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+       post: "/api/hello/{name}",
+       body: "*"
+    };
+  }
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}

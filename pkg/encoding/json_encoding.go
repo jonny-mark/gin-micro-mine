@@ -5,12 +5,12 @@
 package encoding
 
 import (
-	"encoding/json"
-	"compress/gzip"
 	"bytes"
+	"compress/gzip"
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"github.com/golang/snappy"
+	"io/ioutil"
 )
 
 type JSONEncoding struct{}

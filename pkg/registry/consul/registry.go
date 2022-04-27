@@ -5,16 +5,16 @@
 package consul
 
 import (
-	"sync"
 	"context"
-	"github.com/hashicorp/consul/api"
-	"gin/pkg/registry"
 	"fmt"
+	"gin/pkg/registry"
+	"github.com/hashicorp/consul/api"
 	"net/url"
 	"strconv"
-	"time"
-	"sync/atomic"
 	"strings"
+	"sync"
+	"sync/atomic"
+	"time"
 )
 
 var (

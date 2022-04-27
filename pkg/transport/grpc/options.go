@@ -46,4 +46,3 @@ func WithWriteTimeout(writeTimeout time.Duration) ServerOption {
 		s.writeTimeout = writeTimeout
 	}
 }
-

@@ -31,6 +31,11 @@ func TimeToString(ts time.Time) string {
 	return time.Unix(ts.Unix(), 00).Format(TimeLayout())
 }
 
+//TimeNow返回当前时间戳
+func TimeNow() string {
+	return time.Now().Format(TimeLayout())
+}
+
 // TimeToShortString 时间转日期
 func TimeToShortString(ts time.Time) string {
 	return time.Unix(ts.Unix(), 00).Format("2006.01.02")

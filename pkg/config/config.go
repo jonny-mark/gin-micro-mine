@@ -5,16 +5,17 @@
 package config
 
 import (
+	"errors"
+	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-	"sync"
+	"log"
 	"os"
 	"path/filepath"
-	"github.com/fsnotify/fsnotify"
-	"log"
-	"errors"
+	"sync"
 )
 
-var conf *Config
+//全局Config
+var Conf *Config
 
 type Config struct {
 	env        string
@@ -36,13 +37,14 @@ func New(dir string, opts ...Option) *Config {
 	for _, opt := range opts {
 		opt(c)
 	}
-	conf = c
+	Conf = c
 	return c
 }
 
 //Load函数
 func Load(filename string, val interface{}) error {
-	return conf.Load(filename, val) }
+	return Conf.Load(filename, val)
+}
 
 //Load方法
 func (c *Config) Load(filename string, val interface{}) error {

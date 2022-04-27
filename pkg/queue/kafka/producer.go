@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/Shopify/sarama"
 	logger "gin/pkg/log"
+	"github.com/Shopify/sarama"
 )
 
 // Producer kafka producer

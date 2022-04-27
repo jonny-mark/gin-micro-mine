@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gin-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: gin-ingress.local
+      http:
+        paths:
+          - backend:
+              serviceName: awesome-project-svc
+              servicePort: 9001

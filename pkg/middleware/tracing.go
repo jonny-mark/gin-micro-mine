@@ -5,14 +5,14 @@
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
-	"go.opentelemetry.io/otel/propagation"
-	oteltrace "go.opentelemetry.io/otel/trace"
-	"go.opentelemetry.io/otel"
-	otelcontrib "go.opentelemetry.io/contrib"
-	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
-	"go.opentelemetry.io/otel/attribute"
 	"fmt"
+	"github.com/gin-gonic/gin"
+	otelcontrib "go.opentelemetry.io/contrib"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/propagation"
+	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	oteltrace "go.opentelemetry.io/otel/trace"
 )
 
 const (
@@ -54,7 +54,7 @@ func Tracing(serviceName string, opts ...Option) gin.HandlerFunc {
 		defer func() {
 			c.Request = c.Request.WithContext(savedCtx)
 		}()
-		ctx := cfg.Propagators.Extract(savedCtx,propagation.HeaderCarrier(c.Request.Header))
+		ctx := cfg.Propagators.Extract(savedCtx, propagation.HeaderCarrier(c.Request.Header))
 		route := c.FullPath()
 		opts := []oteltrace.SpanStartOption{
 			oteltrace.WithAttributes(semconv.NetAttributesFromHTTPRequest("tcp", c.Request)...),
