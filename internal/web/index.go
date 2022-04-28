@@ -9,5 +9,5 @@ import (
 func Index(c *gin.Context) {
 	var res app.Response
 
-	res.Success(c, "ffffff")
+	res.Success(c, "web连接测试")
 }

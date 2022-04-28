@@ -15,7 +15,7 @@ import (
 type UsersCardsModel struct{}
 
 // 通过plateNo、plateColor找到最后一条未被删除的用户数据
-func FindValidOneByPlate(plateNo string, plateColor uint) (vehicleInfo *vehicle.VehiclesModel, err error) {
+func FindValidOneByPlate(plateNo string, plateColor int8) (vehicleInfo *vehicle.VehiclesModel, err error) {
 	err = orm.DB.Where(&vehicle.VehiclesModel{PlateNo: plateNo, PlateColor: plateColor, IsDel: 0}).Last(&vehicleInfo).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		return nil, err
@@ -42,7 +42,7 @@ func FindValidOneByObuNo(obuNo string) (vehicleInfo *vehicle.VehiclesModel, err 
 }
 
 // 通过uid、plateNo、plateColor找到最后一条未被删除的用户数据
-func FindValidOneByUidAndPlate(uid uint, plateNo string, plateColor uint) (vehicleInfo *vehicle.VehiclesModel, err error) {
+func FindValidOneByUidAndPlate(uid uint, plateNo string, plateColor int8) (vehicleInfo *vehicle.VehiclesModel, err error) {
 	err = orm.DB.Where(&vehicle.VehiclesModel{Uid: uid, PlateNo: plateNo, PlateColor: plateColor, IsDel: 0}).Last(&vehicleInfo).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		return nil, err
@@ -106,13 +106,13 @@ func FindValidAllByUidAndCardId(uid, cardId uint) (vehiclesInfo []vehicle.Vehicl
 }
 
 // 通过uid、plateNo、plateColor、cardNo找到最后一条未被删除的用户数据然后更新
-func ModifyValidOneByUserAndPlate(uid uint, plateNo string, plateColor uint, cardNo string, vehicleInfo *vehicle.VehiclesModel) (err error) {
+func ModifyValidOneByUserAndPlate(uid uint, plateNo string, plateColor int8, cardNo string, vehicleInfo *vehicle.VehiclesModel) (err error) {
 	err = orm.DB.Where(&vehicle.VehiclesModel{Uid: uid, PlateNo: plateNo, PlateColor: plateColor, CardNo: cardNo, IsDel: 0}).Updates(vehicleInfo).Error
 	return
 }
 
 // 通过users_cards的id查找名下关联的有效的所以卡和签
-func FindAssociatedVehicleCardsByValidPlate(uid uint, plateNo string, plateColor uint) (vehicleInfo *vehicle.VehiclesModel, err error) {
+func FindAssociatedVehicleCardsByValidPlate(uid uint, plateNo string, plateColor int8) (vehicleInfo *vehicle.VehiclesModel, err error) {
 	vehicleInfo, err = FindValidOneByUidAndPlate(uid, plateNo, plateColor)
 	if err != nil {
 		return nil, err
@@ -125,7 +125,7 @@ func FindAssociatedVehicleCardsByValidPlate(uid uint, plateNo string, plateColor
 }
 
 // 通过users_cards的id查找名下有效的车辆发行的所以卡
-func FindVehicleCardsByValidPlate(uid uint, plateNo string, plateColor uint) (cardsInfo []vehicle.VehiclesCardsModel, err error) {
+func FindVehicleCardsByValidPlate(uid uint, plateNo string, plateColor int8) (cardsInfo []vehicle.VehiclesCardsModel, err error) {
 	var vehicleInfo *vehicle.VehiclesModel
 	vehicleInfo, err = FindValidOneByUidAndPlate(uid, plateNo, plateColor)
 	if err != nil {

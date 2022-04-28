@@ -8,6 +8,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"gin/pkg/app"
 	"gin/pkg/errcode"
+	"gin/internal/repository/user"
+	"errors"
+	"gorm.io/gorm"
 )
 
 // 登陆鉴权 token认证
@@ -20,11 +23,28 @@ func Access() gin.HandlerFunc {
 		}
 
 		if token == "" {
-			app.NewResponse().Error(c, errcode.InvalidTokenError)
+			app.NewResponse().Error(c, errcode.EmptyTokenError)
 			c.Abort()
 			return
 		}
 
+		userInfo, err := user.FindValidOneByToken(token)
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			app.NewResponse().Error(c, errcode.InvalidTokenError)
+			c.Abort()
+			return
+		}
+		if err != nil {
+			app.NewResponse().Error(c, err)
+			c.Abort()
+			return
+		}
+
+		if userInfo == nil {
+			app.NewResponse().Error(c, errcode.InvalidTokenError)
+			c.Abort()
+			return
+		}
 
 		c.Next()
 	}

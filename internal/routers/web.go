@@ -20,6 +20,12 @@ func LoadWebRouter(g *gin.Engine) *gin.Engine {
 
 	router.GET("/", web.Index)
 
-	router.POST("/device-check/create", device.Create)
+	router.Use(middleware.Access())
+	{
+
+		router.POST("/device-check/create", device.Create)
+	}
+
+
 	return router
 }

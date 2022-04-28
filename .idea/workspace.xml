@@ -2,191 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47921597-3152-4cdd-9ee3-675888de41e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/grpc/user/v1/annotations.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/http/swagger/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/http/swagger/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/http/swagger/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/nacos/config/app@@issuer@@f1b76555-6f2d-49c6-8b3c-9875293347cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/nacos/config/database@@issuer@@f1b76555-6f2d-49c6-8b3c-9875293347cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/nacos/config/logger@@issuer@@f1b76555-6f2d-49c6-8b3c-9875293347cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/nacos/config/redis@@issuer@@f1b76555-6f2d-49c6-8b3c-9875293347cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/nacos/config/trace@@issuer@@f1b76555-6f2d-49c6-8b3c-9875293347cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/internal/test/test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/internal/test/test/add.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/docker-kafka-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/docker-mysql.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/docker-nacos.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/docker-prometheus.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/docker-rabbitMq.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/docker-zookeeper-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/local/sentinel.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/k8s/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/k8s/go-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/k8s/go-ingress.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/k8s/go-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/prometheus/prometheus.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/internal/cache/nacos/config/database@@issuer@@f1b76555-6f2d-49c6-8b3c-9875293347cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/internal/config/nacos.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/internal/internal_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/internal/log/nacos-sdk.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/queue/kafka/mian.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/queue/rabbitMq/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/test/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/test/annotations.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/test/greeter.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/test/greeter.pb.gw.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/test/greeter.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/rpc/test/greeter_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/cache/issuer_order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/constant/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/constant/configConstant.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/middleware/access.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/issuer/issuer_order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/vehicle/users_cards.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/vehicle/vehicles_obus.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/repository/issuer/issuer_order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/web/device/device_check.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/2022-03-20/error" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/2022-03-20/info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/2022-03-26/info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/2022-03-27/info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/nacos-sdk.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/alipay.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/alipay_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/const.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/notify.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/notify_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/params.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/sign.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/types.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/util.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/alipay/util_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/load/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/load/load.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/load/nacos/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/load/nacos/nacos.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/log/span_logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/counter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/counter_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/gauge.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/gauge_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/histogram.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/metric/histogram_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/middleware/limiter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/middleware/timeout.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/redis/README1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/redis/limit_redis.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/redis/pipeline_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/sentinel/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/sentinel/sentinel.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/sql/conn.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/sql/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/sql/mysql.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/sql/transaction.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.air.conf" beforeDir="false" afterPath="$PROJECT_DIR$/.air.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/constant/model/user/user_constant.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/middleware/check_sign.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/model/user/users.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/pkg/sign/security.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/repository/user/users.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/middleware/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grpc/user/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/api/grpc/user/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grpc/user/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/grpc/user/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grpc/user/v1/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/grpc/user/v1/greeter.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grpc/user/v1/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/api/grpc/user/v1/greeter.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grpc/user/v1/user.twirp.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grpc/user/v1/user_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/grpc/user/v1/greeter_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/constant/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/constant/configConstant.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/response.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/docker-jeager.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/docker-jeager.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/docker-php.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/docker-redis-cluster.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/docker-redis-cluster.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/local/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/local/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/local/config.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/local/database.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/local/database.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/init.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/issuer/etc_issuer_order.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/routers/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/constant/configConstant.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/constant/config_constant.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/middleware/access.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/check_access.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/model/vehicle/users_cards.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/vehicle/users_cards.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/routers/web.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/web.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/grpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/grpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/service/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/service/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/web/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/web/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-02-12/info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/config_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/config_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/cache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cache/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/config/config_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/config/config_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/conversion/conversion_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conversion/conversion_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/conversion/slice.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conversion/slice.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/core/core.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/directory/directory_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/directory/directory_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/encoding/encoding.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/encoding/encoding.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/encoding/json_encoding.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/encoding/json_encoding.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/errcode/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/errcode/code.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/lock/etcd.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/lock/etcd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/lock/lock_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/lock/lock_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/lock/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/lock/redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/log/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/log/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/logger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/log/zap.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/zap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/metric/metric.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/metric/metric.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/middleware/logging.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/middleware/logging.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/middleware/metrics.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/middleware/metrics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/middleware/tracing.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/middleware/tracing.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/queue/kafka/producer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/queue/kafka/producer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/queue/rabbitmq/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/queue/rabbitmq/consumer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/redis/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/redis/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/redis/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/redis/redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/redis/redis_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/redis/redis_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/registry.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/registry.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/registry_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/registry_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/watcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/watcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/registry.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/registry.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/registry_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/registry_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/watcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/watcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/registry.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/registry.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/storage/orm/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/storage/orm/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/storage/orm/orm.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/storage/orm/orm.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/system/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/system/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/system/system.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/system/system.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/trace/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/trace/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/trace/trace.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/trace/trace.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/grpc/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/grpc/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/grpc/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/grpc/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/http/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/http/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/http/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/http/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/transport.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/transport.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utils/company_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/company_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utils/compare.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/compare.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utils/slice.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/slice.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utils/slice_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/slice_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utils/time.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/time.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utils/url.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/version/version.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/version/version.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -211,25 +41,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="access.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/internal/middleware/access.go">
+      <file leaf-file-name="users.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/internal/repository/user/users.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+            <state relative-caret-position="330">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding>
+                <element signature="e#76#155#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/docker/docker-compose.yaml">
+      <file leaf-file-name="check_access.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/internal/middleware/check_access.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="50" column="1" lean-forward="true" selection-start-line="15" selection-end-line="50" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check_sign.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/internal/middleware/check_sign.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <folding>
+                <element signature="e#83#203#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sign_aes.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/sign/sign_aes.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="docker-mysql.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/docker/docker-mysql.yaml">
+      <file leaf-file-name="security.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/internal/pkg/sign/security.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/middleware/auth.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding>
+                <element signature="e#20#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jwt.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/app/jwt.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="58" column="49" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -237,8 +112,17 @@
       <file leaf-file-name="code.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/errcode/code.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="218">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/internal/routers/web.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -246,17 +130,8 @@
       <file leaf-file-name="response.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/app/response.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="repository.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/internal/repository/repository.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="518">
+              <caret line="59" column="27" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -272,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>HSet</find>
       <find>watch</find>
       <find>wat</find>
       <find>PubSub</find>
@@ -301,6 +175,7 @@
       <find>VehiclesModel</find>
       <find>all</find>
       <find>ErrInternalServer     = NewError(10000, &quot;Internal server error&quot;)</find>
+      <find>tinyint</find>
       <find>VehiclesCards</find>
     </findStrings>
     <replaceStrings>
@@ -339,16 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/go.sum" />
-        <option value="$PROJECT_DIR$/config/local/database.yaml" />
-        <option value="$PROJECT_DIR$/internal/model/etc_issuer_order.go" />
-        <option value="$PROJECT_DIR$/internal/model/etc_vehicles_cards.go" />
-        <option value="$PROJECT_DIR$/internal/model/etc_vehicles_obus.go" />
-        <option value="$PROJECT_DIR$/internal/repository/etc_users_cards_repo.go" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
-        <option value="$APPLICATION_CONFIG_DIR$/goland.vmoptions" />
-        <option value="$PROJECT_DIR$/api/http/swagger.json" />
-        <option value="$PROJECT_DIR$/api/http/swagger/README.md" />
         <option value="$PROJECT_DIR$/cmd/main.go" />
         <option value="$PROJECT_DIR$/cmd/internal/test/test/add.go" />
         <option value="$PROJECT_DIR$/cmd/internal/test/test.go" />
@@ -370,7 +235,6 @@
         <option value="$PROJECT_DIR$/pkg/storage/sql/conn.go" />
         <option value="$PROJECT_DIR$/pkg/storage/sql/mysql.go" />
         <option value="$PROJECT_DIR$/internal/web/DeviceCheck.go" />
-        <option value="$PROJECT_DIR$/internal/routers/web.go" />
         <option value="$PROJECT_DIR$/internal/web/device/device_check.go" />
         <option value="$PROJECT_DIR$/internal/model/issuer/issuer_order.go" />
         <option value="$PROJECT_DIR$/main.go" />
@@ -380,16 +244,27 @@
         <option value="$PROJECT_DIR$/pkg/load/nacos/nacos.go" />
         <option value="$PROJECT_DIR$/pkg/storage/orm/orm.go" />
         <option value="$PROJECT_DIR$/internal/model/vehicle/vehicles_obus.go" />
-        <option value="$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go" />
         <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/internal/routers/route.go" />
-        <option value="$PROJECT_DIR$/internal/model/vehicle/users_cards.go" />
-        <option value="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" />
         <option value="$PROJECT_DIR$/examples/internal/internal_test.go" />
         <option value="$PROJECT_DIR$/pkg/app/response.go" />
+        <option value="$PROJECT_DIR$/config/docker/docker-mysql.yaml" />
+        <option value="$PROJECT_DIR$/internal/model/user/users.go" />
+        <option value="$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go" />
+        <option value="$PROJECT_DIR$/internal/model/vehicle/users_cards.go" />
+        <option value="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" />
+        <option value="$PROJECT_DIR$/internal/repository/user/user.go" />
+        <option value="$PROJECT_DIR$/internal/constant/model/user/user_constant.go" />
+        <option value="$PROJECT_DIR$/internal/repository/user/users.go" />
         <option value="$PROJECT_DIR$/pkg/errcode/code.go" />
         <option value="$PROJECT_DIR$/internal/middleware/access.go" />
-        <option value="$PROJECT_DIR$/config/docker/docker-mysql.yaml" />
+        <option value="$PROJECT_DIR$/internal/web/index.go" />
+        <option value="$PROJECT_DIR$/internal/middleware/auth.go" />
+        <option value="$PROJECT_DIR$/pkg/middleware/auth.go" />
+        <option value="$PROJECT_DIR$/internal/routers/web.go" />
+        <option value="$PROJECT_DIR$/internal/middleware/check_sign.go" />
+        <option value="$PROJECT_DIR$/internal/pkg/sign/sign.go" />
+        <option value="$PROJECT_DIR$/internal/pkg/sign/security.go" />
       </list>
     </option>
   </component>
@@ -428,18 +303,6 @@
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="docker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -457,33 +320,20 @@
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="vehicle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="vehicle" type="462c0819:PsiDirectoryNode" />
+              <item name="routers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
@@ -494,19 +344,7 @@
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="errcode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin" type="b2602c69:ProjectViewProjectNode" />
@@ -549,11 +387,11 @@
       <recent name="$PROJECT_DIR$/internal/repository/vehicle" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/middleware" />
       <recent name="$PROJECT_DIR$/pkg/redis" />
       <recent name="$PROJECT_DIR$/cmd" />
       <recent name="$PROJECT_DIR$/api/http/swagger" />
       <recent name="$PROJECT_DIR$/internal/repository" />
-      <recent name="$PROJECT_DIR$/internal/model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -748,97 +586,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pkg/app/config.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/app/options.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/model/issuer/issuer_order.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/app/jwt.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/repository/issuer/issuer_order.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/service/service.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.17/1.17.8/libexec/src/testing/testing.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="865">
-          <caret line="1208" selection-start-line="1208" selection-end-line="1208" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/load/nacos/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/spf13/viper/viper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/config/config_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-313" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/app/config_test.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.17/1.17.8/libexec/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="1270" selection-start-line="1270" selection-end-line="1270" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/internal/config/nacos.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/load/nacos/nacos.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -930,20 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="28" column="50" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/model/vehicle/vehicles_obus.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/go@1.17/1.17.8/libexec/src/net/http/header.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -970,13 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/gin-gonic/gin/context.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="196" column="18" selection-start-line="196" selection-start-column="18" selection-end-line="196" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1008,51 +734,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/internal/routers/route.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
-          <folding>
-            <element signature="e#78#331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/gorm.io/gorm/association.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2631">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/repository/vehicle/users_cards.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="141" column="32" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="32" />
-          <folding>
-            <element signature="e#78#188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/internal/internal_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/errcode/errcode.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/model/vehicle/users_cards.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="62" column="38" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1063,34 +748,209 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/app/response.go">
+    <entry file="file://$PROJECT_DIR$/config/docker/docker-mysql.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/errcode/code.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/internal/middleware/access.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        <state relative-caret-position="413">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/docker/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/docker/docker-mysql.yaml">
+    <entry file="file://$PROJECT_DIR$/examples/internal/internal_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state relative-caret-position="409">
+          <caret line="35" column="75" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go@1.17/1.17.8/libexec/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/model/vehicle/vehicles_cards.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/model/vehicle/vehicles_obus.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/model/vehicle/users_cards.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="60" column="67" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/log/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/constant/config_constant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/constant/model/user/user_constant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/repository/vehicle/users_cards.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="e#78#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/model/user/users.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <folding>
+            <element signature="e#76#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/gin-gonic/gin/context.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="181" column="18" selection-start-line="181" selection-start-column="18" selection-end-line="181" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/web/index.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/middleware/auth.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="e#82#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/app/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/app/response.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="59" column="27" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/routers/route.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/errcode/errcode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/errcode/code.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/middleware/auth.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <element signature="e#20#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/app/jwt.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="58" column="49" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/repository/user/users.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#76#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/routers/web.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/middleware/check_access.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="50" column="1" lean-forward="true" selection-start-line="15" selection-end-line="50" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/middleware/check_sign.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding>
+            <element signature="e#83#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/sign/sign_aes.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/internal/pkg/sign/security.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
