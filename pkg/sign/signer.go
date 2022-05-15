@@ -53,6 +53,10 @@ func NewSignerAes() *Signer {
 	return NewSigner(AesSign)
 }
 
+func NewSignerRsa() *Signer {
+	return NewSigner(RsaSign)
+}
+
 // SetBody 设置整个参数体Body对象。
 func (s *Signer) SetBody(body url.Values) {
 	for k, v := range body {

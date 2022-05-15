@@ -12,7 +12,6 @@ require (
 	github.com/fatih/structs v1.1.0
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/gin-contrib/pprof v1.3.0
-	github.com/gin-contrib/static v0.0.1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/locales v0.14.0
 	github.com/go-playground/universal-translator v0.18.0
@@ -63,7 +62,10 @@ require (
 	gotest.tools v2.2.0+incompatible
 )
 
-require github.com/vearne/gin-timeout v0.0.9 // indirect
+require (
+	github.com/gin-contrib/static v0.0.1 // indirect
+	github.com/vearne/gin-timeout v0.0.9
+)
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
@@ -86,7 +88,7 @@ require (
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-contrib/timeout v0.0.3
-	github.com/go-errors/errors v1.0.1 // indirect
+	github.com/go-errors/errors v1.0.1
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-openapi/jsonpointer v0.19.5 // indirect

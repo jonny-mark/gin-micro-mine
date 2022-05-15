@@ -13,7 +13,6 @@ import (
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"time"
-	"github.com/gin-contrib/timeout"
 )
 
 func NewRouter() *gin.Engine {
@@ -27,10 +26,9 @@ func NewRouter() *gin.Engine {
 	g.Use(middleware.RequestId())
 	g.Use(middleware.Tracing(app.Conf.Name))
 	g.Use(middleware.Metrics(app.Conf.Name))
-	// https://github.com/vearne/gin-timeout
-	g.Use(timeout.New(
-		timeout.WithTimeout(time.Duration(app.Conf.CtxDefaultTimeout) * time.Second),
-	))
+	g.Use(middleware.Timeout(3 * time.Second))
+	g.Use(middleware.JWTAuth())
+	g.Use(middleware.SignAuth())
 
 	// 加载web路由
 	LoadWebRouter(g)

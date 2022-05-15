@@ -11,7 +11,18 @@ import (
 
 // RsaSign 非对称加密
 func RsaSign(secretKey, body string) []byte {
-	ret, _ := PublicEncrypt(body, secretKey)
+	ret, err := PublicEncrypt(body, secretKey)
+	if err != nil {
+		panic(err)
+	}
+	return []byte(ret)
+}
+
+func RsaDecryptSign(decryptStr, path string) []byte {
+	ret, err := PrivateDecrypt(decryptStr, path)
+	if err != nil {
+		panic(err)
+	}
 	return []byte(ret)
 }
 
@@ -35,13 +46,17 @@ func PublicEncrypt(encryptStr string, path string) (string, error) {
 	block, _ := pem.Decode(buf)
 
 	// x509 解码
-	publicKeyInterface, err := x509.ParsePKIXPublicKey(block.Bytes)
+	publicKey, err := x509.ParsePKCS1PublicKey(block.Bytes)
+	//publicKeyInterface, err := x509.ParsePKIXPublicKey(block.Bytes)
 	if err != nil {
 		return "", err
 	}
 
 	// 类型断言
-	publicKey := publicKeyInterface.(*rsa.PublicKey)
+	//publicKey, ok := publicKeyInterface.(*rsa.PublicKey)
+	//if !ok {
+	//	return "", errors.New("rsa公钥解析失败")
+	//}
 
 	//对明文进行加密
 	encryptedStr, err := rsa.EncryptPKCS1v15(rand.Reader, publicKey, []byte(encryptStr))
@@ -73,15 +88,24 @@ func PrivateDecrypt(decryptStr string, path string) (string, error) {
 	block, _ := pem.Decode(buf)
 
 	// X509 解码
+	//privateKeyInterface, err := x509.ParsePKCS8PrivateKey(block.Bytes)
 	privateKey, err := x509.ParsePKCS1PrivateKey(block.Bytes)
 	if err != nil {
 		return "", err
 	}
+	//privateKey, ok := privateKeyInterface.(*rsa.PrivateKey)
+	//if !ok {
+	//	return "", errors.New("rsa私钥解析失败")
+	//}
 	decryptBytes, err := base64.URLEncoding.DecodeString(decryptStr)
-
+	if err != nil {
+		return "", err
+	}
 	//对密文进行解密
-	decrypted, _ := rsa.DecryptPKCS1v15(rand.Reader, privateKey, decryptBytes)
-
+	decrypted, err := rsa.DecryptPKCS1v15(rand.Reader, privateKey, decryptBytes)
+	if err != nil {
+		return "", err
+	}
 	//返回明文
 	return string(decrypted), nil
 }

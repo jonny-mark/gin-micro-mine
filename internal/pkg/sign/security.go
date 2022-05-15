@@ -5,15 +5,18 @@
 package sign
 
 type Security struct {
-	sign string
+	Sign      string
+	Key       string
+	KeepEmpty bool
+	data      interface{}
 }
 
 // 校验签名
-func VerifySign(date interface{}, sign string) {
+func (s *Security) VerifySign() {
 
 }
 
 // 生成签名
-func GenerateSign(data interface{}, ) {
+func  (s *Security) GenerateSign() {
 
 }

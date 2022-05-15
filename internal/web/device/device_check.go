@@ -29,6 +29,6 @@ type CheckCreate struct {
 
 // 创建一条设备检测
 func Create(c *gin.Context) {
-	var d CheckCreate
-	err := c.Bind(d)
+	//var d CheckCreate
+	//err := c.Bind(d)
 }

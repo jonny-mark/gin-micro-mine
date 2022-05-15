@@ -7,7 +7,7 @@ import (
 )
 
 // Auth authorize user
-func Auth() gin.HandlerFunc {
+func JWTAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// Parse the json web token.
 		ctx, err := app.ParseRequest(c)
@@ -19,6 +19,14 @@ func Auth() gin.HandlerFunc {
 
 		// set uid to context
 		c.Set("uid", ctx.UserID)
+
+		c.Next()
+	}
+}
+
+// sign签名认证
+func SignAuth() gin.HandlerFunc {
+	return func(c *gin.Context) {
 
 		c.Next()
 	}

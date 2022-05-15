@@ -53,3 +53,25 @@ func TestSigner_AddBody(t *testing.T) {
 	fmt.Println("重新生成签字字符串：" + resigner.GetSignBodyString())
 	fmt.Println("重新输出URL字符串：" + resigner.GetSignedQuery())
 }
+
+func TestSignRsa(t *testing.T)  {
+	body := make(url.Values)
+	body["username"] = []string{"1024casts"}
+	body["tags"] = []string{"github", "gopher"}
+
+	signer := NewSignerRsa()
+
+	signer.SetAppSecret("/Users/临时/rsa_pub_key")
+	signer.SetTimeStamp(1594458195)
+	signer.SetAppID("112233")
+	signer.SetNonceStr("supertempstr")
+
+	signer.SetBody(body)
+	body.Add(KeyNameTimeStamp, "1594458195")
+	body.Add(KeyNameAppID, "eagle")
+	body.Add(KeyNameNonceStr, "eagle_nonce")
+
+	fmt.Println("生成签字字符串：" + signer.GetSignBodyString())
+	fmt.Println("输出URL字符串：" + signer.GetSignedQuery())
+	fmt.Println("输出签名：" + signer.GetSignature())
+}
