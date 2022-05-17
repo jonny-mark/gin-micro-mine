@@ -9,17 +9,14 @@ import (
 	"gin/pkg/load/nacos"
 	logger "gin/pkg/log"
 	"gin/pkg/redis"
-	"gin/pkg/registry/etcd"
 	"gin/pkg/storage/orm"
 	"gin/pkg/trace"
 	v "gin/pkg/version"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/pflag"
-	etcdclient "go.etcd.io/etcd/client/v3"
 	"log"
 	"os"
-	"strings"
 	"net/http"
 )
 
@@ -76,13 +73,13 @@ func main() {
 		}
 	}()
 
-	client, err := etcdclient.New(etcdclient.Config{
-		Endpoints: strings.Split(app.Conf.Registry.Endpoints, ","),
-	})
-	if err != nil {
-		log.Fatalf("etcdclient new failed, err: %s", err.Error())
-	}
-	r := etcd.New(client)
+	//client, err := etcdclient.New(etcdclient.Config{
+	//	Endpoints: strings.Split(app.Conf.Registry.Endpoints, ","),
+	//})
+	//if err != nil {
+	//	log.Fatalf("etcdclient new failed, err: %s", err.Error())
+	//}
+	//r := etcd.New(client)
 
 	// start app
 	myApp := app.New(
@@ -95,7 +92,7 @@ func main() {
 			//// init grpc server
 			//server.NewGRPCServer(&cfg.GRPC),
 		),
-		app.WithRegistry(r),
+		//app.WithRegistry(r),
 	)
 
 	if err := myApp.Run(); err != nil {

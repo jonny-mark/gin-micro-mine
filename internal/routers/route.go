@@ -27,14 +27,13 @@ func NewRouter() *gin.Engine {
 	g.Use(middleware.Tracing(app.Conf.Name))
 	g.Use(middleware.Metrics(app.Conf.Name))
 	g.Use(middleware.Timeout(3 * time.Second))
-	g.Use(middleware.JWTAuth())
-	g.Use(middleware.SignAuth())
 
-	// 加载web路由
-	LoadWebRouter(g)
 	// 404 Handler.
 	g.NoRoute(app.RouteNotFound)
 	g.NoMethod(app.RouteNotFound)
+
+	// 加载web路由
+	LoadWebRouter(g)
 
 	// swagger api docs
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))

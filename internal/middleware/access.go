@@ -14,7 +14,7 @@ import (
 )
 
 // 登陆鉴权 token认证
-func Access() gin.HandlerFunc {
+func TokenAccess() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// 必须登录
 		token := c.GetHeader("X-APP-TOKEN")
@@ -49,3 +49,12 @@ func Access() gin.HandlerFunc {
 		c.Next()
 	}
 }
+
+// sign签名认证
+func SignAccess() gin.HandlerFunc {
+	return func(c *gin.Context) {
+
+		c.Next()
+	}
+}
+

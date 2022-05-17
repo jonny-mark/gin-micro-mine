@@ -23,11 +23,3 @@ func JWTAuth() gin.HandlerFunc {
 		c.Next()
 	}
 }
-
-// sign签名认证
-func SignAuth() gin.HandlerFunc {
-	return func(c *gin.Context) {
-
-		c.Next()
-	}
-}

@@ -6,26 +6,35 @@ package routers
 
 import (
 	"gin/internal/middleware"
-	"gin/internal/web"
+	pubMiddleware "gin/pkg/middleware"
 	"github.com/gin-gonic/gin"
 	"gin/internal/web/device"
+	"gin/internal/web"
 )
 
-func LoadWebRouter(g *gin.Engine) *gin.Engine {
-	router := g
-	router.Use(middleware.Translations())
+func LoadWebRouter(g *gin.Engine) {
+	g.GET("/", web.Index)
 
-	// 静态资源，主要是图片
-	//router.Use(static.Serve("/static", static.LocalFile("./static", false)))
+	apiRouter := g.Group("api/")
+	apiRouter.Use(middleware.Translations())
 
-	router.GET("/", web.Index)
-
-	router.Use(middleware.Access())
+	// 用户登录认证
+	apiRouter.Use(pubMiddleware.JWTAuth())
 	{
 
-		router.POST("/device-check/create", device.Create)
 	}
 
+	innerRouter := g.Group("inner/")
+	// 内部服务签名认证
+	innerRouter.Use(middleware.SignAccess())
+	{
 
-	return router
+	}
+
+	mpRouter := g.Group("mp/")
+	// 小程序token认证
+	mpRouter.Use(middleware.TokenAccess())
+	{
+		mpRouter.POST("/device-check/create", device.Create)
+	}
 }
