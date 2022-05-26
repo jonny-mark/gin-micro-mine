@@ -11,3 +11,9 @@ func Index(c *gin.Context) {
 
 	res.Success(c, "web连接测试")
 }
+
+func SignText(c *gin.Context)  {
+	var res app.Response
+
+	res.Success(c, "sign解密成功")
+}

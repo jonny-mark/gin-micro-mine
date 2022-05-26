@@ -53,8 +53,7 @@ func TokenAccess() gin.HandlerFunc {
 // sign签名认证
 func SignAccess() gin.HandlerFunc {
 	return func(c *gin.Context) {
-
+		c.Request.ParseForm()
 		c.Next()
 	}
 }
-

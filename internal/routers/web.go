@@ -21,14 +21,14 @@ func LoadWebRouter(g *gin.Engine) {
 	// 用户登录认证
 	apiRouter.Use(pubMiddleware.JWTAuth())
 	{
-
+		//apiRouter.POST("")
 	}
 
 	innerRouter := g.Group("inner/")
 	// 内部服务签名认证
 	innerRouter.Use(middleware.SignAccess())
 	{
-
+		innerRouter.POST("/signTest",web.SignText)
 	}
 
 	mpRouter := g.Group("mp/")

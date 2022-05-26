@@ -20,7 +20,7 @@ services:
       - /Users/zhangtingting/docker/gin/sql/source:/docker-entrypoint-initdb.d/
     environment:
       MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: gin-sql
+      MYSQL_DATABASE: gin
       MYSQL_USER: root
       MYSQL_PASSWORD: 123456
       TZ: Asia/Shanghai

@@ -7,6 +7,7 @@ package device
 import (
 	"github.com/gin-gonic/gin"
 	"time"
+	"gin/pkg/app"
 )
 
 type CheckCreate struct {
@@ -31,4 +32,7 @@ type CheckCreate struct {
 func Create(c *gin.Context) {
 	//var d CheckCreate
 	//err := c.Bind(d)
+	var res app.Response
+
+	res.Success(c, "web连接测试")
 }

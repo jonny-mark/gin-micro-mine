@@ -14,16 +14,18 @@ func (u *UsersModel) TableName() string {
 	return "etc_users"
 }
 
+var User *UsersModel
+
 type UsersModel struct {
 	ID           uint64    `gorm:"primaryKey;autoIncrement;column:id" json:"id"`
 	Token        string    `gorm:"index:token;column:token;type:varchar(50);not null;default:''" json:"token"`
-	ClientType   uint      `gorm:"column:client_type;type:tinyint unsigned;not null;default:'1'" json:"client_type"`
-	ThirdType    uint      `gorm:"column:third_type;type:int unsigned;not null;default:'0'" json:"third_type"`
+	ClientType   uint      `gorm:"column:client_type;type:tinyint unsigned;not null;default:1" json:"client_type"`
+	ThirdType    uint      `gorm:"column:third_type;type:int unsigned;not null;default:0" json:"third_type"`
 	ThirdCode    string    `gorm:"column:third_code;type:varchar(255);not null;default:''" json:"third_code"`
 	WxUnionid    string    `gorm:"unique;column:wx_unionid;type:varchar(100);not null;default:''" json:"wx_unionid"`        //微信 unionid
 	MinaOpenid   string    `gorm:"index:m_oid;column:mina_openid;type:varchar(100);not null;default:''" json:"mina_openid"` //小程序 openid
 	MpOpenid     string    `gorm:"index:mp_openid;column:mp_openid;type:varchar(100);not null;default:''" json:"mp_openid"` //公众服务号 openid
-	HasCard      uint      `gorm:"column:has_card;type:tinyint unsigned;not null;default:'0'" json:"has_card"`              //是否有已激活的卡
+	HasCard      uint      `gorm:"column:has_card;type:tinyint unsigned;not null;default:0" json:"has_card"`              //是否有已激活的卡
 	ApplyOrderSn string    `gorm:"column:apply_order_sn;type:varchar(50);not null;default:''" json:"apply_order_sn"`        //申办订单号
 	Nickname     string    `gorm:"column:nickname;type:varchar(50);not null;default:''" json:"nickname"`                    // 昵称
 	Gender       uint8     `gorm:"column:gender;type:tinyint unsigned;not null;default:3" json:"gender"`                    // 性别 1:男 2:女 3:未知

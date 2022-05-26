@@ -8,15 +8,16 @@ import (
 	"gin/pkg/storage/orm"
 	"gorm.io/gorm"
 	"gin/internal/model/user"
-	userConstant "gin/internal/constant/model/user"
 	"errors"
+	"gin/internal/constant"
 )
 
 // 根据token获取正常的用户信息
 func FindValidOneByToken(token string) (userInfo *user.UsersModel, err error) {
-	err = orm.DB.Where(&user.UsersModel{Token: token, Status: uint8(userConstant.STATUS_NORMAL)}).Last(&userInfo).Error
+	err = orm.DB.Where(&user.UsersModel{Token: token, Status: uint8(constant.StatusNormal)}).Last(&userInfo).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		return nil, err
 	}
+	user.User = userInfo
 	return
 }
