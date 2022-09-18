@@ -62,6 +62,7 @@ require (
 	gorm.io/driver/mysql v1.3.6
 	gorm.io/gorm v1.23.8
 	gotest.tools v1.4.0
+	github.com/jonny-mark/gin-micro-mine v1.0
 )
 
 require (
