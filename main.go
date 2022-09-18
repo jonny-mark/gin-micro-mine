@@ -3,8 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"gin/internal/server"
-	"gin/pkg/app"
+	//"github.com/jonny-mark/gin-micro-mine/pkg/app"
 	"gin/pkg/config"
 	"gin/pkg/load/nacos"
 	logger "gin/pkg/log"
@@ -14,10 +13,11 @@ import (
 	v "gin/pkg/version"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/gin-gonic/gin"
+	//"github.com/jonny-mark/gin-micro-mine/internal/server"
 	"github.com/spf13/pflag"
 	"log"
-	"os"
 	"net/http"
+	"os"
 )
 
 var (

@@ -5,7 +5,7 @@
 package redis
 
 import (
-	"github.com/alicebob/miniredis"
+	//"github.com/alicebob/miniredis"
 	"github.com/go-redis/redis/v8"
 )
 
@@ -18,16 +18,16 @@ type Redis struct {
 }
 
 // InitTestRedis 实例化一个可以用于单元测试的redis
-func InitTestRedis() {
-	mr, err := miniredis.Run()
-	if err != nil {
-		panic(err)
-	}
-	// 打开下面命令可以测试链接关闭的情况
-	// defer mr.Close()
-
-	RedisClient = redis.NewClient(&redis.Options{
-		Addr: mr.Addr(),
-	})
-	//fmt.Println("mini redis addr:", mr.Addr())
-}
+//func InitTestRedis() {
+//	mr, err := miniredis.Run()
+//	if err != nil {
+//		panic(err)
+//	}
+//	// 打开下面命令可以测试链接关闭的情况
+//	// defer mr.Close()
+//
+//	RedisClient = redis.NewClient(&redis.Options{
+//		Addr: mr.Addr(),
+//	})
+//	//fmt.Println("mini redis addr:", mr.Addr())
+//}
