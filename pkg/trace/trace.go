@@ -1,14 +1,10 @@
-/**
- * @author jiangshangfang
- * @date 2021/10/28 8:01 PM
- **/
 package trace
 
 import (
 	"errors"
-	"gin/internal/constant"
-	appConfig "gin-micro-mine/pkg/config"
-	"gin-micro-mine/pkg/load/nacos"
+	"github.com/jonny-mark/gin-micro-mine/internal/constant"
+	appConfig "github.com/jonny-mark/gin-micro-mine/pkg/config"
+	"github.com/jonny-mark/gin-micro-mine/pkg/load/nacos"
 	jaegerprop "go.opentelemetry.io/contrib/propagators/jaeger"
 	"go.opentelemetry.io/otel"
 	jaegerExporter "go.opentelemetry.io/otel/exporters/jaeger"
@@ -81,7 +77,7 @@ func initTracerProvider(serviceName, endpoint string, options ...Option) (*trace
 	return tp, nil
 }
 
-//监听nacos的变化
+// 监听nacos的变化
 func listenConfiguration(name string, cfg *Config) {
 	ctx, err := nacos.NacosClient.ListenConfiguration(name)
 	if err != nil {

@@ -5,9 +5,9 @@
 package log
 
 import (
-	"gin/internal/constant"
-	"gin-micro-mine/pkg/config"
-	"gin-micro-mine/pkg/load/nacos"
+	"github.com/jonny-mark/gin-micro-mine/internal/constant"
+	"github.com/jonny-mark/gin-micro-mine/pkg/config"
+	"github.com/jonny-mark/gin-micro-mine/pkg/load/nacos"
 	"gopkg.in/yaml.v3"
 	"log"
 )
@@ -28,7 +28,7 @@ type Config struct {
 	MaxAge           int64  `yaml:"MaxAge"`
 }
 
-//初始化
+// 初始化
 func Init() Logger {
 	var cfg Config
 	if nacos.NacosClient.Enable {

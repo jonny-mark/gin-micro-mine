@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"gin-micro-mine/pkg/utils"
+	"github.com/jonny-mark/gin-micro-mine/pkg/utils"
 )
 
 // Verifier define struct

@@ -7,7 +7,7 @@ package lock
 import (
 	"context"
 	"fmt"
-	"gin-micro-mine/pkg/log"
+	"github.com/jonny-mark/gin-micro-mine/pkg/log"
 	"go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/concurrency"
 	"time"
@@ -39,7 +39,7 @@ func (l *EtcdLock) Lock(ctx context.Context, timeout time.Duration) (bool, error
 	return true, l.mu.Lock(ctx)
 }
 
-//Unlock del the lock
+// Unlock del the lock
 func (l *EtcdLock) UnLock(ctx context.Context) (bool, error) {
 	err := l.mu.Unlock(ctx)
 	if err != nil {

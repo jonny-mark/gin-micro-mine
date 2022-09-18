@@ -5,9 +5,9 @@
 package app
 
 import (
-	"gin/internal/constant"
-	"gin-micro-mine/pkg/config"
-	"gin-micro-mine/pkg/load/nacos"
+	"github.com/jonny-mark/gin-micro-mine/internal/constant"
+	"github.com/jonny-mark/gin-micro-mine/pkg/config"
+	"github.com/jonny-mark/gin-micro-mine/pkg/load/nacos"
 	"gopkg.in/yaml.v3"
 	"log"
 	"time"
@@ -44,7 +44,7 @@ type RegistryConfig struct {
 	Endpoints string `yaml:"Endpoints"`
 }
 
-//初始化配置项
+// 初始化配置项
 func Init() {
 	var cfg Config
 	if nacos.NacosClient.Enable {
@@ -65,7 +65,7 @@ func Init() {
 	Conf = &cfg
 }
 
-//监听nacos的变化
+// 监听nacos的变化
 func listenConfiguration(name string) {
 	context, err := nacos.NacosClient.ListenConfiguration(name)
 	if err != nil {

@@ -5,17 +5,17 @@
 package cache
 
 import (
-	"fmt"
-	"gin/internal/model/user"
-	"gin-micro-mine/pkg/cache"
-	"go.opentelemetry.io/otel/trace"
-	"gin-micro-mine/pkg/encoding"
-	"go.opentelemetry.io/otel"
-	"gin-micro-mine/pkg/redis"
-	"time"
 	"context"
-	"gin-micro-mine/pkg/log"
+	"fmt"
 	"gin/internal/constant"
+	"gin/internal/model/user"
+	"github.com/jonny-mark/gin-micro-mine/pkg/cache"
+	"github.com/jonny-mark/gin-micro-mine/pkg/encoding"
+	"github.com/jonny-mark/gin-micro-mine/pkg/log"
+	"github.com/jonny-mark/gin-micro-mine/pkg/redis"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/trace"
+	"time"
 )
 
 // Cache cache

@@ -6,9 +6,9 @@ import (
 	"os"
 	"time"
 
-	"gin-micro-mine/pkg/log"
-	"gin-micro-mine/pkg/registry"
-	"gin-micro-mine/pkg/transport"
+	"github.com/jonny-mark/gin-micro-mine/pkg/log"
+	"github.com/jonny-mark/gin-micro-mine/pkg/registry"
+	"github.com/jonny-mark/gin-micro-mine/pkg/transport"
 )
 
 // Option is func for application

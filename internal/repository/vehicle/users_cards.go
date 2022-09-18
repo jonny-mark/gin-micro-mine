@@ -6,8 +6,8 @@ package vehicle
 
 import (
 	"gin/internal/model/vehicle"
-	"gin-micro-mine/pkg/storage/orm"
 	"github.com/go-errors/errors"
+	"github.com/jonny-mark/gin-micro-mine/pkg/storage/orm"
 	"gorm.io/gorm"
 )
 

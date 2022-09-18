@@ -7,10 +7,10 @@ package app
 import (
 	"context"
 	"errors"
-	logger "gin-micro-mine/pkg/log"
-	"gin-micro-mine/pkg/registry"
-	"gin-micro-mine/pkg/transport"
 	"github.com/google/uuid"
+	logger "github.com/jonny-mark/gin-micro-mine/pkg/log"
+	"github.com/jonny-mark/gin-micro-mine/pkg/registry"
+	"github.com/jonny-mark/gin-micro-mine/pkg/transport"
 	"golang.org/x/sync/errgroup"
 	"os"
 	"os/signal"

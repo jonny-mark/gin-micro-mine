@@ -1,19 +1,19 @@
 package redis_test
 
 import (
-	. "github.com/onsi/ginkgo/v2"
-	mine "gin-micro-mine/pkg/redis"
-	. "github.com/onsi/gomega"
 	"context"
 	"github.com/go-redis/redis/v8"
-	"testing"
+	mine "github.com/jonny-mark/gin-micro-mine/pkg/redis"
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 	"strconv"
+	"testing"
 )
+
 func TestGin(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "Gin Suite")
 }
-
 
 var _ = Describe("Pipeline", func() {
 	var pipe *redis.Pipeline

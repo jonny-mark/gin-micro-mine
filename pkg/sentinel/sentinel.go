@@ -5,9 +5,9 @@
 package sentinel
 
 import (
-	//sentinel "github.com/alibaba/sentinel-golang/api"
-	"gin-micro-mine/pkg/config"
 	sentinelConfig "github.com/alibaba/sentinel-golang/core/config"
+	//sentinel "github.com/alibaba/sentinel-golang/api"
+	"github.com/jonny-mark/gin-micro-mine/pkg/config"
 	"log"
 )
 

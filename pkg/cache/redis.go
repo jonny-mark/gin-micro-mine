@@ -6,9 +6,9 @@ package cache
 
 import (
 	"context"
-	"gin-micro-mine/pkg/encoding"
-	"gin-micro-mine/pkg/log"
 	"github.com/go-redis/redis/v8"
+	"github.com/jonny-mark/gin-micro-mine/pkg/encoding"
+	"github.com/jonny-mark/gin-micro-mine/pkg/log"
 	"github.com/pkg/errors"
 	"reflect"
 	"time"

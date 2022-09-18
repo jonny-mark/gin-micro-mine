@@ -5,17 +5,18 @@
 package internal
 
 import (
-	"testing"
 	"gin/internal/repository/vehicle"
-	"gin-micro-mine/pkg/config"
-	"github.com/spf13/pflag"
-	"gin-micro-mine/pkg/load/nacos"
 	"github.com/davecgh/go-spew/spew"
-	"gin-micro-mine/pkg/storage/orm"
+	"github.com/jonny-mark/gin-micro-mine/pkg/config"
+	"github.com/jonny-mark/gin-micro-mine/pkg/load/nacos"
+	"github.com/jonny-mark/gin-micro-mine/pkg/storage/orm"
+	"github.com/spf13/pflag"
+	"testing"
 )
+
 var (
-	cfgDir  = pflag.StringP("config dir", "c", "config", "config directory.")
-	env     = pflag.StringP("env name", "e", "", "env var name.")
+	cfgDir = pflag.StringP("config dir", "c", "config", "config directory.")
+	env    = pflag.StringP("env name", "e", "", "env var name.")
 )
 
 func TestVehicle(t *testing.T) {
@@ -33,7 +34,7 @@ func TestVehicle(t *testing.T) {
 	//}
 	//fmt.Print(usersCard)
 
-	vehicleCards,err := vehicle.FindVehicleObusByValidPlate(uint(1991826963),"苏ZDEAAB",uint(0))
+	vehicleCards, err := vehicle.FindVehicleObusByValidPlate(uint(1991826963), "苏ZDEAAB", uint(0))
 	if err != nil {
 		t.Logf("err:%+v", err)
 	}

@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/consul/api"
 	"github.com/stretchr/testify/assert"
 
-	"gin-micro-mine/pkg/registry"
+	"github.com/jonny-mark/gin-micro-mine/pkg/registry"
 )
 
 func tcpServer(t *testing.T, lis net.Listener) {

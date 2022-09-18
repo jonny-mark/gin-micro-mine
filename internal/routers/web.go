@@ -5,11 +5,11 @@
 package routers
 
 import (
-	"gin/internal/middleware"
-	pubMiddleware "gin-micro-mine/pkg/middleware"
 	"github.com/gin-gonic/gin"
-	"gin/internal/web/device"
-	"gin/internal/web"
+	"github.com/jonny-mark/gin-micro-mine/internal/middleware"
+	"github.com/jonny-mark/gin-micro-mine/internal/web"
+	"github.com/jonny-mark/gin-micro-mine/internal/web/device"
+	pubMiddleware "github.com/jonny-mark/gin-micro-mine/pkg/middleware"
 )
 
 func LoadWebRouter(g *gin.Engine) {
@@ -28,7 +28,7 @@ func LoadWebRouter(g *gin.Engine) {
 	// 内部服务签名认证
 	innerRouter.Use(middleware.SignAccess())
 	{
-		innerRouter.POST("/signTest",web.SignText)
+		innerRouter.POST("/signTest", web.SignText)
 	}
 
 	mpRouter := g.Group("mp/")

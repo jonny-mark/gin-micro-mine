@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"gin-micro-mine/pkg/app"
-	"gin-micro-mine/pkg/errcode"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
+	"github.com/jonny-mark/gin-micro-mine/pkg/errcode"
 )
 
 // Auth authorize user

@@ -1,15 +1,11 @@
-/**
- * @author jiangshangfang
- * @date 2022/4/16 10:46 PM
- **/
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
-	"gin-micro-mine/pkg/app"
-	"gin-micro-mine/pkg/errcode"
-	"gin/internal/repository/user"
 	"errors"
+	"github.com/gin-gonic/gin"
+	"github.com/jonny-mark/gin-micro-mine/internal/repository/user"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
+	"github.com/jonny-mark/gin-micro-mine/pkg/errcode"
 	"gorm.io/gorm"
 )
 

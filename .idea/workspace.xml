@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47921597-3152-4cdd-9ee3-675888de41e4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gin.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/internal/internal_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/internal/internal_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/queue/kafka/mian.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/queue/kafka/mian.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/queue/rabbitMq/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/queue/rabbitMq/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/rpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rpc/server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/middleware/access.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/access.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/repository/user/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/user/users.go" afterDir="false" />
@@ -19,12 +25,6 @@
       <change beforePath="$PROJECT_DIR$/internal/server/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/web/device/device_check.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/web/device/device_check.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/web/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/web/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-05-15/error" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-05-15/info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-05-17/error" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-05-17/info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-05-22/error" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-05-22/info" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/app/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/config.go" afterDir="false" />
@@ -285,6 +285,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -317,7 +318,16 @@
       <recent name="$PROJECT_DIR$/api/http/swagger" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build github.com/jonny-mark/gin-micro-mine">
+    <configuration name="go build github.com/jonny-mark/gin-micro-mine" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gin-micro-mine" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/jonny-mark/gin-micro-mine" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="gin" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -353,18 +363,6 @@
       <pattern value="^TestSignRsa$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVehicle in gin/examples/internal" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="gin" />
-      <working_directory value="$PROJECT_DIR$/examples/internal" />
-      <go_parameters value="-i" />
-      <kind value="PACKAGE" />
-      <package value="gin/examples/internal" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <framework value="gotest" />
-      <pattern value="^TestVehicle$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestVerify_Rsa in gin/pkg/sign" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="gin" />
       <working_directory value="$PROJECT_DIR$/pkg/sign" />
@@ -378,19 +376,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build github.com/jonny-mark/gin-micro-mine" />
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.TestVehicle in gin/examples/internal" />
       <item itemvalue="Go Test.TestSignRsa in gin/pkg/sign" />
       <item itemvalue="Go Test.TestSignMd5 in gin/pkg/sign" />
       <item itemvalue="Go Test.TestVerify_Rsa in gin/pkg/sign" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/jonny-mark/gin-micro-mine" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestVerify_Rsa in gin/pkg/sign" />
         <item itemvalue="Go Test.TestSignRsa in gin/pkg/sign" />
         <item itemvalue="Go Test.TestSignMd5 in gin/pkg/sign" />
-        <item itemvalue="Go Test.TestVehicle in gin/examples/internal" />
       </list>
     </recent_temporary>
   </component>
@@ -479,10 +477,9 @@
     </option>
   </component>
   <component name="VgoProject">
-    <integration-enabled>false</integration-enabled>
     <environment>
       <map>
-        <entry key="GOPROXY" value="https://goproxy.io,direct,https://proxy.golang.org,https://mirrors.aliyun.com/goproxy" />
+        <entry key="GOPROXY" value="direct,https://proxy.golang.org,https://mirrors.aliyun.com/goproxy,https://goproxy.io" />
       </map>
     </environment>
     <settings-migrated>true</settings-migrated>

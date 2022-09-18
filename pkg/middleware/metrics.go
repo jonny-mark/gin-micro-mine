@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"fmt"
-	"gin-micro-mine/pkg/metric"
 	"github.com/gin-gonic/gin"
+	"github.com/jonny-mark/gin-micro-mine/pkg/metric"
 	"net/http"
 	"time"
 )

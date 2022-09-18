@@ -6,8 +6,8 @@ package lock
 
 import (
 	"context"
-	"gin-micro-mine/pkg/redis"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/jonny-mark/gin-micro-mine/pkg/redis"
 	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"

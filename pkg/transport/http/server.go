@@ -7,8 +7,8 @@ package http
 import (
 	"context"
 	"errors"
-	"gin-micro-mine/pkg/log"
-	"gin-micro-mine/pkg/utils"
+	"github.com/jonny-mark/gin-micro-mine/pkg/log"
+	"github.com/jonny-mark/gin-micro-mine/pkg/utils"
 	"net"
 	"net/http"
 	"net/url"

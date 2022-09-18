@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"time"
 
-	logger "gin-micro-mine/pkg/log"
 	"github.com/Shopify/sarama"
+	logger "github.com/jonny-mark/gin-micro-mine/pkg/log"
 )
 
 // Producer kafka producer

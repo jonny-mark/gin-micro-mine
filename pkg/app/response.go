@@ -5,9 +5,9 @@
 package app
 
 import (
-	"gin-micro-mine/pkg/errcode"
-	"gin-micro-mine/pkg/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/jonny-mark/gin-micro-mine/pkg/errcode"
+	"github.com/jonny-mark/gin-micro-mine/pkg/utils"
 	"net/http"
 )
 

@@ -1,13 +1,9 @@
-/**
- * @author jiangshangfang
- * @date 2021/10/23 7:32 PM
- **/
 package server
 
 import (
-	"gin/internal/routers"
-	"gin-micro-mine/pkg/app"
-	"gin-micro-mine/pkg/transport/http"
+	"github.com/jonny-mark/gin-micro-mine/internal/routers"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
+	"github.com/jonny-mark/gin-micro-mine/pkg/transport/http"
 )
 
 func NewHTTPServer(cfg *app.ServerConfig) *http.Server {

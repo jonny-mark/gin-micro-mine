@@ -1,17 +1,11 @@
-/**
- * @author jiangshangfang
- * @date 2021/8/8 4:53 PM
- **/
 package routers
 
 import (
-	"gin-micro-mine/pkg/app"
-	"gin-micro-mine/pkg/middleware"
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
+	"github.com/jonny-mark/gin-micro-mine/pkg/middleware"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	ginSwagger "github.com/swaggo/gin-swagger"
-	swaggerfiles "github.com/swaggo/files"
 	"time"
 )
 
@@ -34,9 +28,6 @@ func NewRouter() *gin.Engine {
 
 	// 加载web路由
 	LoadWebRouter(g)
-
-	// swagger api docs
-	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// pprof router 性能分析路由
 	// 默认关闭，开发环境下可以打开

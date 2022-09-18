@@ -7,8 +7,8 @@ package consul
 import (
 	"context"
 	"fmt"
-	"gin-micro-mine/pkg/registry"
 	"github.com/hashicorp/consul/api"
+	"github.com/jonny-mark/gin-micro-mine/pkg/registry"
 	"net/url"
 	"strconv"
 	"strings"

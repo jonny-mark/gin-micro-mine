@@ -6,8 +6,8 @@ package device
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
 	"time"
-	"gin-micro-mine/pkg/app"
 )
 
 type CheckCreate struct {

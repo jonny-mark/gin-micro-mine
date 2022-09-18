@@ -1,4 +1,4 @@
-module gin-micro-mine
+module github.com/jonny-mark/gin-micro-mine
 
 go 1.19
 
@@ -37,7 +37,6 @@ require (
 	github.com/spf13/viper v1.13.0
 	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.8.0
-	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
 	github.com/swaggo/gin-swagger v1.5.3
 	github.com/tealeg/xlsx v1.0.5
 	github.com/teris-io/shortid v0.0.0-20220617161101-71ec9f2aa569

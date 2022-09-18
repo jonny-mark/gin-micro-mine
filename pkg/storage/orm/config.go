@@ -1,13 +1,9 @@
-/**
- * @author jiangshangfang
- * @date 2021/10/21 4:35 PM
- **/
 package orm
 
 import (
-	"gin/internal/constant"
-	"gin-micro-mine/pkg/config"
-	"gin-micro-mine/pkg/load/nacos"
+	"github.com/jonny-mark/gin-micro-mine/internal/constant"
+	"github.com/jonny-mark/gin-micro-mine/pkg/config"
+	"github.com/jonny-mark/gin-micro-mine/pkg/load/nacos"
 	"gopkg.in/yaml.v3"
 	"gorm.io/gorm"
 	"log"
@@ -47,7 +43,7 @@ func Init() *gorm.DB {
 	return DB
 }
 
-//监听nacos的变化
+// 监听nacos的变化
 func listenConfiguration(name string, cfg *Config) {
 	context, err := nacos.NacosClient.ListenConfiguration(name)
 	if err != nil {

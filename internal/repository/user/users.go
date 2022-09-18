@@ -1,15 +1,11 @@
-/**
- * @author jiangshangfang
- * @date 2022/4/27 4:36 PM
- **/
 package user
 
 import (
-	"gin-micro-mine/pkg/storage/orm"
-	"gorm.io/gorm"
-	"gin/internal/model/user"
 	"errors"
-	"gin/internal/constant"
+	"github.com/jonny-mark/gin-micro-mine/internal/constant"
+	"github.com/jonny-mark/gin-micro-mine/internal/model/user"
+	"github.com/jonny-mark/gin-micro-mine/pkg/storage/orm"
+	"gorm.io/gorm"
 )
 
 // 根据token获取正常的用户信息

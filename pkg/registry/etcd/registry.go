@@ -7,7 +7,7 @@ package etcd
 import (
 	"context"
 	"fmt"
-	"gin-micro-mine/pkg/registry"
+	"github.com/jonny-mark/gin-micro-mine/pkg/registry"
 	"go.etcd.io/etcd/client/v3"
 	"math/rand"
 	"time"

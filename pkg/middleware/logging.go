@@ -7,10 +7,10 @@ package middleware
 import (
 	"bytes"
 	"encoding/json"
-	"gin-micro-mine/pkg/app"
-	"gin-micro-mine/pkg/errcode"
-	"gin-micro-mine/pkg/log"
 	"github.com/gin-gonic/gin"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
+	"github.com/jonny-mark/gin-micro-mine/pkg/errcode"
+	"github.com/jonny-mark/gin-micro-mine/pkg/log"
 	"github.com/willf/pad"
 	"regexp"
 	"time"
