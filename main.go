@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	//"github.com/jonny-mark/gin-micro-mine/pkg/app"
+	"github.com/jonny-mark/gin-micro-mine/pkg/app"
 	"gin/pkg/config"
 	"gin/pkg/load/nacos"
 	logger "gin/pkg/log"
