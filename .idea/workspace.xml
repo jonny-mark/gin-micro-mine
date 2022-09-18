@@ -5,63 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47921597-3152-4cdd-9ee3-675888de41e4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gin.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/internal/internal_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/internal/internal_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/queue/kafka/mian.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/queue/kafka/mian.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/queue/rabbitMq/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/queue/rabbitMq/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/rpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rpc/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/cache/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/middleware/access.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/access.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/user/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/user/users.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/vehicle/users_cards.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/routers/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/route.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/routers/web.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/web.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/grpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/grpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/web/device/device_check.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/web/device/device_check.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/web/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/web/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/app/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cache/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/load/nacos/nacos.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/load/nacos/nacos.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/lock/etcd.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/lock/etcd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/lock/lock_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/lock/lock_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/lock/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/lock/redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/log/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/log/zap.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/zap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/middleware/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/middleware/logging.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/middleware/logging.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/middleware/metrics.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/middleware/metrics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/queue/kafka/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/queue/kafka/consumer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/queue/kafka/producer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/queue/kafka/producer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/redis/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/redis/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/redis/pipeline_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/redis/pipeline_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/redis/redis_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/redis/redis_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/registry.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/registry.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/registry_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/registry_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/consul/watcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/consul/watcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/registry.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/registry.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/registry_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/registry_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/registry/etcd/watcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/registry/etcd/watcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/sentinel/sentinel.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sentinel/sentinel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/sign/signer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sign/signer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/sign/verifer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sign/verifer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/storage/orm/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/storage/orm/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/system/options.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/system/options.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/system/system.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/system/system.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/trace/trace.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/trace/trace.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/grpc/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/grpc/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/transport/http/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/transport/http/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
