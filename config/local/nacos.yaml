@@ -5,7 +5,7 @@ ClientConfig:
   AppName : 'gin'
   CacheDir: "cache/nacos"
   NotLoadCacheAtStart: true
-  LogDir: "log"
+  LogDir: "log/nacos"
   LogLevel: "debug"
   MaxAge: 3
   Namespace: f1b76555-6f2d-49c6-8b3c-9875293347cb
