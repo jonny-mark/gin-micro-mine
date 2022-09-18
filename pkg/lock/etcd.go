@@ -7,7 +7,7 @@ package lock
 import (
 	"context"
 	"fmt"
-	"gin/pkg/log"
+	"gin-micro-mine/pkg/log"
 	"go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/concurrency"
 	"time"

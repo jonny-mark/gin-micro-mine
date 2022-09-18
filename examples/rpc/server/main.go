@@ -6,9 +6,9 @@ import (
 
 	pb "gin/examples/rpc/test"
 	grpcSrv "gin/internal/server"
-	"gin/pkg/app"
-	eagle "gin/pkg/app"
-	logger "gin/pkg/log"
+	"gin-micro-mine/pkg/app"
+	eagle "gin-micro-mine/pkg/app"
+	logger "gin-micro-mine/pkg/log"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
 	"net/http"

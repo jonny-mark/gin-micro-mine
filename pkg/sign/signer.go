@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gin/pkg/utils"
+	"gin-micro-mine/pkg/utils"
 )
 
 // CryptoFunc 签名加密函数

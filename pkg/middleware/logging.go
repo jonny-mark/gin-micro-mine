@@ -7,9 +7,9 @@ package middleware
 import (
 	"bytes"
 	"encoding/json"
-	"gin/pkg/app"
-	"gin/pkg/errcode"
-	"gin/pkg/log"
+	"gin-micro-mine/pkg/app"
+	"gin-micro-mine/pkg/errcode"
+	"gin-micro-mine/pkg/log"
 	"github.com/gin-gonic/gin"
 	"github.com/willf/pad"
 	"regexp"

@@ -5,7 +5,7 @@
 package log
 
 import (
-	"gin/pkg/utils"
+	"gin-micro-mine/pkg/utils"
 	"github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

@@ -5,7 +5,7 @@
 package user
 
 import (
-	"gin/pkg/storage/orm"
+	"gin-micro-mine/pkg/storage/orm"
 	"gorm.io/gorm"
 	"gin/internal/model/user"
 	"errors"

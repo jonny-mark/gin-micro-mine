@@ -12,7 +12,7 @@ import (
 	"net/url"
 	"time"
 
-	"gin/pkg/utils"
+	"gin-micro-mine/pkg/utils"
 	grpcRecovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
 	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"

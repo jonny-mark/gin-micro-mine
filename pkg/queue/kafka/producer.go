@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"time"
 
-	logger "gin/pkg/log"
+	logger "gin-micro-mine/pkg/log"
 	"github.com/Shopify/sarama"
 )
 

@@ -2,7 +2,7 @@ package redis_test
 
 import (
 	. "github.com/onsi/ginkgo/v2"
-	mine "gin/pkg/redis"
+	mine "gin-micro-mine/pkg/redis"
 	. "github.com/onsi/gomega"
 	"context"
 	"github.com/go-redis/redis/v8"

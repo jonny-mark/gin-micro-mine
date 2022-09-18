@@ -5,8 +5,8 @@
 package server
 
 import (
-	"gin/pkg/app"
-	"gin/pkg/transport/grpc"
+	"gin-micro-mine/pkg/app"
+	"gin-micro-mine/pkg/transport/grpc"
 )
 
 func NewGRPCServer(cfg *app.ServerConfig) *grpc.Server {

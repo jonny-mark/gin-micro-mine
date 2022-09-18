@@ -7,7 +7,7 @@ package etcd
 import (
 	"context"
 	"fmt"
-	"gin/pkg/registry"
+	"gin-micro-mine/pkg/registry"
 	"go.etcd.io/etcd/client/v3"
 	"google.golang.org/grpc"
 	"testing"

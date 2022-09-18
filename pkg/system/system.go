@@ -7,9 +7,9 @@ package system
 import (
 	"context"
 	"errors"
-	"gin/pkg/config"
-	"gin/pkg/log"
-	"gin/pkg/transport"
+	"gin-micro-mine/pkg/config"
+	"gin-micro-mine/pkg/log"
+	"gin-micro-mine/pkg/transport"
 	"golang.org/x/sync/errgroup"
 	"os"
 	"os/signal"

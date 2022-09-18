@@ -5,7 +5,7 @@
 package main
 
 import (
-	"gin/pkg/queue/kafka"
+	"gin-micro-mine/pkg/queue/kafka"
 	"github.com/Shopify/sarama"
 	"log"
 	"os"

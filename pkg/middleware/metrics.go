@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"gin/pkg/metric"
+	"gin-micro-mine/pkg/metric"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"

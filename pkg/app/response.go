@@ -5,8 +5,8 @@
 package app
 
 import (
-	"gin/pkg/errcode"
-	"gin/pkg/utils"
+	"gin-micro-mine/pkg/errcode"
+	"gin-micro-mine/pkg/utils"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

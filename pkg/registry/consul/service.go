@@ -5,7 +5,7 @@
 package consul
 
 import (
-	"gin/pkg/registry"
+	"gin-micro-mine/pkg/registry"
 	"sync"
 	"sync/atomic"
 )

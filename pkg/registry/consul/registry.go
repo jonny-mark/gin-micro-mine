@@ -7,7 +7,7 @@ package consul
 import (
 	"context"
 	"fmt"
-	"gin/pkg/registry"
+	"gin-micro-mine/pkg/registry"
 	"github.com/hashicorp/consul/api"
 	"net/url"
 	"strconv"

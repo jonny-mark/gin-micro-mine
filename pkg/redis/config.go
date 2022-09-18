@@ -7,8 +7,8 @@ package redis
 import (
 	"context"
 	"gin/internal/constant"
-	"gin/pkg/config"
-	"gin/pkg/load/nacos"
+	"gin-micro-mine/pkg/config"
+	"gin-micro-mine/pkg/load/nacos"
 	"github.com/go-redis/redis/extra/redisotel/v8"
 	"github.com/go-redis/redis/v8"
 	"gopkg.in/yaml.v3"

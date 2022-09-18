@@ -1,9 +1,9 @@
 package web
 
 import (
-	"gin/pkg/app"
+	"gin-micro-mine/pkg/app"
 	"github.com/gin-gonic/gin"
-	"gin/pkg/log"
+	"gin-micro-mine/pkg/log"
 )
 
 // Index home page

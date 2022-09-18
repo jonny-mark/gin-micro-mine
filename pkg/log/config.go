@@ -6,8 +6,8 @@ package log
 
 import (
 	"gin/internal/constant"
-	"gin/pkg/config"
-	"gin/pkg/load/nacos"
+	"gin-micro-mine/pkg/config"
+	"gin-micro-mine/pkg/load/nacos"
 	"gopkg.in/yaml.v3"
 	"log"
 )

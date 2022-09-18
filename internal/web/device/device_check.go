@@ -7,7 +7,7 @@ package device
 import (
 	"github.com/gin-gonic/gin"
 	"time"
-	"gin/pkg/app"
+	"gin-micro-mine/pkg/app"
 )
 
 type CheckCreate struct {

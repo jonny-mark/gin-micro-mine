@@ -7,7 +7,7 @@ package lock
 import (
 	"context"
 	"fmt"
-	"gin/pkg/log"
+	"gin-micro-mine/pkg/log"
 	"github.com/go-redis/redis/v8"
 	"time"
 )

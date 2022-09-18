@@ -6,8 +6,8 @@ package system
 
 import (
 	"context"
-	"gin/pkg/log"
-	"gin/pkg/transport"
+	"gin-micro-mine/pkg/log"
+	"gin-micro-mine/pkg/transport"
 	"os"
 )
 

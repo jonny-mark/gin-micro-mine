@@ -7,11 +7,11 @@ package internal
 import (
 	"testing"
 	"gin/internal/repository/vehicle"
-	"gin/pkg/config"
+	"gin-micro-mine/pkg/config"
 	"github.com/spf13/pflag"
-	"gin/pkg/load/nacos"
+	"gin-micro-mine/pkg/load/nacos"
 	"github.com/davecgh/go-spew/spew"
-	"gin/pkg/storage/orm"
+	"gin-micro-mine/pkg/storage/orm"
 )
 var (
 	cfgDir  = pflag.StringP("config dir", "c", "config", "config directory.")

@@ -7,9 +7,9 @@ package nacos
 import (
 	"errors"
 	"fmt"
-	"gin/pkg/config"
-	"gin/pkg/load"
-	"gin/pkg/utils"
+	"gin-micro-mine/pkg/config"
+	"gin-micro-mine/pkg/load"
+	"gin-micro-mine/pkg/utils"
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/clients/config_client"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"

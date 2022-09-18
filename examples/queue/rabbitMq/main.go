@@ -7,7 +7,7 @@ package main
 
 import (
 	"fmt"
-	"gin/pkg/queue/rabbitmq"
+	"gin-micro-mine/pkg/queue/rabbitmq"
 	"log"
 )
 

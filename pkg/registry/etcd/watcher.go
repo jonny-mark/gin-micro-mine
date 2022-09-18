@@ -6,7 +6,7 @@ package etcd
 
 import (
 	"context"
-	"gin/pkg/registry"
+	"gin-micro-mine/pkg/registry"
 	"go.etcd.io/etcd/client/v3"
 )
 

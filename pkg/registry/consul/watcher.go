@@ -6,7 +6,7 @@ package consul
 
 import (
 	"context"
-	"gin/pkg/registry"
+	"gin-micro-mine/pkg/registry"
 )
 
 type watcher struct {

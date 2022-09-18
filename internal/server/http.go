@@ -6,8 +6,8 @@ package server
 
 import (
 	"gin/internal/routers"
-	"gin/pkg/app"
-	"gin/pkg/transport/http"
+	"gin-micro-mine/pkg/app"
+	"gin-micro-mine/pkg/transport/http"
 )
 
 func NewHTTPServer(cfg *app.ServerConfig) *http.Server {

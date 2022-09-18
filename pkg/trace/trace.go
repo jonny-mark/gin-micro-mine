@@ -7,8 +7,8 @@ package trace
 import (
 	"errors"
 	"gin/internal/constant"
-	appConfig "gin/pkg/config"
-	"gin/pkg/load/nacos"
+	appConfig "gin-micro-mine/pkg/config"
+	"gin-micro-mine/pkg/load/nacos"
 	jaegerprop "go.opentelemetry.io/contrib/propagators/jaeger"
 	"go.opentelemetry.io/otel"
 	jaegerExporter "go.opentelemetry.io/otel/exporters/jaeger"

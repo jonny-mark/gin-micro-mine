@@ -6,7 +6,7 @@ package routers
 
 import (
 	"gin/internal/middleware"
-	pubMiddleware "gin/pkg/middleware"
+	pubMiddleware "gin-micro-mine/pkg/middleware"
 	"github.com/gin-gonic/gin"
 	"gin/internal/web/device"
 	"gin/internal/web"

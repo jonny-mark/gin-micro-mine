@@ -6,8 +6,8 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"gin/pkg/app"
-	"gin/pkg/errcode"
+	"gin-micro-mine/pkg/app"
+	"gin-micro-mine/pkg/errcode"
 	"gin/internal/repository/user"
 	"errors"
 	"gorm.io/gorm"

@@ -7,9 +7,9 @@ package app
 import (
 	"context"
 	"errors"
-	logger "gin/pkg/log"
-	"gin/pkg/registry"
-	"gin/pkg/transport"
+	logger "gin-micro-mine/pkg/log"
+	"gin-micro-mine/pkg/registry"
+	"gin-micro-mine/pkg/transport"
 	"github.com/google/uuid"
 	"golang.org/x/sync/errgroup"
 	"os"

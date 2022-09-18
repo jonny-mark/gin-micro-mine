@@ -5,8 +5,8 @@
 package routers
 
 import (
-	"gin/pkg/app"
-	"gin/pkg/middleware"
+	"gin-micro-mine/pkg/app"
+	"gin-micro-mine/pkg/middleware"
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

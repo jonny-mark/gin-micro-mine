@@ -3,7 +3,7 @@ package etcd
 import (
 	"encoding/json"
 
-	"gin/pkg/registry"
+	"gin-micro-mine/pkg/registry"
 )
 
 func marshal(si *registry.ServiceInstance) (string, error) {

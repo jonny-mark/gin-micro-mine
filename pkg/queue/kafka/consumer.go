@@ -8,7 +8,7 @@ import (
 
 	"github.com/Shopify/sarama"
 
-	logger "gin/pkg/log"
+	logger "gin-micro-mine/pkg/log"
 )
 
 // Consumer kafka consumer
