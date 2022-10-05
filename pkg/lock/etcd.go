@@ -10,7 +10,6 @@ import (
 	"github.com/jonny-mark/gin-micro-mine/pkg/log"
 	"go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/concurrency"
-	"time"
 )
 
 const EtcdLockKey = "gin:etcd:lock:%s"
@@ -33,9 +32,8 @@ func NewEtcdLock(client *clientv3.Client, key string, opts ...concurrency.Sessio
 }
 
 // Lock acquires the lock
-func (l *EtcdLock) Lock(ctx context.Context, timeout time.Duration) (bool, error) {
-	ctx, cancel := context.WithTimeout(ctx, timeout)
-	defer cancel()
+func (l *EtcdLock) Lock(ctx context.Context) (bool, error) {
+	// NOTE: ignore bool value
 	return true, l.mu.Lock(ctx)
 }
 

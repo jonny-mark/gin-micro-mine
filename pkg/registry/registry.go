@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/1/10 2:10 PM
- **/
 package registry
 
 import "context"

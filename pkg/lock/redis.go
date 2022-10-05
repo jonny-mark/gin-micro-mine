@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2021/12/1 4:14 PM
- **/
 package lock
 
 import (
@@ -14,18 +10,20 @@ import (
 
 const RedisLockKey = "gin:redis.yaml:lock:%s"
 
-//RedisLock is a redis.yaml lock
+// RedisLock is a redis.yaml lock
 type RedisLock struct {
 	key         string
 	redisClient *redis.Client
 	token       string
+	expiration  time.Duration
 }
 
-func NewRedisLock(rdb *redis.Client, key string) *RedisLock {
+func NewRedisLock(rdb *redis.Client, key string, expiration time.Duration) *RedisLock {
 	return &RedisLock{
 		key:         getRedisKey(key),
 		redisClient: rdb,
 		token:       getToken(),
+		expiration:  expiration,
 	}
 }
 
@@ -33,9 +31,9 @@ func getRedisKey(key string) string {
 	return fmt.Sprintf(RedisLockKey, key)
 }
 
-//Lock acquires the lock
-func (l *RedisLock) Lock(ctx context.Context, timeout time.Duration) (bool, error) {
-	isSet, err := l.redisClient.SetNX(ctx, l.key, l.token, timeout).Result()
+// Lock acquires the lock
+func (l *RedisLock) Lock(ctx context.Context) (bool, error) {
+	isSet, err := l.redisClient.SetNX(ctx, l.key, l.token, l.expiration).Result()
 	if err == redis.Nil {
 		return false, nil
 	}
@@ -46,8 +44,8 @@ func (l *RedisLock) Lock(ctx context.Context, timeout time.Duration) (bool, erro
 	return isSet, nil
 }
 
-//Unlock del the lock
-//token 一致才会执行删除，避免误删
+// Unlock del the lock
+// token 一致才会执行删除，避免误删
 func (l *RedisLock) UnLock(ctx context.Context) (bool, error) {
 	luaScript := "if redis.yaml.call('GET',KEYS[1]) == ARGV[1] then return redis.yaml.call('DEL',KEYS[1]) else return 0 end"
 	ret, err := l.redisClient.Eval(ctx, luaScript, []string{l.key}, l.token).Result()

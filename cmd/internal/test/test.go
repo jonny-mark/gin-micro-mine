@@ -5,8 +5,9 @@
 package test
 
 import (
+	"fmt"
+	"github.com/jonny-mark/gin-micro-mine/cmd/internal/test/test"
 	"github.com/spf13/cobra"
-	"gin/cmd/internal/test/test"
 )
 
 // CmdProto represents the proto command.
@@ -22,4 +23,5 @@ func init() {
 }
 
 func run(cmd *cobra.Command, args []string) {
+	fmt.Println("Please enter the cache filename")
 }
