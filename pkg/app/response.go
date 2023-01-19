@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/1/24 6:28 PM
- **/
 package app
 
 import (

@@ -1,4 +1,4 @@
-Enable: true  #nacos是否开启
+Enable: false  #nacos是否开启
 ClientConfig:
   Env: dev
   TimeoutMs : 5000

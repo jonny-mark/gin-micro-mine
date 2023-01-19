@@ -18,7 +18,7 @@ libprotoc 3.12.1
 运行：
 
 ```shell script
-go get google.golang.org/protobuf/cmd/protoc-gen-go
+go get google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/protobuf/cmd/protoc-gen-go
 ```
 
@@ -27,35 +27,24 @@ go install google.golang.org/protobuf/cmd/protoc-gen-go
 grpc-go包含了Go的grpc库
 
 ```shell script
-go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 ```
-
-### 安装 twirp
-它的设置非常简单，这对我来说最重要；
-同时支持 http 1.1 和 http 2.0；
-同时支持 Protobuf 和 JSON；
-易于调试
-
+将$GOPATH/bin/下的可执行文件复制到系统下
 ```shell script
-go get github.com/twitchtv/twirp/protoc-gen-twirp
-go install github.com/twitchtv/twirp/protoc-gen-twirp
+cp protoc-gen-go /usr/local/bin
+cp protoc-gen-go-grpc /usr/local/bin
 ```
 
 ### 编辑 proto 文件
 
 ### 生成代码
 
-//生成grpc文件
-protoc --go-grpc_out=.  user.proto
-
-//生成一般文件
-protoc --go_out=.  user.proto
-
-//生成twirp文件
-protoc --twirp_out=.  user.proto
-
--I：源文件的目录（可省略）
+//生成一般文件和grpc文件
+```shell script
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative greeter.proto
+```
+`
 --go_out: 设置所生成的Go代码输出目录
 
 ## 目录结构

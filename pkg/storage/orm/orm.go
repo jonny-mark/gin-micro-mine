@@ -1,19 +1,15 @@
-/**
- * @author jiangshangfang
- * @date 2021/10/22 9:58 AM
- **/
 package orm
 
 import (
+	"database/sql"
+	"fmt"
+	opentelemetry "github.com/1024casts/gorm-opentelemetry"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
 	"os"
 	"time"
-	"fmt"
-	"database/sql"
-	"gorm.io/driver/mysql"
-	opentelemetry "github.com/1024casts/gorm-opentelemetry"
 )
 
 var DB *gorm.DB

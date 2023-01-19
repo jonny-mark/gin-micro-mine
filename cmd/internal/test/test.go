@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/4/5 9:39 PM
- **/
 package test
 
 import (

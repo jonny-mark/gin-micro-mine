@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2021/7/30 11:53 AM
- **/
 package log
 
 import (
@@ -11,7 +7,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-//全局log
+// 全局log
 var logger Logger
 var zl *zap.Logger
 

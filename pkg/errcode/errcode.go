@@ -13,6 +13,8 @@ type Error struct {
 
 var codes = map[int]struct{}{}
 
+// NewError return an Error.
+// According to the error code,the error description to create
 func NewError(code int, msg string) *Error {
 	if _, ok := codes[code]; ok {
 		panic(fmt.Sprintf("code %d is exsit, please change one", code))
@@ -26,17 +28,17 @@ func (e *Error) Error() string {
 	return fmt.Sprintf("code：%d, msg:：%s", e.Code, e.Msg)
 }
 
-// Code return error code
+// GetCode return error's code int
 func (e *Error) GetCode() int {
 	return e.Code
 }
 
-// Msg return error msg
+// GetMsg return error msg
 func (e *Error) GetMsg() string {
 	return e.Msg
 }
 
-// Details return more error details
+// GetDetails return more error details
 func (e *Error) GetDetails() []string {
 	return e.Details
 }

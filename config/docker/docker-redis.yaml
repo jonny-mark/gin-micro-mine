@@ -1,0 +1,22 @@
+# 指定compose文件的版本
+version: '3.7'
+# 定义所有的service信息,services下面的第一级别的key即是一个service的名称
+services:
+  redis:
+    container_name: redis_container
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - gin-redis
+    volumes:
+      - /Users/jonny/project/docker/redis:/var/lib/redis
+    environment:
+      # 设置时区为上海，否则时间会有问题
+      - TZ=Asia/Shanghai
+
+
+#设置网络环境
+networks:
+  gin-redis:
+    driver: "bridge"

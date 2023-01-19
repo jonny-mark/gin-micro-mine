@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2021/7/30 10:23 AM
- **/
 package config
 
 import (
@@ -14,7 +10,7 @@ import (
 	"sync"
 )
 
-//全局Config
+// 全局Config
 var Conf *Config
 
 type Config struct {
@@ -41,12 +37,12 @@ func New(dir string, opts ...Option) *Config {
 	return c
 }
 
-//Load函数
+// Load函数
 func Load(filename string, val interface{}) error {
 	return Conf.Load(filename, val)
 }
 
-//Load方法
+// Load方法
 func (c *Config) Load(filename string, val interface{}) error {
 	v, err := c.LoadWithType(filename, c.configType)
 	if err != nil {

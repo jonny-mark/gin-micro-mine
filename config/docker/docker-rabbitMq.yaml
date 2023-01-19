@@ -7,16 +7,17 @@ services:
          RABBITMQ_DEFAULT_VHOST: "root"
          RABBITMQ_DEFAULT_USER: "root"
          RABBITMQ_DEFAULT_PASS: "12345678"
-       image: "rabbitmq:3.7.16-management"
+       image: "rabbitmq:latest"
        restart: on-failure
        volumes:
-         - "/Users/zhangtingting/docker/rabbitMq/data:/var/lib/rabbitmq"
-         - "/Users/zhangtingting/docker/rabbitMq/log:/var/log/rabbitmq/log"
+         - "/Users/jonny/project/docker/rabbitMq/data:/var/lib/rabbitmq"
+         - "/Users/jonny/project/docker/rabbitMq/log:/var/log/rabbitmq/log"
        ports:
-         - "15672:15672"
-         - "4369:4369"
-         - "5672:5672"
-         - "25672:25672"
+         - "15672:15672" #客户端-HTTP_API端口
+         - "4369:4369"  #用来跟踪结点名称监听地址，在集群中起到类似DNS的作用
+         - "5672:5672"  #没有使用SSL的端口
+         - "5671:5671"  #使用SSL的端口
+         - "25672:25672" #用于rabbitmq节点间和CLI工具通信，配合4369使用
        networks:
          - rabbitMqNetwork
 

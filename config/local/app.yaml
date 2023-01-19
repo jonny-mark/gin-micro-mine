@@ -1,7 +1,7 @@
 Name: gin
 Version: 1.0.0
 PprofPort: :5555
-Mode: debug                 # debug, release, test
+Mode: release                 # debug, release, test
 JwtSecret: JWT_SECRET
 JwtTimeout: 86400
 CookieName: jwt-token
@@ -13,13 +13,15 @@ EnableTrace: true
 EnablePprof: true
 
 HTTP:
+  Network: http
   Addr: :801
   ReadTimeout: 3s
   WriteTimeout: 3s
 GRPC:
+  Network: tcp
   Addr: :901
-  ReadTimeout: 5s
-  WriteTimeout: 5s
+  ReadTimeout: 3s
+  WriteTimeout: 3s
 
 Registry:
   Endpoints: 127.0.0.1:2379 #多个节点以,分割

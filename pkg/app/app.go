@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2021/12/12 8:11 PM
- **/
 package app
 
 import (
@@ -142,7 +138,7 @@ func (a *App) buildInstance() (*registry.ServiceInstance, error) {
 	}, nil
 }
 
-//优雅关闭应用
+// 优雅关闭应用
 func (a *App) stop() error {
 	//如果开启注册，需要注销节点
 	a.mu.Lock()

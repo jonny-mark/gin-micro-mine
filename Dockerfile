@@ -7,7 +7,7 @@
 
 # 第一阶段 生成可执行文件阶段
 # Compile stage
-FROM golang:1.17-alpine AS builder
+FROM golang:1.19-alpine AS builder
 
 # 安装grpc_health工具
 RUN GRPC_HEALTH_PROBE_VERSION=v0.4.8 && \
@@ -23,7 +23,7 @@ ENV GO111MODULE=on \
     TZ=Asia/Shanghai
 
 # 工作目录
-WORKDIR /Users/zhangtingting/go/src/gin
+WORKDIR /Users/jonny/project/go/src/gin-micro-mine
 
 # 复制项目中的 go.mod 和 go.sum文件并下载依赖信息
 COPY go.mod .
@@ -52,11 +52,12 @@ FROM alpine:latest
 WORKDIR /data/app
 
 # 从builder镜像中把 /build 拷贝到当前目录
-COPY --from=builder /Users/zhangtingting/go/src/gin/main   .
-COPY --from=builder /Users/zhangtingting/go/src/gin/config  ./config
-COPY --from=builder /bin/grpc_health_probe    /bin/grpc_health_probe
+COPY --from=builder /Users/jonny/project/go/src/gin-micro-mine/main .
+COPY --from=builder /Users/jonny/project/go/src/gin-micro-mine/config  ./config
+COPY --from=builder /bin/grpc_health_probe /bin/grpc_health_probe
 
 EXPOSE 801
+EXPOSE 901
 
 # 需要运行的命令
 CMD [ "./main", "-c", "config", "-e" ,"local"]

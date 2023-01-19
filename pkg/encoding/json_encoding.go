@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/1/17 2:33 PM
- **/
 package encoding
 
 import (
@@ -28,7 +24,7 @@ func (j JSONEncoding) Unmarshal(data []byte, value interface{}) error {
 	return nil
 }
 
-//Gzip压缩
+// Gzip压缩
 type JSONGzipEncoding struct{}
 
 func (jz JSONGzipEncoding) Marshal(v interface{}) ([]byte, error) {
@@ -99,7 +95,7 @@ func GzipDecode(in []byte) ([]byte, error) {
 	return ioutil.ReadAll(reader)
 }
 
-//snappy压缩
+// snappy压缩
 type JSONSnappyEncoding struct{}
 
 func (s JSONSnappyEncoding) Marshal(v interface{}) (data []byte, err error) {

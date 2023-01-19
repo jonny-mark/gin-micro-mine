@@ -1,8 +1,6 @@
-/**
- * @author jiangshangfang
- * @date 2022/3/3 4:38 PM
- **/
 package sentinel
+
+import "github.com/alibaba/sentinel-golang/logging"
 
 // SentinelConfig represent the general configuration of Sentinel.
 type SentinelConfig struct {

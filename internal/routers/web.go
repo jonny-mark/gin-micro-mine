@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2021/8/8 5:20 PM
- **/
 package routers
 
 import (

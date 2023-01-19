@@ -1,6 +1,6 @@
 ## 📗 目录结构
 
-```shell
+```
 ├── Makefile                     # 项目管理文件
 ├── api                          # grpc客户端和Swagger 文档
 ├── common                       # 公共方法 或 常数

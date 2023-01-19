@@ -1,4 +1,4 @@
-Name: gin-sql                 # 数据库名称db
+Name: gin-mysql                 # 数据库名称db
 Addr: localhost:3306            # 如果是 docker,可以替换为 对应的服务名称，eg: db:3306
 UserName: root
 Password: 123456

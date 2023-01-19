@@ -1,10 +1,11 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/davecgh/go-spew/spew"
 	"github.com/gin-gonic/gin"
+	pb "github.com/jonny-mark/gin-micro-mine/api/grpc/user/v1"
 	"github.com/jonny-mark/gin-micro-mine/internal/server"
 	"github.com/jonny-mark/gin-micro-mine/pkg/app"
 	"github.com/jonny-mark/gin-micro-mine/pkg/config"
@@ -39,26 +40,12 @@ func main() {
 		fmt.Println(string(marshaled))
 		return
 	}
-	spew.Dump(*cfgDir)
-	spew.Dump(*env)
 	// 初始化cfg目录
 	config.New(*cfgDir, config.WithEnv(*env))
 
-	/**加载资源start**/
-	//初始化nacos配置
-	nacos.Init()
-	//初始化app
-	app.Init()
-	//初始化日志
-	logger.Init()
-	//初始化数据库
-	orm.Init()
-	//初始化redis
-	redis.Init()
-	//初始化trace
-	if app.Conf.EnableTrace {
-		trace.Init()
-	}
+	// 初始化各组件
+	initModule()
+
 	//初始化service
 	//service.Svc = service.New(repository.New(orm.GetDB()))
 	/**加载资源end**/
@@ -81,7 +68,6 @@ func main() {
 	//}
 	//r := etcd.New(client)
 
-	// start app
 	myApp := app.New(
 		app.WithName(app.Conf.Name),
 		app.WithVersion(app.Conf.Version),
@@ -89,13 +75,67 @@ func main() {
 		app.WithServer(
 			// init http server
 			server.NewHTTPServer(&app.Conf.HTTP),
-			//// init grpc server
-			//server.NewGRPCServer(&cfg.GRPC),
+
+			// init grpc server
+			//grpcServer,
 		),
 		//app.WithRegistry(r),
 	)
 
+	go RunGrpc()
 	if err := myApp.Run(); err != nil {
 		panic(err)
+	}
+}
+
+func RunGrpc() {
+	grpcServer := server.NewGRPCServer(&app.Conf.GRPC)
+
+	srv := &grpcSrv{}
+	pb.RegisterUserServiceServer(grpcServer, srv)
+	myApp := app.New(
+		app.WithName(app.Conf.Name),
+		app.WithVersion(app.Conf.Version),
+		app.WithLogger(logger.GetLogger()),
+		app.WithServer(
+			// init http server
+			//server.NewHTTPServer(&app.Conf.HTTP),
+
+			// init grpc server
+			grpcServer,
+		),
+		//app.WithRegistry(r),
+	)
+	if err := myApp.Run(); err != nil {
+		panic(err)
+	}
+}
+
+type grpcSrv struct {
+	pb.UnimplementedUserServiceServer
+}
+
+func (se *grpcSrv) LoginByPhone(c context.Context, r *pb.PhoneLoginRequest) (*pb.PhoneLoginReply, error) {
+	return &pb.PhoneLoginReply{Ret: fmt.Sprintf("Phone: %+v", r.Phone)}, nil
+}
+
+// initModule 初始化组件
+func initModule() {
+	/**加载资源start**/
+	//初始化nacos配置
+	nacos.Init()
+	//初始化app
+	app.Init()
+	//初始化日志
+	logger.Init()
+	//初始化数据库
+	orm.Init()
+	//初始化RabbitMq
+	//rabbitMq.init()
+	//初始化redis
+	redis.Init()
+	//初始化trace
+	if app.Conf.EnableTrace {
+		trace.Init()
 	}
 }

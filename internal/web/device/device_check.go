@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/4/16 6:13 PM
- **/
 package device
 
 import (

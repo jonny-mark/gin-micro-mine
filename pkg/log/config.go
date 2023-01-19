@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2021/10/17 9:14 PM
- **/
 package log
 
 import (

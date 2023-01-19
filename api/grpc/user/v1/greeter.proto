@@ -2,21 +2,20 @@ syntax = "proto3";
 
 package test;
 
-option go_package="/;rpc";
+option go_package = "/;grpc";
 
 //添加的google.api.http注解依赖该文件
 //import "google/api/annotations.proto";
 
 service UserService{
-    rpc LoginByPhone(PhoneLoginRequest) returns (PhoneLoginReply) {}
+  rpc LoginByPhone (PhoneLoginRequest) returns (PhoneLoginReply) {}
 }
 
 message PhoneLoginRequest {
-    int64 Phone = 1;
-    int32 VerifyCode = 2;
+  int32 phone = 1;
+  string VerifyCode = 2;
 }
 
 message PhoneLoginReply {
-    string Ret = 1;
-    string err = 2;
+  string ret = 1;
 }

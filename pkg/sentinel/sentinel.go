@@ -1,7 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/3/3 4:41 PM
- **/
 package sentinel
 
 import (

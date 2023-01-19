@@ -1,8 +1,3 @@
-/**
- * @author jiangshangfang
- * @date 2022/1/23 4:31 PM
- **/
-
 package grpc
 
 import "github.com/prometheus/client_golang/prometheus"
